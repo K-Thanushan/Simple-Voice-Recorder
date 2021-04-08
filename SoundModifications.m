@@ -22,7 +22,7 @@ Xt = Xt/max(abs(Xt));
 %pause;
 %stop(player);
 
-subplot(4,1,1);
+subplot(5,1,1);
 plot(t, Xt);
 xlabel('Time'); ylabel('Amplitude');title('Time domain after noramalizating');
 
@@ -30,22 +30,24 @@ pause;
 
 Xf = abs(fft(Xt));
 f = 1/5:1/5:fs;
-subplot(4,1,2);
-plot(f(1:2.5*fs), Xf(1:2.5*fs));
+subplot(5,1,2);
+plot(f, Xf);
 xlabel('Frequency'); ylabel('Magnitude');title('Frequency domain');
 
 pause;
 
-Xf_amp = Xf;
-for ff = 1:length(Xf_amp)
-    if ff > amp_frq*5
-        Xf_amp(ff) = const*Xf_amp(ff);
-    end
-end 
+Len_Xf = length(Xf);                %Length of total freq. spectrum
+Freq_Domain = fs*(0:(Len_Xf/2))/Len_Xf;
 
-subplot(4,1,3);
-plot(f(1:2.5*fs), Xf_amp(1:2.5*fs));
-xlabel('Frequency'); ylabel('Magnitude');title('Frequency domain - Amplified');
+subplot(5,1,3);
+plot(Freq_Domain,freq_onesided(Xf,Len_Xf));
+xlabel('Frequency'); ylabel('Magnitude');title('Frequency domain - One-Sided');
+
+Xf_amp = freq_amp(Xf,1000,6400,0.002);      %Amplifying frequency components between 1000-6400 by 0.002
+
+subplot(5,1,4);
+plot(Freq_Domain, freq_onesided(Xf_amp,Len_Xf));
+xlabel('Frequency'); ylabel('Magnitude');title('Frequency domain - Amplified (One-Sided)');
 
 Xt_amp = ifft(Xf_amp);
 player_amp = audioplayer(Xt_amp, fs);
@@ -56,7 +58,7 @@ stop(player);
 Xt_shift = Xt;
 
 for tt = 1:length(t)
-    Xt_shift(tt) = exp(1i*shift_frq*2*pi*t(tt))*Xt(tt);
+    Xt_shift(tt) = exp(0i*shift_frq*2*pi*t(tt))*Xt(tt);
 end
 
 Xf_shift = abs(fft(Xt_shift));
@@ -67,7 +69,7 @@ for ff = 1:length(Xf_shift)
     end
 end
 
-subplot(4,1,4);
+subplot(5,1,5);
 plot(f(1:2.5*fs), Xf_shift(1:2.5*fs));
 xlabel('Frequency'); ylabel('Magnitude');title('Frequency domain - Shifted');
 
