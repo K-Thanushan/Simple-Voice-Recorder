@@ -77,3 +77,15 @@ player_amp = audioplayer(Xt_shift, fs);
 play(player_amp);
 pause;
 stop(player);
+
+scalingfactor=0.8;
+fsscaled=scalingfactor*fs;
+tn=linspace(0,length(Xt)/fsscaled,length(Xt));
+subplot(6,1,6);
+plot(tn,Xt);
+xlabel('Time'); ylabel('Magnitude');title('Time domain - Scaled');
+
+player = audioplayer(inputSound, fsscaled);
+play(player);
+pause;
+stop(player);
