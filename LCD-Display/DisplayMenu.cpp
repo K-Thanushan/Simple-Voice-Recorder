@@ -1,6 +1,7 @@
 #include "Arduino.h"
 #include "DisplayMenu.h"
 #include <LiquidCrystal.h>
+#include <string.h>
 
 LiquidCrystal lcd(12, 3, 4, 5, 6, 7);
 
@@ -10,13 +11,56 @@ DisplayMenu::DisplayMenu(int UpButton, int DownButton, int EnterButton, int Back
     pinMode(EnterButton, INPUT); 
     pinMode(BackButton, INPUT);
     pinMode(DownButton, INPUT);
-    pinMode(UpButton, INPUT); 
+    pinMode(UpButton, INPUT);
 
     int _enter = EnterButton;         
     int _back = BackButton;
     int _down = DownButton;
     int _up = UpButton;
     int _Position = Position;   
+}
+
+String to_binary(int num) {
+    /*
+     * returns the binary value of a given decimal number between 0 and 255
+     * as a 8 bit string
+    */
+
+    String bin;
+
+    while (num) {
+        bin = String(num % 2) + bin;
+        num /= 2;
+    }
+    while (bin.length() < 8) {
+        bin = "0" + bin;
+    }
+    return bin;
+}
+int output = 13; // output pin
+int Fs = 8000;  // sampling rate 
+int sensorValue;
+String stream;
+void DisplayMenu::input(){
+    while (_Position == 6){
+        sensorValue = analogRead(A0) / 4;
+        String binary = to_binary(sensorValue);
+        stream += binary;
+        Serial.print(String(sensorValue) + "  -->  ");
+        for (int i = 0; i < 8; i++) {
+            if (binary[i] == '0') {
+                digitalWrite(output, LOW);
+                Serial.print("0 ");
+            }
+            else {
+                digitalWrite(output, HIGH);
+                Serial.print("1 ");
+            }
+            delay(1 / (8 * Fs));
+        }
+        Serial.println();
+    }
+    Serial.println(stream);
 }
 
 void DisplayMenu::Position_1(){
@@ -224,6 +268,7 @@ void DisplayMenu::Enter(){
     }
     else if (_Position==5){
         Position_6();
+        input();
     }
     else if (_Position==8){
         Position_9();

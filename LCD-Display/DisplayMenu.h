@@ -1,6 +1,7 @@
 #ifndef DisplayMenu_h
 #define DisplayMenu_h
 
+#include <string.h>
 #include "Arduino.h"
 
 
@@ -28,6 +29,7 @@ class DisplayMenu
         void Position_13();
         void Position_14();
         void ButtonPress();
+        void input();
         int _enter;
         int _back;
         int _down;
