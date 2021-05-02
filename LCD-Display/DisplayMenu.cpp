@@ -19,232 +19,145 @@ DisplayMenu::DisplayMenu(int UpButton, int DownButton, int EnterButton, int Back
     int _Position = Position;   
 }
 
-void DisplayMenu::Position_1(){
-  _Position = 1;
-  lcd.clear();
-  lcd.print("Record Voice");
-  delay(500);
+
+void DisplayMenu::MenuPosition(int a, String Displaytext1){
+    _Position = a;
+    lcd.clear();
+    lcd.setCursor(0,0);
+    lcd.print(Displaytext1);
+    delay(500);
 }
 
-void DisplayMenu::Position_2(){
-  _Position = 2;
-  lcd.clear();
-  lcd.print("Recordings");
-  delay(500);
-}
-
-void DisplayMenu::Position_3(){
-  _Position = 3;
-  lcd.clear();
-  lcd.print("Voice Characters");
-  delay(500);
-}
-
-void DisplayMenu::Position_4(){
-  _Position = 4;
-  lcd.clear();
-  lcd.print("Reset");
-  delay(500);
-}
-
-void DisplayMenu::Position_5(){
-  _Position = 5;
-  lcd.clear();
-  lcd.print("Start Recording");
-  delay(500);
-}
-
-void DisplayMenu::Position_6(){
-  _Position = 6;
-  lcd.clear();
-  lcd.print("Stop Recording");
-  delay(500);
-}
-
-void DisplayMenu::Position_7(){
-  _Position = 7;
-  lcd.clear();
-  lcd.print("Play Recordings");
-  delay(500);
-}
-void DisplayMenu::Position_8(){
-  _Position = 8;
-  lcd.clear();
-  lcd.print("Options");
-  delay(500);
-}
-
-void DisplayMenu::Position_9(){
-  _Position = 9;
-  lcd.clear();
-  lcd.print("Rename Recording");
-  delay(500);
-}
-
-void DisplayMenu::Position_10(){
-  _Position = 10;
-  lcd.clear();
-  lcd.print("Delete Recording");
-  delay(500);
-}
-
-void DisplayMenu::Position_11(){
-  _Position = 11;
-  lcd.clear();
-  lcd.print("Change Pitch");
-  delay(500);
-}
-
-void DisplayMenu::Position_12(){
-  _Position = 12;
-  lcd.clear();
-  lcd.print("Include Echo");
-  delay(500);
-}
-
-void DisplayMenu::Position_13(){
-  _Position = 13;
-  lcd.clear();
-  lcd.print("Fast Forward");
-  delay(500);
-}
-
-void DisplayMenu::Position_14(){
-  _Position = 14;
-  lcd.clear();
-  lcd.print("Pause Recording");
-  delay(500);
-}
 
 void DisplayMenu::Start(){
     lcd.begin(16,2);
-    Position_1();
+    MenuPosition(1, "Record Voice");
     delay(500);
 }
 
 void DisplayMenu::Up(){
     if (_Position==1){
-        Position_4();
+        MenuPosition(4, "Reset");
     }
     else if (_Position==2){
-        Position_1();
+        MenuPosition(1, "Record Voice");
     }
     else if (_Position==3){
-        Position_2();
+        MenuPosition(2, "Recordings");
     }
     else if (_Position==4){
-        Position_3();
+        MenuPosition(3, "Voice Characters");
     }
     else if (_Position==5){
-        Position_5();
+        MenuPosition(5, "Start Recording");
     }
     else if (_Position==14){
-        Position_5();
+        MenuPosition(5, "Start Recording");
     }
     else if (_Position==6){
-        Position_14();
+        MenuPosition(14, "Pause Recording");
     }
     else if (_Position==7){
-        Position_7();
+        MenuPosition(7, "Play Recordings");
     }
     else if (_Position==8){
-        Position_7();
+        MenuPosition(7, "Play Recordings");
     }
     else if (_Position==9){
-        Position_9();
+        MenuPosition(9, "Rename Recording");
     }
     else if (_Position==10){
-        Position_9();
+        MenuPosition(9, "Rename Recording");
     }
     else if (_Position==11){
-        Position_11();
+        MenuPosition(11, "Change Pitch");
     }
     else if (_Position==12){
-        Position_11();
+        MenuPosition(11, "Change Pitch");
     }
     else if (_Position==13){
-        Position_12();
+        MenuPosition(12, "Fast Forward");
     }
 }
 
 void DisplayMenu::Down(){
     if (_Position==1){
-        Position_2();
+        MenuPosition(2, "Recordings");
     }
     else if (_Position==2){
-        Position_3();
+        MenuPosition(3, "Voice Characters");
     }
     else if (_Position==3){
-        Position_4();
+        MenuPosition(4, "Reset");
     }
     else if (_Position==4){
-        Position_1();
+        MenuPosition(1, "Record Voice");
     }
     else if (_Position==5){
-        Position_14();
+        MenuPosition(14, "Pause Recording");
     }
     else if (_Position==14){
-        Position_6();
+        MenuPosition(6, "Stop Recording");
     }
     else if (_Position==6){
-        Position_6();
+        MenuPosition(6, "Stop Recording");
     }
     else if (_Position==7){
-        Position_8();
+        MenuPosition(8, "Options");
     }
     else if (_Position==8){
-        Position_8();
+        MenuPosition(8, "Options");
     }
     else if (_Position==9){
-        Position_10();
+        MenuPosition(10, "Delete Recording");
     }
     else if (_Position==10){
-        Position_10();
+        MenuPosition(10, "Delete Recording");
     }
     else if (_Position==11){
-        Position_12();
+        MenuPosition(12, "Include Echo");
     }
     else if (_Position==12){
-        Position_13();
+        MenuPosition(13, "Fast Forward");
     }
     else if (_Position==13){
-        Position_13();
+        MenuPosition(13, "Fast Forward");
     }
 }
 
 void DisplayMenu::Enter(){
     if (_Position==1){
-        Position_5();
+        MenuPosition(5, "Start Recording");
     }
     else if (_Position==2){
-        Position_7();
+        MenuPosition(7, "Play Recordings");
     }
     else if (_Position==3){
-        Position_11();
+        MenuPosition(11, "Change Pitch");
     }
     else if (_Position==5){
-        Position_6();
+        MenuPosition(14, "Pause Recording");
     }
     else if (_Position==8){
-        Position_9();
+        MenuPosition(9, "Rename Recording");
     }
 }
 
 void DisplayMenu::Back(){            
   if (_Position == 1 or _Position ==2 or _Position == 3 or _Position == 4) {           
-        Position_1();
+        MenuPosition(1, "Record Voice");
   }
   else if (_Position == 5 or _Position == 6 or _Position == 14){
-        Position_1();
+        MenuPosition(1, "Record Voice");
   }
   else if (_Position == 7 or _Position == 8){
-        Position_2();
+        MenuPosition(2, "Recordings");
   } 
   else if (_Position == 9 or _Position == 10){
-        Position_8();
+        MenuPosition(8, "Options");
   }
   else if (_Position == 11 or _Position == 12 or _Position == 13){
-        Position_3();
+        MenuPosition(3, "Voice Characters");
   }
 }
 
