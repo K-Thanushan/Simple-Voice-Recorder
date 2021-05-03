@@ -40,27 +40,27 @@ String to_binary(int num) {
 int output = 13; // output pin
 int Fs = 8000;  // sampling rate 
 int sensorValue;
-String stream;
+//String stream;
 void DisplayMenu::input(){
     while (_Position == 6){
         sensorValue = analogRead(A0) / 4;
         String binary = to_binary(sensorValue);
-        stream += binary;
-        Serial.print(String(sensorValue) + "  -->  ");
+        //stream += binary;
+       
         for (int i = 0; i < 8; i++) {
             if (binary[i] == '0') {
                 digitalWrite(output, LOW);
-                Serial.print("0 ");
+               
             }
             else {
                 digitalWrite(output, HIGH);
-                Serial.print("1 ");
+                
             }
             delay(1 / (8 * Fs));
         }
-        Serial.println();
+       
     }
-    Serial.println(stream);
+   
 }
 
 void DisplayMenu::Position_1(){
