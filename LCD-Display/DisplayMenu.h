@@ -13,7 +13,7 @@ class DisplayMenu
         void Down();
         void Enter();
         void Back();
-        void MenuPosition(int a, String Displaytext1);
+        void MenuPosition(int a, String Displaytext1, String Displaytext2);
         int _enter;
         int _back;
         int _down;
