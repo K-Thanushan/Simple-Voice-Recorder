@@ -159,7 +159,7 @@ void DisplayMenu::Back(){
         MenuPosition(8, ">Options", "");
   }
   else if (_Position == 11 or _Position == 12 or _Position == 13){
-        MenuPosition(3, ">Voice Characters", "Resets");
+        MenuPosition(3, ">Voice Characters", "Reset");
   }
 }
 
