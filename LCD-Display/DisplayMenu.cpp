@@ -51,10 +51,7 @@ void DisplayMenu::Up(){
         MenuPosition(3, ">VoiceCharacters", "Reset");
     }
     else if (_Position==5){
-        MenuPosition(5, ">Start Recording", "Pause Recording");
-    }
-    else if (_Position==14){
-        MenuPosition(5, ">Start Recording", "Pause Recording");
+        MenuPosition(5, ">Start Recording", "");
     }
     else if (_Position==6){
         MenuPosition(14, ">Pause Recording", "Stop Recording");
@@ -95,9 +92,6 @@ void DisplayMenu::Down(){
     else if (_Position==4){
         MenuPosition(1, ">Record Voice", "Recordings");
     }
-    else if (_Position==5){
-        MenuPosition(14, ">Pause Recording", "Stop Recording");
-    }
     else if (_Position==14){
         MenuPosition(6, ">Stop Recording", "");
     }
@@ -129,7 +123,7 @@ void DisplayMenu::Down(){
 
 void DisplayMenu::Enter(){
     if (_Position==1){
-        MenuPosition(5, ">Start Recording", "Pause Recording");
+        MenuPosition(5, ">Start Recording", "");
     }
     else if (_Position==2){
         MenuPosition(7, ">Play Recordings", "Options");
@@ -139,6 +133,15 @@ void DisplayMenu::Enter(){
     }
     else if (_Position==5){
         MenuPosition(14, ">Pause Recording", "Stop Recording");
+    }
+    else if (_Position==6){
+        lcd.clear();
+        lcd.print("Saving File");
+        delay(1000);
+        lcd.clear();
+        lcd.print("Saved File");
+        delay(1000);
+        MenuPosition(1, ">Record Voice", "Recordings");
     }
     else if (_Position==8){
         MenuPosition(9, ">RenameRecording", "DeleteRecordings");
