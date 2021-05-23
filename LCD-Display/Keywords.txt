@@ -5,4 +5,5 @@ Enter KEYWORD2
 Back KEYWORD2
 Start KEYWORD2
 ButtonPress KEYWORD2
-MenuPosition KEYWORD2
+MenuPosition1 KEYWORD2
+MenuPosition2 KEYWORD2

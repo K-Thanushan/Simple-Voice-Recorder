@@ -7,9 +7,9 @@ int BackButton = 11;
 
 
 int Position = 1;
+int FileIndex = 0;
 
-DisplayMenu MyMenu(UpButton, DownButton, EnterButton, BackButton, Position);
-
+DisplayMenu MyMenu(UpButton, DownButton, EnterButton, BackButton, Position, FileIndex);
 void setup() {
     MyMenu.Start();
 }
