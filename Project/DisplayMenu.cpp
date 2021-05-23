@@ -213,6 +213,8 @@ void DisplayMenu::Enter(){
     else if (_Position==4){
         MenuPosition2(5, "Stop Recording", "");
         startRecording();
+        lcd.setCursor(2, 0);
+        lcd.print("Recording...");
     }
     else if (_Position==5){
         lcd.clear();
