@@ -26,7 +26,7 @@ char file_name[50];
 int file_number = 0;
 
 int input_signal = A0; 
-int audio_output = 9;
+int audio_output = 11;
 int Fs = 11025;
 
 volatile char fileSlNum[20] = "";
@@ -260,7 +260,7 @@ void DisplayMenu::Enter(){
     } */
     else if (_Position==14){
         audio.disable();
-        MenuPosition1(7, "Play Recording", "Change Volume");
+        MenuPosition1(6, "Play Recording", "Change Volume");
     }
     else if (_Position==7){
         //MenuPosition1(18, "Increase Volume", "Decrease Volume");
@@ -320,7 +320,7 @@ void DisplayMenu::Up(){
     else if (_Position==13){
         MenuPosition1(12, "High Pitch", "Low Pitch");
     }
-    else if (_Position==14){
+   /*  else if (_Position==14){
         MenuPosition2(14, "Pause", "Stop");
     }
     else if (_Position==15){
@@ -331,7 +331,7 @@ void DisplayMenu::Up(){
     }
     else if (_Position==17){
         MenuPosition2(16, "Play", "Stop");
-    }
+    } */
     else if (_Position==18){
         Volume++;
         //Increase volume in tmrpcm
@@ -401,7 +401,7 @@ void DisplayMenu::Down(){
     else if (_Position==13){
         MenuPosition1(13, "Low Pitch", "");
     }
-    else if (_Position==14){
+   /*  else if (_Position==14){
         MenuPosition2(15, "Stop", "");
     }
     else if (_Position==15){
@@ -412,7 +412,7 @@ void DisplayMenu::Down(){
     }
     else if (_Position==17){
         MenuPosition2(17, "Stop","");
-    }
+    } */
     else if (_Position==18){
         Volume--;
         //decrease volume in tmrpcm
