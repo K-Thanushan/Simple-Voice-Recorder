@@ -182,7 +182,7 @@ void DisplayMenu::Enter(){
         MenuPosition1(4, "Start Recording", "");
     }
     else if (_Position==2){
-        File root;
+        //File root;
         int count = 0;
         root = SD.open("/");
   
@@ -208,21 +208,22 @@ void DisplayMenu::Enter(){
         MenuPosition1(19, nameList[_FileIndex], nameList[_FileIndex + 1]);
     }
     else if (_Position>=19){
-        MenuPosition1(6, "Play Recording", "Change Pitch");
+        MenuPosition1(6, "Play Recording", "Change Volume");
     }
     else if (_Position==4){
         MenuPosition2(5, "Stop Recording", "");
-        startRecording();
         lcd.setCursor(2, 0);
         lcd.print("Recording...");
+        startRecording();
+        
     }
     else if (_Position==5){
         lcd.clear();
         lcd.print("Saving File");
-        delay(1000);
         stopRecording();
+        delay(1000);
         lcd.clear();
-        lcd.print("Saved File");
+        lcd.print("File Saved");
         delay(1000);
         MenuPosition1(1, "Record Voice", "Recordings");
     }
@@ -230,21 +231,37 @@ void DisplayMenu::Enter(){
         deleteRecording(nameList[_FileIndex]);
         lcd.clear();
         lcd.print("File Deleted");
+        _FileIndex = 0;
+        for (int i = 0; i<100; i++){
+            nameList[i] = "";
+        }
         delay(1000);
         MenuPosition1(1, "Record Voice", "Recordings");
     }
     else if (_Position==6){
-        MenuPosition2(14, "Pause", "Stop");
+        MenuPosition2(14, "Stop", "");
+        lcd.setCursor(3, 0);
+        lcd.print("Playing...");
+       
         startPlayback(nameList[_FileIndex]);
     }
-    else if (_Position==14){
-       /*  audio.disable();
-        audio.stopPlayback();  */
-
-        MenuPosition2(16, "Stop", "Back");
+    /* else if (_Position==14){
+        audio.disable();
+        //audio.stopPlayback();
+       //audio.pause();
+       MenuPosition2(16, "Play", "Stop");
+       
+       
     }
-    else if (_Position==17){
-        MenuPosition1(7, "Play Recording", "Change Pitch");
+    else if (_Position==16){
+        audio.disable();
+        MenuPosition2(14, "Pause", "Stop");
+        
+     
+    } */
+    else if (_Position==14){
+        audio.disable();
+        MenuPosition1(7, "Play Recording", "Change Volume");
     }
     else if (_Position==7){
         MenuPosition1(18, "Increase Volume", "Decrease Volume");
@@ -301,24 +318,25 @@ void DisplayMenu::Up(){
         MenuPosition2(14, "Pause", "Stop");
     }
     else if (_Position==16){
-        MenuPosition2(16, "Stop", "Back");
+        MenuPosition2(16, "Play", "Stop");
     }
     else if (_Position==17){
-        MenuPosition2(16, "Stop", "Back");
+        MenuPosition2(16, "Play", "Stop");
     }
     else if (_Position==18){
         Volume++;
+        //Increase volume in tmrpcm
         lcd.clear();
         lcd.setCursor(0,0);
         lcd.print("Volume:");
         lcd.setCursor(9,0);
         lcd.print(Volume);
-        delay(2000);
+        delay(1000);
         MenuPosition1(18, "Increase Volume", "Decrease Volume");
     }
     else if (_Position==19){
         _FileIndex = _FileIndex;
-        MenuPosition1(18, nameList[_FileIndex], nameList[_FileIndex + 1]);
+        MenuPosition1(19, nameList[_FileIndex], nameList[_FileIndex + 1]);
     }
     else if (_Position>19){
         _FileIndex --;
@@ -374,28 +392,37 @@ void DisplayMenu::Down(){
         MenuPosition2(15, "Stop", "");
     }
     else if (_Position==16){
-        MenuPosition2(17, "Back","");
+        MenuPosition2(17, "Stop","");
     }
     else if (_Position==17){
-        MenuPosition2(17, "Back","");
+        MenuPosition2(17, "Stop","");
     }
     else if (_Position==18){
         Volume--;
+        //decrease volume in tmrpcm
         lcd.clear();
         lcd.setCursor(0,0);
         lcd.print("Volume:");
         lcd.setCursor(9,0);
         lcd.print(Volume);
-        delay(2000);
+        delay(1000);
         MenuPosition1(18, "Increase Volume", "Decrease Volume");
     }
     else if (_Position>=19){
         _FileIndex++;
         _Position++;
-        if (_FileIndex == N){
-            MenuPosition1(_Position, nameList[_FileIndex], "");
+       
+        if (_FileIndex >=  N){
+                --_FileIndex;
+                --_Position;
+                MenuPosition1(_Position, nameList[_FileIndex], "");
         }
+        /* else if (_FileIndex == N){
+            MenuPosition1(_Position, nameList[_FileIndex], "");
+        } */
+        else{
         MenuPosition1(_Position, nameList[_FileIndex], nameList[_FileIndex + 1]);
+        }
     }
  }
 
@@ -408,19 +435,19 @@ void DisplayMenu::Back(){
   else if (_Position == 4 or _Position == 5){
         MenuPosition1(1, "Record Voice", "Recordings");
   }
-  else if (_Position>=18){
+  else if (_Position>=19){
         MenuPosition1(2, "Recordings", "Factory Reset");
   }
   else if (_Position==17){
-        MenuPosition1(7, "Play Recordings", "Change Pitch");
+        MenuPosition1(6, "Play Recording", "Change Volume");
   }
-  else if (_Position == 7 or _Position == 8 or _Position == 9 or _Position == 10 or _Position == 11){
-        MenuPosition1(18, nameList[_FileIndex], nameList[_FileIndex + 1]);
+  else if (_Position == 6 or _Position == 7 or _Position == 8 or _Position == 9 or _Position == 10 or _Position == 11){
+        MenuPosition1(19, nameList[_FileIndex], nameList[_FileIndex + 1]);
   } 
   else if (_Position == 12 or _Position == 13){
         MenuPosition1(8, "Change Pitch", "Include Echo");
   }
   else if (_Position == 18){
-        MenuPosition1(7, "ChangeVolume", "Change Pitch");
+        MenuPosition1(7, "Change Volume", "Change Pitch");
   }
 }
