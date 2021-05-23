@@ -22,6 +22,11 @@ class DisplayMenu
         int _up;
         int _Position;
         int _FileIndex; 
+        void startRecording();
+        void stopRecording();
+        void startPlayback(String fileName);
+        void deleteRecording(String fileName);
+
 };
 
 #endif;
