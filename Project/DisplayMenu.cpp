@@ -124,7 +124,7 @@ void DisplayMenu::startPlayback(String fileName) {
     if (SD.exists(fileName)) {
         char play_filename[fileName.length()];
         fileName.toCharArray(play_filename, fileName.length());
-        audio.setVolume(5);
+        audio.setVolume(Volume);
         audio.play(play_filename);
         //audio.stopPlayback();
     }
@@ -182,7 +182,6 @@ void DisplayMenu::Enter(){
         MenuPosition1(4, "Start Recording", "");
     }
     else if (_Position==2){
-        //File root;
         int count = 0;
         root = SD.open("/");
   
@@ -264,11 +263,21 @@ void DisplayMenu::Enter(){
         MenuPosition1(7, "Play Recording", "Change Volume");
     }
     else if (_Position==7){
-        MenuPosition1(18, "Increase Volume", "Decrease Volume");
+        //MenuPosition1(18, "Increase Volume", "Decrease Volume");
+        lcd.clear();
+        lcd.setCursor(5, 0);
+        lcd.print("Volume");
+        lcd.setCursor(7,1);
+        lcd.print(Volume);
+        _Position = 18;
+        delay(250);
     }
     else if (_Position==8){
         MenuPosition1(12, "High Pitch", "Low Pitch");
     }
+    else if (_Position == 18){
+        MenuPosition1(7, "Change Volume", "Change Pitch");
+  }
 }
 
 void DisplayMenu::Up(){
@@ -326,13 +335,20 @@ void DisplayMenu::Up(){
     else if (_Position==18){
         Volume++;
         //Increase volume in tmrpcm
-        lcd.clear();
+        /* lcd.clear();
         lcd.setCursor(0,0);
         lcd.print("Volume:");
         lcd.setCursor(9,0);
         lcd.print(Volume);
         delay(1000);
-        MenuPosition1(18, "Increase Volume", "Decrease Volume");
+        MenuPosition1(18, "Increase Volume", "Decrease Volume"); */
+        lcd.clear();
+        lcd.setCursor(5, 0);
+        lcd.print("Volume");
+        lcd.setCursor(7,1);
+        lcd.print(Volume);
+        _Position = 18;
+        delay(250);
     }
     else if (_Position==19){
         _FileIndex = _FileIndex;
@@ -400,13 +416,20 @@ void DisplayMenu::Down(){
     else if (_Position==18){
         Volume--;
         //decrease volume in tmrpcm
-        lcd.clear();
+        /* lcd.clear();
         lcd.setCursor(0,0);
         lcd.print("Volume:");
         lcd.setCursor(9,0);
         lcd.print(Volume);
         delay(1000);
-        MenuPosition1(18, "Increase Volume", "Decrease Volume");
+        MenuPosition1(18, "Increase Volume", "Decrease Volume"); */
+        lcd.clear();
+        lcd.setCursor(5, 0);
+        lcd.print("Volume");
+        lcd.setCursor(7,1);
+        lcd.print(Volume);
+        _Position = 18;
+        delay(250);
     }
     else if (_Position>=19){
         _FileIndex++;
