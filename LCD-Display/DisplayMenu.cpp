@@ -51,8 +51,6 @@ void DisplayMenu::MenuPosition2(int a, String Displaytext3, String Displaytext4)
     delay(500);
 }
 
-
-
 void DisplayMenu::Start(){
     lcd.begin(16,2);
     MenuPosition1(1,"Record Voice", "Recordings");
@@ -90,7 +88,7 @@ void DisplayMenu::Enter(){
         MenuPosition1(19, nameList[_FileIndex], nameList[_FileIndex + 1]);
     }
     else if (_Position>=19){
-        MenuPosition1(6, "Play Recordings", "Change Pitch");
+        MenuPosition1(6, "Play Recording", "Change Pitch");
     }
     else if (_Position==4){
         MenuPosition2(5, "Stop Recording", "");
@@ -111,7 +109,7 @@ void DisplayMenu::Enter(){
         MenuPosition2(16, "Stop", "Back");
     }
     else if (_Position==17){
-        MenuPosition1(7, "Play Recordings", "Change Pitch");
+        MenuPosition1(7, "Play Recording", "Change Pitch");
     }
     else if (_Position==7){
         MenuPosition1(18, "Increase Volume", "Decrease Volume");
@@ -275,19 +273,19 @@ void DisplayMenu::Back(){
   else if (_Position == 4 or _Position == 5){
         MenuPosition1(1, "Record Voice", "Recordings");
   }
-  else if (_Position>=18){
+  else if (_Position>=19){
         MenuPosition1(2, "Recordings", "Factory Reset");
   }
   else if (_Position==17){
-        MenuPosition1(7, "Play Recordings", "Change Pitch");
+        MenuPosition1(7, "Play Recording", "Change Volume");
   }
-  else if (_Position == 7 or _Position == 8 or _Position == 9 or _Position == 10 or _Position == 11){
-        MenuPosition1(18, nameList[_FileIndex], nameList[_FileIndex + 1]);
+  else if (_Position == 6 or_Position == 7 or _Position == 8 or _Position == 9 or _Position == 10 or _Position == 11){
+        MenuPosition1(19, nameList[_FileIndex], nameList[_FileIndex + 1]);
   } 
   else if (_Position == 12 or _Position == 13){
         MenuPosition1(8, "Change Pitch", "Include Echo");
   }
   else if (_Position == 18){
-        MenuPosition1(7, "ChangeVolume", "Change Pitch");
+        MenuPosition1(7, "Play Recording", "Change Volume");
   }
 }
