@@ -4,16 +4,16 @@
 #include <SD.h>
 #include <TMRpcm.h>
 
-/// I2C activation for physical implementation 
+/// I2C enabling for physical implementation 
 
  /* #include<Wire.h>
 #include <LiquidCrystal_I2C.h>
-LiquidCrystal_I2C lcd(0x27, 16, 2);   */            /// also do changes in 'start' function
+LiquidCrystal_I2C lcd(0x27, 16, 2);   */          /// also do changes in 'start' function
                                            
  /// For simulation
  
  #include <LiquidCrystal.h>
-LiquidCrystal lcd(12, 3, 4, 5, 6, 7);   
+LiquidCrystal lcd(12, 3, 4, 5, 6, 7);    
  
 #define SD_CSPin 53
 
@@ -82,7 +82,7 @@ void DisplayMenu::Start(){
     /* lcd.init();              // for I2C
     lcd.backlight(); */
     
-    lcd.begin(16, 2);           // for simulation
+   lcd.begin(16, 2);           // for simulation
 
     lcd.clear();
 
@@ -270,7 +270,7 @@ void DisplayMenu::Enter(){
         lcd.setCursor(7,1);
         lcd.print(Volume);
         _Position = 18;
-        delay(250);
+        delay(500);
     }
     else if (_Position==8){
         MenuPosition1(12, "High Pitch", "Low Pitch");
@@ -348,7 +348,7 @@ void DisplayMenu::Up(){
         lcd.setCursor(7,1);
         lcd.print(Volume);
         _Position = 18;
-        delay(250);
+        delay(500);
     }
     else if (_Position==19){
         _FileIndex = _FileIndex;
@@ -429,7 +429,7 @@ void DisplayMenu::Down(){
         lcd.setCursor(7,1);
         lcd.print(Volume);
         _Position = 18;
-        delay(250);
+        delay(500);
     }
     else if (_Position>=19){
         _FileIndex++;
