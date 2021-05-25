@@ -1,39 +1,38 @@
-#include <DisplayMenu.h>
+#include <VoiceRecorder.h>
 
-int UpButton =14;
-int DownButton = 15;
-int EnterButton = 16;
-int BackButton = 17;
+const int UpButton =14;
+const int DownButton = 15;
+const int EnterButton = 18;
+const int BackButton = 17;
 
 
-int Position = 1;
-int FileIndex = 0;
+const int Position = 1;
+const int FileIndex = 0;
 
-DisplayMenu MyMenu(UpButton, DownButton, EnterButton, BackButton, Position, FileIndex);
+VoiceRecorder VR(UpButton, DownButton, EnterButton, BackButton, Position, FileIndex);
+
 void setup() {
-
-    MyMenu.Start();
+    VR.Start();
 }
 
 void loop(){
     int UpState = digitalRead(UpButton);
     if (UpState == HIGH){       
-        MyMenu.Up();
+        VR.Up();
     }
 
     int DownState = digitalRead(DownButton);
     if (DownState == HIGH){      
-        MyMenu.Down();
+        VR.Down();
     }
 
     int EnterState = digitalRead(EnterButton);
     if (EnterState == HIGH){   
-        MyMenu.Enter();
+        VR.Enter();
     }
    
     int BackState = digitalRead(BackButton);
     if (BackState == HIGH){       
-        MyMenu.Back();
+        VR.Back();
     }
-    //MyMenu.ButtonPress();
 }
