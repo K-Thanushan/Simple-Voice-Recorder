@@ -53,7 +53,6 @@ VoiceRecorder::VoiceRecorder(int UpButton, int DownButton, int EnterButton, int 
         ;
     }
     
-    //SD.begin(SD_CSPin);
     if (!SD.begin(SD_CSPin)) {
         while (1);
     }
@@ -117,17 +116,11 @@ void VoiceRecorder::stopRecording() {
 
 
 void VoiceRecorder::startPlayback(String fileName) {
-    // fileName += ".WAV";
-    // char play_filename[fileName.length()+1];
-    // fileName.toCharArray(play_filename, fileName.length()+1);
-    // audio.setVolume(Volume);
-    // audio.play(play_filename); 
 
-    const char extent[5] = ".WAV";
     const short int fileLen = fileName.length()+1;
     char playerFile[fileLen];
     fileName.toCharArray(playerFile, fileLen);
-    strcat(playerFile, extent);
+    strcat(playerFile, exten);
 
     if (SD.begin(SD_CSPin)){
         player.volume(Volume);
@@ -216,7 +209,13 @@ void VoiceRecorder::Enter(){
         }
         root.close();
         N = count;
+        if (N == 0){
+            lcd.clear();
+            lcd.print("SD is empty");
+        }
+        else{
         MenuPosition1(19, nameList[_FileIndex], nameList[_FileIndex + 1]);
+        }
     }
 
     else if (_Position>=19){
@@ -246,7 +245,7 @@ void VoiceRecorder::Enter(){
     else if (_Position==11){
         deleteRecording(nameList[_FileIndex]);
         lcd.clear();
-        lcd.print("File Deleted");
+        lcd.print(nameList[_FileIndex]+" deleted");
         _FileIndex = 0;
         for (int i = 0; i<100; i++){
             nameList[i] = "";
@@ -262,19 +261,7 @@ void VoiceRecorder::Enter(){
        
         startPlayback(nameList[_FileIndex]);
     }
-    /* else if (_Position==14){
-        audio.disable();
-        //audio.stopPlayback();
-       //audio.pause();
-       MenuPosition2(16, "Play", "Stop");
-    }
-    
-    else if (_Position==16){
-        audio.disable();
-        MenuPosition2(14, "Pause", "Stop");
-        
-     
-    } */
+
     else if (_Position==14){
         player.disable();
         MenuPosition1(6, "Play Recording", "Change Volume");
@@ -356,18 +343,7 @@ void VoiceRecorder::Up(){
     else if (_Position==13){
         MenuPosition1(12, "High Pitch", "Low Pitch");
     }
-   /*  else if (_Position==14){
-        MenuPosition2(14, "Pause", "Stop");
-    }
-    else if (_Position==15){
-        MenuPosition2(14, "Pause", "Stop");
-    }
-    else if (_Position==16){
-        MenuPosition2(16, "Play", "Stop");
-    }
-    else if (_Position==17){
-        MenuPosition2(16, "Play", "Stop");
-    } */
+
     else if (_Position==18){
         if (Volume != 7){
         Volume++;
@@ -431,18 +407,7 @@ void VoiceRecorder::Down(){
     else if (_Position==13){
         MenuPosition1(13, "Low Pitch", "");
     }
-   /*  else if (_Position==14){
-        MenuPosition2(15, "Stop", "");
-    }
-    else if (_Position==15){
-        MenuPosition2(15, "Stop", "");
-    }
-    else if (_Position==16){
-        MenuPosition2(17, "Stop","");
-    }
-    else if (_Position==17){
-        MenuPosition2(17, "Stop","");
-    } */
+
     else if (_Position==18){
         if (Volume != 0){
         Volume--;
