@@ -17,7 +17,7 @@ LiquidCrystal_I2C lcd(0x27, 16, 2);   */          /// also do changes in 'start'
  
 #define SD_CSPin 53
 
-TMRpcm audio;
+TMRpcm audio, player;
 File myFile, root;
 
 char filePrefixname[50] = "aud";
@@ -31,7 +31,7 @@ int SpeakerPin = 11;
 int Fs = 8000;
 
 int N ;
-int Volume = 50;
+int Volume = 5;
 String nameList[100];
 
 
@@ -53,13 +53,16 @@ VoiceRecorder::VoiceRecorder(int UpButton, int DownButton, int EnterButton, int 
         ;
     }
     
-    SD.begin(SD_CSPin);
-    if (!SD.begin()) {
+    //SD.begin(SD_CSPin);
+    if (!SD.begin(SD_CSPin)) {
         while (1);
     }
     
     audio.speakerPin = SpeakerPin;
     audio.CSPin = SD_CSPin;
+
+    player.speakerPin = SpeakerPin;
+    player.CSPin = SD_CSPin;
 
     myFile = SD.open("index.txt");
     if (myFile) {
@@ -114,13 +117,27 @@ void VoiceRecorder::stopRecording() {
 
 
 void VoiceRecorder::startPlayback(String fileName) {
-    fileName += ".WAV";
-    if (SD.exists(fileName)) {
-        char play_filename[fileName.length()];
-        fileName.toCharArray(play_filename, fileName.length());
-        audio.setVolume(Volume);
-        audio.play(play_filename);
-    }  
+    // fileName += ".WAV";
+    // char play_filename[fileName.length()+1];
+    // fileName.toCharArray(play_filename, fileName.length()+1);
+    // audio.setVolume(Volume);
+    // audio.play(play_filename); 
+
+    const char extent[5] = ".WAV";
+    const short int fileLen = fileName.length()+1;
+    char playerFile[fileLen];
+    fileName.toCharArray(playerFile, fileLen);
+    strcat(playerFile, extent);
+
+    if (SD.begin(SD_CSPin)){
+        player.volume(Volume);
+        player.play(playerFile);
+    }
+
+    if (!player.isPlaying()){
+         player.disable();
+         MenuPosition1(6, "Play Recording", "Change Volume");
+    }
 }
 
 void VoiceRecorder::deleteRecording(String fileName) {
@@ -128,6 +145,22 @@ void VoiceRecorder::deleteRecording(String fileName) {
     if (SD.exists(fileName)) {
         SD.remove(fileName);
     }
+}
+
+void VoiceRecorder::reset(){
+    root = SD.open("/");
+  
+        while (true) {
+            File entry =  root.openNextFile();
+            if (! entry) {
+            break;
+            }
+    
+            SD.remove(entry.name());
+            entry.close();
+        }
+    root.close();
+    Volume = 5;
 }
 
 
@@ -243,7 +276,7 @@ void VoiceRecorder::Enter(){
      
     } */
     else if (_Position==14){
-        audio.disable();
+        player.disable();
         MenuPosition1(6, "Play Recording", "Change Volume");
     }
 
@@ -263,7 +296,24 @@ void VoiceRecorder::Enter(){
 
     else if (_Position == 18){
         MenuPosition1(7, "Change Volume", "Change Pitch");
-  }
+   }
+    else if (_Position == 3){
+        lcd.clear();
+        lcd.setCursor(0, 0);
+        lcd.print("Confirm factory ");
+        lcd.setCursor(0, 1);
+        lcd.print("reset ?");
+        _Position = -1;
+        delay(500);
+    }
+    else if (_Position == -1){
+        reset();
+        lcd.clear();
+        lcd.setCursor(0, 0);
+        lcd.print("Reseting Success");
+        delay(1000);
+        MenuPosition1(1, "Record Voice", "Recordings");
+    }
 }
 
 void VoiceRecorder::Up(){
@@ -319,7 +369,9 @@ void VoiceRecorder::Up(){
         MenuPosition2(16, "Play", "Stop");
     } */
     else if (_Position==18){
+        if (Volume != 7){
         Volume++;
+        }
         lcd.clear();
         lcd.setCursor(5, 0);
         lcd.print("Volume");
@@ -392,7 +444,9 @@ void VoiceRecorder::Down(){
         MenuPosition2(17, "Stop","");
     } */
     else if (_Position==18){
+        if (Volume != 0){
         Volume--;
+        }
         lcd.clear();
         lcd.setCursor(5, 0);
         lcd.print("Volume");
@@ -439,5 +493,8 @@ void VoiceRecorder::Back(){
   }
   else if (_Position == 18){
         MenuPosition1(7, "Change Volume", "Change Pitch");
+  }
+  else if (_Position == -1){
+       MenuPosition1(1, "Record Voice", "Recordings");
   }
 }

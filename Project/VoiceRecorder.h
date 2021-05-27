@@ -7,6 +7,7 @@
 class VoiceRecorder
 {
     public:
+    
         VoiceRecorder(int UpButton, int DownButton, int EnterButton, int BackButton, int Position, int FileIndex);
         void Start();
         void Up();
@@ -19,7 +20,7 @@ class VoiceRecorder
         void stopRecording();
         void startPlayback(String fileName);
         void deleteRecording(String fileName);
-    
+        void reset();
         int _enter;
         int _back;
         int _down;
