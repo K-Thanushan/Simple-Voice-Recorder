@@ -12,7 +12,7 @@ LiquidCrystal_I2C lcd(0x27, 16, 2);   */            /// also do changes in 'star
                                            
  /// For simulation
  
- #include <LiquidCrystal.h>
+#include <LiquidCrystal.h>
 LiquidCrystal lcd(12, 3, 4, 5, 6, 7);   
  
 #define SD_CSPin 53
@@ -234,7 +234,9 @@ void DisplayMenu::Enter(){
         MenuPosition1(1, "Record Voice", "Recordings");
     }
     else if (_Position==6){
-        MenuPosition2(14, "Pause", "Stop");
+        MenuPosition2(14, "Stop", "");
+        lcd.setCursor(3, 0);
+        lcd.print("Playing...");
         startPlayback(nameList[_FileIndex]);
     }
     else if (_Position==14){
@@ -404,8 +406,6 @@ void DisplayMenu::Down(){
         MenuPosition1(_Position, nameList[_FileIndex], nameList[_FileIndex + 1]);
     }
  }
-
-
 
 void DisplayMenu::Back(){   
   if (_Position == 1 or _Position ==2 or _Position == 3) {           
