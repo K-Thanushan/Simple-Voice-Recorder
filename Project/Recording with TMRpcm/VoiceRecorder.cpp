@@ -1,3 +1,15 @@
+/*
+* Date   : 30-May-2021
+
+* project: Simple Voice Recorder
+*
+* Authors: 190592X - Nisitha Maneesha
+*          190595J - Maleesha Siriwardana
+*          190610E - Gevindu Ganganath
+*          190621M - Thanushan k.  
+*
+*/
+
 #include "Arduino.h"
 #include "VoiceRecorder.h"
 #include <SPI.h>
@@ -78,9 +90,10 @@ void VoiceRecorder::Start(){
     lcd.begin(16, 2);           // for simulation
 
     lcd.clear();
-
+    lcd.setCursor(4, 0);
+    lcd.print("Welcome!");
+    delay(1000);
     MenuPosition1(1,"Record Voice", "Recordings");
-    delay(100);
 }
 
 void VoiceRecorder::startRecording() {

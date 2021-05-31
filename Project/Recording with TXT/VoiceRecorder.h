@@ -16,6 +16,7 @@ class VoiceRecorder
         void stopRecording();
         void startPlayback(String fileName);
         void deleteRecording(String fileName);
+        void freq_shift(String fileName,int shiftFrq);
         void reset();
         int _enter;
         int _back;

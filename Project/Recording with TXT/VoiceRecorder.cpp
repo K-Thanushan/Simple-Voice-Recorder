@@ -18,6 +18,7 @@
 #include <SD.h>
 #include <MCP4725.h>
 #include <Wire.h>
+#include <Complex.h>
 
 
 /// I2C enabling for physical implementation 
@@ -111,9 +112,11 @@ void VoiceRecorder::Start(){
     lcd.begin(16, 2);           // for simulation
 
     lcd.clear();
-
+    lcd.setCursor(4, 0);
+    lcd.print("Welcome!");
+    delay(1000);
     MenuPosition1(1,"Record Voice", "Recordings");
-    delay(100);
+    
 }
 
 void VoiceRecorder::startRecording() {
@@ -123,7 +126,7 @@ void VoiceRecorder::startRecording() {
     strcat(file_name, fileSlNum);
     strcat(file_name, exten);
     isRecording = !isRecording;
-    delay(50);
+
     File myFile = SD.open(file_name,FILE_WRITE); 
     while (1){
       int audio_in_analog = analogRead(MicPin)/4;
@@ -169,11 +172,8 @@ void VoiceRecorder::startPlayback(String fileName) {
 
     isPlaying = !isPlaying;
 
-    const short int fileLen = fileName.length()+1;
-    char playerFile[fileLen];
-    fileName.toCharArray(playerFile, fileLen);
-    strcat(playerFile, exten);
-    File outfile = SD.open("AUD1.TXT", FILE_READ);
+    fileName += ".TXT";
+    File outfile = SD.open(fileName, FILE_READ);
 
     String _txt = "";
     int count = 0 ;
@@ -194,11 +194,13 @@ void VoiceRecorder::startPlayback(String fileName) {
 
       if (state){
           state = !state;
-          isPlaying = !isPlaying;
           break;
       }
     }
+    isPlaying = !isPlaying;
     outfile.close();
+    delay(500);
+    MenuPosition1(6, "Play Recording", "Change Volume");
 } 
 
 void VoiceRecorder::deleteRecording(String fileName) {
@@ -224,6 +226,44 @@ void VoiceRecorder::reset(){
     Volume = 5;
 }
 
+void VoiceRecorder::freq_shift(String fileName,int shiftFrq){
+  Serial.begin(9600);
+  Serial.println("welcome");
+  isPlaying = !isPlaying;
+
+  fileName += ".TXT";
+  File freq_file = SD.open(fileName, FILE_READ);
+  
+  String _txt = "";
+  int count = 0 ;
+  float time_val = 0;
+  
+  while (freq_file.available()){
+      if (count<3){    
+        _txt += (char) freq_file.read();
+        count++;
+      }
+      else{
+        int alg_val = _txt.toInt();
+        Complex angle(cos(shiftFrq*1/Fs*time_val),sin(shiftFrq*1/Fs*time_val));
+        int shift_val = alg_val*(angle.real()+angle.imag());
+        dac.setValue(shift_val);
+        Serial.println(shift_val);
+        _txt = "";
+        count = 0 ;
+        time_val += 1/8000;
+      }
+      if (state){
+          state = !state;
+          break;
+      }
+   }
+   isPlaying = !isPlaying;
+   freq_file.close();
+   delay(500);
+   MenuPosition1(12, "High Pitch", "Low Pitch");
+}
+
 
 void VoiceRecorder::MenuPosition1(int a, String Displaytext1, String Displaytext2){
     _Position = a;
@@ -234,7 +274,7 @@ void VoiceRecorder::MenuPosition1(int a, String Displaytext1, String Displaytext
     lcd.print(Displaytext1);
     lcd.setCursor(0,1);
     lcd.print(Displaytext2);
-    delay(250);
+    delay(500);
 }
 
 void VoiceRecorder::MenuPosition2(int a, String Displaytext3, String Displaytext4){
@@ -246,7 +286,7 @@ void VoiceRecorder::MenuPosition2(int a, String Displaytext3, String Displaytext
     lcd.print(Displaytext3);
     lcd.setCursor(10,1);
     lcd.print(Displaytext4);
-    delay(250);
+    delay(500);
 }
 
 
@@ -313,12 +353,13 @@ void VoiceRecorder::Enter(){
         MenuPosition2(14, "Stop", "");
         lcd.setCursor(3, 0);
         lcd.print("Playing...");
+        delay(1000);
         startPlayback(nameList[_FileIndex]);
     }
 
-    else if (_Position==14){
+    /* else if (_Position==14){
         MenuPosition1(6, "Play Recording", "Change Volume");
-    }
+    } */
 
     else if (_Position==7){
         lcd.clear();
@@ -344,15 +385,29 @@ void VoiceRecorder::Enter(){
         lcd.setCursor(0, 1);
         lcd.print("reset ?");
         _Position = -1;
-        delay(500);
+        delay(750);
     }
     else if (_Position == -1){
         reset();
         lcd.clear();
         lcd.setCursor(0, 0);
         lcd.print("Reseting Success");
-        delay(1000);
+        delay(750);
         MenuPosition1(1, "Record Voice", "Recordings");
+    }
+    else if (_Position == 12){
+        MenuPosition2(14, "Stop", "");
+        lcd.setCursor(3, 0);
+        lcd.print("Playing...");
+        delay(1000);
+        freq_shift(nameList[_FileIndex], -1500);
+    }
+    else if (_Position == 13){
+        MenuPosition2(14, "Stop", "");
+        lcd.setCursor(3, 0);
+        lcd.print("Playing...");
+        delay(1000);
+        freq_shift(nameList[_FileIndex], 1500);
     }
 }
 
