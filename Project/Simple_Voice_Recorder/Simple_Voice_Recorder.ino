@@ -12,6 +12,7 @@ const int FileIndex = 0;
 VoiceRecorder VR(UpButton, DownButton, EnterButton, BackButton, Position, FileIndex);
 
 void setup() {
+
     VR.Start();
 }
 
