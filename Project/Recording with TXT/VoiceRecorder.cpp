@@ -227,8 +227,7 @@ void VoiceRecorder::reset(){
 }
 
 void VoiceRecorder::freq_shift(String fileName,int shiftFrq){
-  Serial.begin(9600);
-  Serial.println("welcome");
+
   isPlaying = !isPlaying;
 
   fileName += ".TXT";
@@ -248,7 +247,6 @@ void VoiceRecorder::freq_shift(String fileName,int shiftFrq){
         Complex angle(cos(shiftFrq*1/Fs*time_val),sin(shiftFrq*1/Fs*time_val));
         int shift_val = alg_val*(angle.real()+angle.imag());
         dac.setValue(shift_val);
-        Serial.println(shift_val);
         _txt = "";
         count = 0 ;
         time_val += 1/8000;
@@ -368,7 +366,7 @@ void VoiceRecorder::Enter(){
         lcd.setCursor(7,1);
         lcd.print(Volume);
         _Position = 18;
-        delay(250);
+        delay(500);
     }
 
     else if (_Position==8){
@@ -462,7 +460,7 @@ void VoiceRecorder::Up(){
         lcd.setCursor(7,1);
         lcd.print(Volume);
         _Position = 18;
-        delay(250);
+        delay(500);
     }
     else if (_Position==19){
         _FileIndex = _FileIndex;
@@ -526,7 +524,7 @@ void VoiceRecorder::Down(){
         lcd.setCursor(7,1);
         lcd.print(Volume);
         _Position = 18;
-        delay(250);
+        delay(500);
     }
     else if (_Position>=19){
         _FileIndex++;

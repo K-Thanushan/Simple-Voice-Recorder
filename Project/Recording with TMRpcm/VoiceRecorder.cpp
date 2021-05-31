@@ -175,7 +175,7 @@ void VoiceRecorder::MenuPosition1(int a, String Displaytext1, String Displaytext
     lcd.print(Displaytext1);
     lcd.setCursor(0,1);
     lcd.print(Displaytext2);
-    delay(250);
+    delay(500);
 }
 
 void VoiceRecorder::MenuPosition2(int a, String Displaytext3, String Displaytext4){
@@ -187,7 +187,7 @@ void VoiceRecorder::MenuPosition2(int a, String Displaytext3, String Displaytext
     lcd.print(Displaytext3);
     lcd.setCursor(10,1);
     lcd.print(Displaytext4);
-    delay(250);
+    delay(500);
 }
 
 
@@ -283,7 +283,7 @@ void VoiceRecorder::Enter(){
         lcd.setCursor(7,1);
         lcd.print(Volume);
         _Position = 18;
-        delay(250);
+        delay(500);
     }
 
     else if (_Position==8){
@@ -363,7 +363,7 @@ void VoiceRecorder::Up(){
         lcd.setCursor(7,1);
         lcd.print(Volume);
         _Position = 18;
-        delay(250);
+        delay(500);
     }
     else if (_Position==19){
         _FileIndex = _FileIndex;
@@ -427,7 +427,7 @@ void VoiceRecorder::Down(){
         lcd.setCursor(7,1);
         lcd.print(Volume);
         _Position = 18;
-        delay(250);
+        delay(500);
     }
     else if (_Position>=19){
         _FileIndex++;
