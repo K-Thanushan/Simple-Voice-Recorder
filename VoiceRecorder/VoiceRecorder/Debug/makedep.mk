@@ -6,3 +6,5 @@ LCD.cpp
 
 main.cpp
 
+VoiceRecorder.cpp
+

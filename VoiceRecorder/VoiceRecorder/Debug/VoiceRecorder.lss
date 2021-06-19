@@ -3,31 +3,31 @@ VoiceRecorder.elf:     file format elf32-avr
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
-  0 .data         0000011e  00800200  00000c34  00000cc8  2**0
+  0 .data         0000011e  00800200  00000ca4  00000d38  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  1 .text         00000c34  00000000  00000000  00000094  2**1
+  1 .text         00000ca4  00000000  00000000  00000094  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  2 .bss          00000005  0080031e  0080031e  00000de6  2**0
+  2 .bss          00000005  0080031e  0080031e  00000e56  2**0
                   ALLOC
-  3 .comment      00000030  00000000  00000000  00000de6  2**0
+  3 .comment      00000030  00000000  00000000  00000e56  2**0
                   CONTENTS, READONLY
-  4 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  00000e18  2**2
+  4 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  00000e88  2**2
                   CONTENTS, READONLY
-  5 .debug_aranges 000000b8  00000000  00000000  00000e58  2**0
+  5 .debug_aranges 000000d8  00000000  00000000  00000ec8  2**0
                   CONTENTS, READONLY, DEBUGGING
-  6 .debug_info   0000286c  00000000  00000000  00000f10  2**0
+  6 .debug_info   00002cf8  00000000  00000000  00000fa0  2**0
                   CONTENTS, READONLY, DEBUGGING
-  7 .debug_abbrev 00001001  00000000  00000000  0000377c  2**0
+  7 .debug_abbrev 0000111c  00000000  00000000  00003c98  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_line   00000ad3  00000000  00000000  0000477d  2**0
+  8 .debug_line   00000b4e  00000000  00000000  00004db4  2**0
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_frame  000001e4  00000000  00000000  00005250  2**2
+  9 .debug_frame  00000238  00000000  00000000  00005904  2**2
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_str    00000812  00000000  00000000  00005434  2**0
+ 10 .debug_str    00000901  00000000  00000000  00005b3c  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_loc    00000d03  00000000  00000000  00005c46  2**0
+ 11 .debug_loc    00001210  00000000  00000000  0000643d  2**0
                   CONTENTS, READONLY, DEBUGGING
- 12 .debug_ranges 00000098  00000000  00000000  00006949  2**0
+ 12 .debug_ranges 000000a8  00000000  00000000  0000764d  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -149,7 +149,7 @@ Disassembly of section .text:
 	...
 
 000000e4 <__ctors_start>:
-  e4:	d7 05       	cpc	r29, r7
+  e4:	0f 06       	cpc	r0, r31
 
 000000e6 <__ctors_end>:
   e6:	11 24       	eor	r1, r1
@@ -165,7 +165,7 @@ Disassembly of section .text:
   f6:	13 e0       	ldi	r17, 0x03	; 3
   f8:	a0 e0       	ldi	r26, 0x00	; 0
   fa:	b2 e0       	ldi	r27, 0x02	; 2
-  fc:	e4 e3       	ldi	r30, 0x34	; 52
+  fc:	e4 ea       	ldi	r30, 0xA4	; 164
   fe:	fc e0       	ldi	r31, 0x0C	; 12
  100:	00 e0       	ldi	r16, 0x00	; 0
  102:	0b bf       	out	0x3b, r16	; 59
@@ -200,14 +200,14 @@ Disassembly of section .text:
  12c:	01 09       	sbc	r16, r1
  12e:	80 2f       	mov	r24, r16
  130:	fe 01       	movw	r30, r28
- 132:	43 d5       	rcall	.+2694   	; 0xbba <__tablejump2__>
+ 132:	7b d5       	rcall	.+2806   	; 0xc2a <__tablejump2__>
  134:	c2 37       	cpi	r28, 0x72	; 114
  136:	d1 07       	cpc	r29, r17
  138:	80 e0       	ldi	r24, 0x00	; 0
  13a:	08 07       	cpc	r16, r24
  13c:	b1 f7       	brne	.-20     	; 0x12a <__do_global_ctors+0xa>
- 13e:	1a d5       	rcall	.+2612   	; 0xb74 <main>
- 140:	77 c5       	rjmp	.+2798   	; 0xc30 <_exit>
+ 13e:	df d0       	rcall	.+446    	; 0x2fe <main>
+ 140:	af c5       	rjmp	.+2910   	; 0xca0 <_exit>
 
 00000142 <__bad_interrupt>:
  142:	5e cf       	rjmp	.-324    	; 0x0 <__vectors>
@@ -248,17 +248,17 @@ void LCD::Command(unsigned char command)
 	#endif
 
 	__builtin_avr_delay_cycles(__ticks_dc);
- 15e:	82 e0       	ldi	r24, 0x02	; 2
+ 15e:	85 e0       	ldi	r24, 0x05	; 5
  160:	8a 95       	dec	r24
  162:	f1 f7       	brne	.-4      	; 0x160 <_ZN3LCD7CommandEh+0x1a>
- 164:	00 c0       	rjmp	.+0      	; 0x166 <_ZN3LCD7CommandEh+0x20>
+ 164:	00 00       	nop
 	_delay_us(1);
 	Lcd_Port &= ~(1<<EN);
  166:	8e b1       	in	r24, 0x0e	; 14
  168:	87 7f       	andi	r24, 0xF7	; 247
  16a:	8e b9       	out	0x0e, r24	; 14
- 16c:	8f e8       	ldi	r24, 0x8F	; 143
- 16e:	91 e0       	ldi	r25, 0x01	; 1
+ 16c:	8f e1       	ldi	r24, 0x1F	; 31
+ 16e:	93 e0       	ldi	r25, 0x03	; 3
  170:	01 97       	sbiw	r24, 0x01	; 1
  172:	f1 f7       	brne	.-4      	; 0x170 <_ZN3LCD7CommandEh+0x2a>
  174:	00 c0       	rjmp	.+0      	; 0x176 <_ZN3LCD7CommandEh+0x30>
@@ -283,10 +283,10 @@ void LCD::Command(unsigned char command)
  18e:	8e b1       	in	r24, 0x0e	; 14
  190:	88 60       	ori	r24, 0x08	; 8
  192:	8e b9       	out	0x0e, r24	; 14
- 194:	82 e0       	ldi	r24, 0x02	; 2
+ 194:	85 e0       	ldi	r24, 0x05	; 5
  196:	8a 95       	dec	r24
  198:	f1 f7       	brne	.-4      	; 0x196 <_ZN3LCD7CommandEh+0x50>
- 19a:	00 c0       	rjmp	.+0      	; 0x19c <_ZN3LCD7CommandEh+0x56>
+ 19a:	00 00       	nop
 	_delay_us(1);
 	Lcd_Port &= ~(1<<EN);
  19c:	8e b1       	in	r24, 0x0e	; 14
@@ -298,8 +298,8 @@ void LCD::Command(unsigned char command)
 	#endif
 
 	__builtin_avr_delay_cycles(__ticks_dc);
- 1a2:	8f e9       	ldi	r24, 0x9F	; 159
- 1a4:	9f e0       	ldi	r25, 0x0F	; 15
+ 1a2:	8f e3       	ldi	r24, 0x3F	; 63
+ 1a4:	9f e1       	ldi	r25, 0x1F	; 31
  1a6:	01 97       	sbiw	r24, 0x01	; 1
  1a8:	f1 f7       	brne	.-4      	; 0x1a6 <_ZN3LCD7CommandEh+0x60>
  1aa:	00 c0       	rjmp	.+0      	; 0x1ac <_ZN3LCD7CommandEh+0x66>
@@ -333,17 +333,17 @@ void LCD::Print(unsigned char Data)
 	#endif
 
 	__builtin_avr_delay_cycles(__ticks_dc);
- 1c8:	82 e0       	ldi	r24, 0x02	; 2
+ 1c8:	85 e0       	ldi	r24, 0x05	; 5
  1ca:	8a 95       	dec	r24
  1cc:	f1 f7       	brne	.-4      	; 0x1ca <_ZN3LCD5PrintEh+0x1a>
- 1ce:	00 c0       	rjmp	.+0      	; 0x1d0 <_ZN3LCD5PrintEh+0x20>
+ 1ce:	00 00       	nop
 	_delay_us(1);
 	Lcd_Port &= ~(1<<EN);
  1d0:	8e b1       	in	r24, 0x0e	; 14
  1d2:	87 7f       	andi	r24, 0xF7	; 247
  1d4:	8e b9       	out	0x0e, r24	; 14
- 1d6:	8f e8       	ldi	r24, 0x8F	; 143
- 1d8:	91 e0       	ldi	r25, 0x01	; 1
+ 1d6:	8f e1       	ldi	r24, 0x1F	; 31
+ 1d8:	93 e0       	ldi	r25, 0x03	; 3
  1da:	01 97       	sbiw	r24, 0x01	; 1
  1dc:	f1 f7       	brne	.-4      	; 0x1da <_ZN3LCD5PrintEh+0x2a>
  1de:	00 c0       	rjmp	.+0      	; 0x1e0 <_ZN3LCD5PrintEh+0x30>
@@ -368,10 +368,10 @@ void LCD::Print(unsigned char Data)
  1f8:	8e b1       	in	r24, 0x0e	; 14
  1fa:	88 60       	ori	r24, 0x08	; 8
  1fc:	8e b9       	out	0x0e, r24	; 14
- 1fe:	82 e0       	ldi	r24, 0x02	; 2
+ 1fe:	85 e0       	ldi	r24, 0x05	; 5
  200:	8a 95       	dec	r24
  202:	f1 f7       	brne	.-4      	; 0x200 <_ZN3LCD5PrintEh+0x50>
- 204:	00 c0       	rjmp	.+0      	; 0x206 <_ZN3LCD5PrintEh+0x56>
+ 204:	00 00       	nop
 	_delay_us(1);
 	Lcd_Port &= ~(1<<EN);
  206:	8e b1       	in	r24, 0x0e	; 14
@@ -383,8 +383,8 @@ void LCD::Print(unsigned char Data)
 	#endif
 
 	__builtin_avr_delay_cycles(__ticks_dc);
- 20c:	8f e9       	ldi	r24, 0x9F	; 159
- 20e:	9f e0       	ldi	r25, 0x0F	; 15
+ 20c:	8f e3       	ldi	r24, 0x3F	; 63
+ 20e:	9f e1       	ldi	r25, 0x1F	; 31
  210:	01 97       	sbiw	r24, 0x01	; 1
  212:	f1 f7       	brne	.-4      	; 0x210 <_ZN3LCD5PrintEh+0x60>
  214:	00 c0       	rjmp	.+0      	; 0x216 <_ZN3LCD5PrintEh+0x66>
@@ -403,1629 +403,1689 @@ void LCD::Initialize(void)
 	Lcd_Direction = 0xFF;
  220:	8f ef       	ldi	r24, 0xFF	; 255
  222:	8d b9       	out	0x0d, r24	; 13
- 224:	8f e3       	ldi	r24, 0x3F	; 63
- 226:	9c e9       	ldi	r25, 0x9C	; 156
- 228:	01 97       	sbiw	r24, 0x01	; 1
- 22a:	f1 f7       	brne	.-4      	; 0x228 <_ZN3LCD10InitializeEv+0xe>
- 22c:	00 c0       	rjmp	.+0      	; 0x22e <_ZN3LCD10InitializeEv+0x14>
- 22e:	00 00       	nop
+ 224:	2f ef       	ldi	r18, 0xFF	; 255
+ 226:	89 ef       	ldi	r24, 0xF9	; 249
+ 228:	90 e0       	ldi	r25, 0x00	; 0
+ 22a:	21 50       	subi	r18, 0x01	; 1
+ 22c:	80 40       	sbci	r24, 0x00	; 0
+ 22e:	90 40       	sbci	r25, 0x00	; 0
+ 230:	e1 f7       	brne	.-8      	; 0x22a <_ZN3LCD10InitializeEv+0x10>
+ 232:	00 c0       	rjmp	.+0      	; 0x234 <_ZN3LCD10InitializeEv+0x1a>
+ 234:	00 00       	nop
 	_delay_ms(20);
 	
 	Command(0x02);
- 230:	62 e0       	ldi	r22, 0x02	; 2
- 232:	ce 01       	movw	r24, r28
- 234:	88 df       	rcall	.-240    	; 0x146 <_ZN3LCD7CommandEh>
-	Command(0x28);
- 236:	68 e2       	ldi	r22, 0x28	; 40
+ 236:	62 e0       	ldi	r22, 0x02	; 2
  238:	ce 01       	movw	r24, r28
  23a:	85 df       	rcall	.-246    	; 0x146 <_ZN3LCD7CommandEh>
-	Command(0x0c);
- 23c:	6c e0       	ldi	r22, 0x0C	; 12
+	Command(0x28);
+ 23c:	68 e2       	ldi	r22, 0x28	; 40
  23e:	ce 01       	movw	r24, r28
  240:	82 df       	rcall	.-252    	; 0x146 <_ZN3LCD7CommandEh>
-	Command(0x06);
- 242:	66 e0       	ldi	r22, 0x06	; 6
+	Command(0x0c);
+ 242:	6c e0       	ldi	r22, 0x0C	; 12
  244:	ce 01       	movw	r24, r28
  246:	7f df       	rcall	.-258    	; 0x146 <_ZN3LCD7CommandEh>
-	Command(0x01);
- 248:	61 e0       	ldi	r22, 0x01	; 1
+	Command(0x06);
+ 248:	66 e0       	ldi	r22, 0x06	; 6
  24a:	ce 01       	movw	r24, r28
  24c:	7c df       	rcall	.-264    	; 0x146 <_ZN3LCD7CommandEh>
- 24e:	8f e9       	ldi	r24, 0x9F	; 159
- 250:	9f e0       	ldi	r25, 0x0F	; 15
- 252:	01 97       	sbiw	r24, 0x01	; 1
- 254:	f1 f7       	brne	.-4      	; 0x252 <_ZN3LCD10InitializeEv+0x38>
- 256:	00 c0       	rjmp	.+0      	; 0x258 <_ZN3LCD10InitializeEv+0x3e>
- 258:	00 00       	nop
- 25a:	df 91       	pop	r29
+	Command(0x01);
+ 24e:	61 e0       	ldi	r22, 0x01	; 1
+ 250:	ce 01       	movw	r24, r28
+ 252:	79 df       	rcall	.-270    	; 0x146 <_ZN3LCD7CommandEh>
+ 254:	8f e3       	ldi	r24, 0x3F	; 63
+ 256:	9f e1       	ldi	r25, 0x1F	; 31
+ 258:	01 97       	sbiw	r24, 0x01	; 1
+ 25a:	f1 f7       	brne	.-4      	; 0x258 <_ZN3LCD10InitializeEv+0x3e>
+ 25c:	00 c0       	rjmp	.+0      	; 0x25e <_ZN3LCD10InitializeEv+0x44>
+ 25e:	00 00       	nop
+ 260:	df 91       	pop	r29
 	_delay_ms(2);
 }
- 25c:	cf 91       	pop	r28
- 25e:	08 95       	ret
+ 262:	cf 91       	pop	r28
+ 264:	08 95       	ret
 
-00000260 <_ZN3LCD11PrintStringEPc>:
- 260:	ef 92       	push	r14
+00000266 <_ZN3LCD11PrintStringEPc>:
+ 266:	ef 92       	push	r14
 
 void LCD::PrintString(char *String)
 {
- 262:	ff 92       	push	r15
- 264:	0f 93       	push	r16
- 266:	1f 93       	push	r17
- 268:	cf 93       	push	r28
- 26a:	df 93       	push	r29
- 26c:	7c 01       	movw	r14, r24
- 26e:	8b 01       	movw	r16, r22
+ 268:	ff 92       	push	r15
+ 26a:	0f 93       	push	r16
+ 26c:	1f 93       	push	r17
+ 26e:	cf 93       	push	r28
+ 270:	df 93       	push	r29
+ 272:	7c 01       	movw	r14, r24
+ 274:	8b 01       	movw	r16, r22
 	for(int i=0; String[i] != 0; i++)
- 270:	c0 e0       	ldi	r28, 0x00	; 0
- 272:	d0 e0       	ldi	r29, 0x00	; 0
- 274:	f8 01       	movw	r30, r16
- 276:	ec 0f       	add	r30, r28
- 278:	fd 1f       	adc	r31, r29
- 27a:	60 81       	ld	r22, Z
- 27c:	66 23       	and	r22, r22
- 27e:	21 f0       	breq	.+8      	; 0x288 <_ZN3LCD11PrintStringEPc+0x28>
+ 276:	c0 e0       	ldi	r28, 0x00	; 0
+ 278:	d0 e0       	ldi	r29, 0x00	; 0
+ 27a:	f8 01       	movw	r30, r16
+ 27c:	ec 0f       	add	r30, r28
+ 27e:	fd 1f       	adc	r31, r29
+ 280:	60 81       	ld	r22, Z
+ 282:	66 23       	and	r22, r22
+ 284:	21 f0       	breq	.+8      	; 0x28e <_ZN3LCD11PrintStringEPc+0x28>
 	{
 		Print(String[i]);
- 280:	c7 01       	movw	r24, r14
- 282:	96 df       	rcall	.-212    	; 0x1b0 <_ZN3LCD5PrintEh>
+ 286:	c7 01       	movw	r24, r14
+ 288:	93 df       	rcall	.-218    	; 0x1b0 <_ZN3LCD5PrintEh>
 	_delay_ms(2);
 }
 
 void LCD::PrintString(char *String)
 {
 	for(int i=0; String[i] != 0; i++)
- 284:	21 96       	adiw	r28, 0x01	; 1
- 286:	f6 cf       	rjmp	.-20     	; 0x274 <_ZN3LCD11PrintStringEPc+0x14>
+ 28a:	21 96       	adiw	r28, 0x01	; 1
+ 28c:	f6 cf       	rjmp	.-20     	; 0x27a <_ZN3LCD11PrintStringEPc+0x14>
 	{
 		Print(String[i]);
 	}
 }
- 288:	df 91       	pop	r29
- 28a:	cf 91       	pop	r28
- 28c:	1f 91       	pop	r17
- 28e:	0f 91       	pop	r16
- 290:	ff 90       	pop	r15
- 292:	ef 90       	pop	r14
- 294:	08 95       	ret
+ 28e:	df 91       	pop	r29
+ 290:	cf 91       	pop	r28
+ 292:	1f 91       	pop	r17
+ 294:	0f 91       	pop	r16
+ 296:	ff 90       	pop	r15
+ 298:	ef 90       	pop	r14
+ 29a:	08 95       	ret
 
-00000296 <_ZN3LCD14PrintString_xyEccPc>:
+0000029c <_ZN3LCD14PrintString_xyEccPc>:
 
 void LCD::PrintString_xy (char row, char pos, char *Str)
 {
- 296:	0f 93       	push	r16
- 298:	1f 93       	push	r17
- 29a:	cf 93       	push	r28
- 29c:	df 93       	push	r29
- 29e:	8c 01       	movw	r16, r24
- 2a0:	e9 01       	movw	r28, r18
+ 29c:	0f 93       	push	r16
+ 29e:	1f 93       	push	r17
+ 2a0:	cf 93       	push	r28
+ 2a2:	df 93       	push	r29
+ 2a4:	8c 01       	movw	r16, r24
+ 2a6:	e9 01       	movw	r28, r18
 	if (row == 0 && pos<16)
- 2a2:	61 11       	cpse	r22, r1
- 2a4:	07 c0       	rjmp	.+14     	; 0x2b4 <_ZN3LCD14PrintString_xyEccPc+0x1e>
- 2a6:	40 31       	cpi	r20, 0x10	; 16
- 2a8:	28 f4       	brcc	.+10     	; 0x2b4 <_ZN3LCD14PrintString_xyEccPc+0x1e>
+ 2a8:	61 11       	cpse	r22, r1
+ 2aa:	07 c0       	rjmp	.+14     	; 0x2ba <_ZN3LCD14PrintString_xyEccPc+0x1e>
+ 2ac:	40 31       	cpi	r20, 0x10	; 16
+ 2ae:	28 f4       	brcc	.+10     	; 0x2ba <_ZN3LCD14PrintString_xyEccPc+0x1e>
 	Command((pos & 0x0F)|0x80);
- 2aa:	4f 70       	andi	r20, 0x0F	; 15
- 2ac:	64 2f       	mov	r22, r20
- 2ae:	60 68       	ori	r22, 0x80	; 128
- 2b0:	4a df       	rcall	.-364    	; 0x146 <_ZN3LCD7CommandEh>
- 2b2:	09 c0       	rjmp	.+18     	; 0x2c6 <_ZN3LCD14PrintString_xyEccPc+0x30>
+ 2b0:	4f 70       	andi	r20, 0x0F	; 15
+ 2b2:	64 2f       	mov	r22, r20
+ 2b4:	60 68       	ori	r22, 0x80	; 128
+ 2b6:	47 df       	rcall	.-370    	; 0x146 <_ZN3LCD7CommandEh>
+ 2b8:	09 c0       	rjmp	.+18     	; 0x2cc <_ZN3LCD14PrintString_xyEccPc+0x30>
 	else if (row == 1 && pos<16)
- 2b4:	61 30       	cpi	r22, 0x01	; 1
- 2b6:	39 f4       	brne	.+14     	; 0x2c6 <_ZN3LCD14PrintString_xyEccPc+0x30>
- 2b8:	40 31       	cpi	r20, 0x10	; 16
- 2ba:	28 f4       	brcc	.+10     	; 0x2c6 <_ZN3LCD14PrintString_xyEccPc+0x30>
+ 2ba:	61 30       	cpi	r22, 0x01	; 1
+ 2bc:	39 f4       	brne	.+14     	; 0x2cc <_ZN3LCD14PrintString_xyEccPc+0x30>
+ 2be:	40 31       	cpi	r20, 0x10	; 16
+ 2c0:	28 f4       	brcc	.+10     	; 0x2cc <_ZN3LCD14PrintString_xyEccPc+0x30>
 	Command((pos & 0x0F)|0xC0);
- 2bc:	4f 70       	andi	r20, 0x0F	; 15
- 2be:	64 2f       	mov	r22, r20
- 2c0:	60 6c       	ori	r22, 0xC0	; 192
- 2c2:	c8 01       	movw	r24, r16
- 2c4:	40 df       	rcall	.-384    	; 0x146 <_ZN3LCD7CommandEh>
-	PrintString(Str);
- 2c6:	be 01       	movw	r22, r28
+ 2c2:	4f 70       	andi	r20, 0x0F	; 15
+ 2c4:	64 2f       	mov	r22, r20
+ 2c6:	60 6c       	ori	r22, 0xC0	; 192
  2c8:	c8 01       	movw	r24, r16
- 2ca:	ca df       	rcall	.-108    	; 0x260 <_ZN3LCD11PrintStringEPc>
+ 2ca:	3d df       	rcall	.-390    	; 0x146 <_ZN3LCD7CommandEh>
+	PrintString(Str);
+ 2cc:	be 01       	movw	r22, r28
+ 2ce:	c8 01       	movw	r24, r16
+ 2d0:	ca df       	rcall	.-108    	; 0x266 <_ZN3LCD11PrintStringEPc>
 }
- 2cc:	df 91       	pop	r29
- 2ce:	cf 91       	pop	r28
- 2d0:	1f 91       	pop	r17
- 2d2:	0f 91       	pop	r16
- 2d4:	08 95       	ret
+ 2d2:	df 91       	pop	r29
+ 2d4:	cf 91       	pop	r28
+ 2d6:	1f 91       	pop	r17
+ 2d8:	0f 91       	pop	r16
+ 2da:	08 95       	ret
 
-000002d6 <_ZN3LCD5ClearEv>:
+000002dc <_ZN3LCD5ClearEv>:
 
 void LCD::Clear(void)
 {
- 2d6:	cf 93       	push	r28
- 2d8:	df 93       	push	r29
- 2da:	ec 01       	movw	r28, r24
+ 2dc:	cf 93       	push	r28
+ 2de:	df 93       	push	r29
+ 2e0:	ec 01       	movw	r28, r24
 	Command (0x01);
- 2dc:	61 e0       	ldi	r22, 0x01	; 1
- 2de:	33 df       	rcall	.-410    	; 0x146 <_ZN3LCD7CommandEh>
- 2e0:	8f e9       	ldi	r24, 0x9F	; 159
- 2e2:	9f e0       	ldi	r25, 0x0F	; 15
- 2e4:	01 97       	sbiw	r24, 0x01	; 1
- 2e6:	f1 f7       	brne	.-4      	; 0x2e4 <_ZN3LCD5ClearEv+0xe>
- 2e8:	00 c0       	rjmp	.+0      	; 0x2ea <_ZN3LCD5ClearEv+0x14>
- 2ea:	00 00       	nop
+ 2e2:	61 e0       	ldi	r22, 0x01	; 1
+ 2e4:	30 df       	rcall	.-416    	; 0x146 <_ZN3LCD7CommandEh>
+ 2e6:	8f e3       	ldi	r24, 0x3F	; 63
+ 2e8:	9f e1       	ldi	r25, 0x1F	; 31
+ 2ea:	01 97       	sbiw	r24, 0x01	; 1
+ 2ec:	f1 f7       	brne	.-4      	; 0x2ea <_ZN3LCD5ClearEv+0xe>
+ 2ee:	00 c0       	rjmp	.+0      	; 0x2f0 <_ZN3LCD5ClearEv+0x14>
+ 2f0:	00 00       	nop
 	_delay_ms(2);		
 	Command (0x80);		
- 2ec:	60 e8       	ldi	r22, 0x80	; 128
- 2ee:	ce 01       	movw	r24, r28
- 2f0:	2a df       	rcall	.-428    	; 0x146 <_ZN3LCD7CommandEh>
- 2f2:	df 91       	pop	r29
- 2f4:	cf 91       	pop	r28
- 2f6:	08 95       	ret
+ 2f2:	60 e8       	ldi	r22, 0x80	; 128
+ 2f4:	ce 01       	movw	r24, r28
+ 2f6:	27 df       	rcall	.-434    	; 0x146 <_ZN3LCD7CommandEh>
+ 2f8:	df 91       	pop	r29
+ 2fa:	cf 91       	pop	r28
+ 2fc:	08 95       	ret
 
-000002f8 <_Z41__static_initialization_and_destruction_0ii>:
-		else if (ButtonCommand & (1<< BackButton))
+000002fe <main>:
+
+
+
+
+int main(void)
+{
+ 2fe:	cf 93       	push	r28
+ 300:	df 93       	push	r29
+ 302:	1f 92       	push	r1
+ 304:	cd b7       	in	r28, 0x3d	; 61
+ 306:	de b7       	in	r29, 0x3e	; 62
+    VoiceRecorder MyRecorder(1);
+ 308:	61 e0       	ldi	r22, 0x01	; 1
+ 30a:	70 e0       	ldi	r23, 0x00	; 0
+ 30c:	ce 01       	movw	r24, r28
+ 30e:	01 96       	adiw	r24, 0x01	; 1
+ 310:	32 d0       	rcall	.+100    	; 0x376 <_ZN13VoiceRecorderC1Ei>
+	MyRecorder.Start();
+ 312:	ce 01       	movw	r24, r28
+ 314:	01 96       	adiw	r24, 0x01	; 1
+ 316:	8e d0       	rcall	.+284    	; 0x434 <_ZN13VoiceRecorder5StartEv>
+	ButtonDirection = 0x00;
+ 318:	10 92 01 01 	sts	0x0101, r1	; 0x800101 <__TEXT_REGION_LENGTH__+0x7c0101>
+	ButtonCommand = 0x00;
+ 31c:	10 92 00 01 	sts	0x0100, r1	; 0x800100 <__TEXT_REGION_LENGTH__+0x7c0100>
+    while (1) 
+    {
+		if (ButtonCommand & (1<< UpButton))
+ 320:	80 91 00 01 	lds	r24, 0x0100	; 0x800100 <__TEXT_REGION_LENGTH__+0x7c0100>
+ 324:	83 ff       	sbrs	r24, 3
+ 326:	04 c0       	rjmp	.+8      	; 0x330 <main+0x32>
 		{
-			LCD_Back();
+			MyRecorder.Up();
+ 328:	ce 01       	movw	r24, r28
+ 32a:	01 96       	adiw	r24, 0x01	; 1
+ 32c:	19 d2       	rcall	.+1074   	; 0x760 <_ZN13VoiceRecorder2UpEv>
+ 32e:	f8 cf       	rjmp	.-16     	; 0x320 <main+0x22>
 		}
-    }
-}
- 2f8:	01 97       	sbiw	r24, 0x01	; 1
- 2fa:	41 f4       	brne	.+16     	; 0x30c <_Z41__static_initialization_and_destruction_0ii+0x14>
- 2fc:	6f 3f       	cpi	r22, 0xFF	; 255
- 2fe:	7f 4f       	sbci	r23, 0xFF	; 255
- 300:	29 f4       	brne	.+10     	; 0x30c <_Z41__static_initialization_and_destruction_0ii+0x14>
+		
+		else if (ButtonCommand & (1<< DownButton))
+ 330:	80 91 00 01 	lds	r24, 0x0100	; 0x800100 <__TEXT_REGION_LENGTH__+0x7c0100>
+ 334:	84 ff       	sbrs	r24, 4
+		{
+			MyRecorder.Down();
+ 336:	04 c0       	rjmp	.+8      	; 0x340 <main+0x42>
+ 338:	ce 01       	movw	r24, r28
+ 33a:	01 96       	adiw	r24, 0x01	; 1
+ 33c:	11 d3       	rcall	.+1570   	; 0x960 <_ZN13VoiceRecorder4DownEv>
+ 33e:	f0 cf       	rjmp	.-32     	; 0x320 <main+0x22>
+		}
+		
+		else if (ButtonCommand & (1<< EnterButton))
+ 340:	80 91 00 01 	lds	r24, 0x0100	; 0x800100 <__TEXT_REGION_LENGTH__+0x7c0100>
+ 344:	85 ff       	sbrs	r24, 5
+		{
+			MyRecorder.Enter();
+ 346:	04 c0       	rjmp	.+8      	; 0x350 <main+0x52>
+ 348:	ce 01       	movw	r24, r28
+ 34a:	01 96       	adiw	r24, 0x01	; 1
+ 34c:	97 d0       	rcall	.+302    	; 0x47c <_ZN13VoiceRecorder5EnterEv>
+ 34e:	e8 cf       	rjmp	.-48     	; 0x320 <main+0x22>
+		}
+		else if (ButtonCommand & (1<< BackButton))
+ 350:	80 91 00 01 	lds	r24, 0x0100	; 0x800100 <__TEXT_REGION_LENGTH__+0x7c0100>
+ 354:	86 ff       	sbrs	r24, 6
+		{
+			MyRecorder.Back();
+ 356:	e4 cf       	rjmp	.-56     	; 0x320 <main+0x22>
+ 358:	ce 01       	movw	r24, r28
+ 35a:	01 96       	adiw	r24, 0x01	; 1
+ 35c:	ee d3       	rcall	.+2012   	; 0xb3a <_ZN13VoiceRecorder4BackEv>
+ 35e:	e0 cf       	rjmp	.-64     	; 0x320 <main+0x22>
+
+00000360 <_Z41__static_initialization_and_destruction_0ii>:
+		MenuPosition1(7, "Change Volume", "Change Pitch");
+	}
+	else if (Position == 16){
+		MenuPosition1(3, "Factory Reset", "Record Voice");
+	}
+ 360:	01 97       	sbiw	r24, 0x01	; 1
+ 362:	41 f4       	brne	.+16     	; 0x374 <_Z41__static_initialization_and_destruction_0ii+0x14>
+ 364:	6f 3f       	cpi	r22, 0xFF	; 255
+ 366:	7f 4f       	sbci	r23, 0xFF	; 255
+ 368:	29 f4       	brne	.+10     	; 0x374 <_Z41__static_initialization_and_destruction_0ii+0x14>
 int Volume = 5;
 int FileIndex = 0;
 int N = 5;
 char FileList[][5] = {"AUD1", "AUD2", "AUD3", "AUD4", "AUD5"};
 
 LCD MyLCD(1);
- 302:	61 e0       	ldi	r22, 0x01	; 1
- 304:	70 e0       	ldi	r23, 0x00	; 0
- 306:	8e e1       	ldi	r24, 0x1E	; 30
- 308:	93 e0       	ldi	r25, 0x03	; 3
- 30a:	1c cf       	rjmp	.-456    	; 0x144 <_ZN3LCDC1Ei>
- 30c:	08 95       	ret
+ 36a:	61 e0       	ldi	r22, 0x01	; 1
+ 36c:	70 e0       	ldi	r23, 0x00	; 0
+ 36e:	8e e1       	ldi	r24, 0x1E	; 30
+ 370:	93 e0       	ldi	r25, 0x03	; 3
+ 372:	e8 ce       	rjmp	.-560    	; 0x144 <_ZN3LCDC1Ei>
+ 374:	08 95       	ret
 
-0000030e <_Z13MenuPosition1iPcS_>:
+00000376 <_ZN13VoiceRecorderC1Ei>:
 
-void MenuPosition1(int a, char *Displaytext1, char *Displaytext2)
+VoiceRecorder::VoiceRecorder(int d){
+ 376:	08 95       	ret
+
+00000378 <_ZN13VoiceRecorder13MenuPosition1EiPcS0_>:
+
+}
+void VoiceRecorder::MenuPosition1(int a, char *Displaytext1, char *Displaytext2)
 {
- 30e:	0f 93       	push	r16
- 310:	1f 93       	push	r17
- 312:	cf 93       	push	r28
- 314:	df 93       	push	r29
- 316:	8b 01       	movw	r16, r22
- 318:	ea 01       	movw	r28, r20
+ 378:	0f 93       	push	r16
+ 37a:	1f 93       	push	r17
+ 37c:	cf 93       	push	r28
+ 37e:	df 93       	push	r29
+ 380:	8a 01       	movw	r16, r20
+ 382:	e9 01       	movw	r28, r18
 	Position = a;
- 31a:	90 93 22 03 	sts	0x0322, r25	; 0x800322 <Position+0x1>
- 31e:	80 93 21 03 	sts	0x0321, r24	; 0x800321 <Position>
+ 384:	70 93 22 03 	sts	0x0322, r23	; 0x800322 <Position+0x1>
+ 388:	60 93 21 03 	sts	0x0321, r22	; 0x800321 <Position>
 	MyLCD.Clear();
- 322:	8e e1       	ldi	r24, 0x1E	; 30
- 324:	93 e0       	ldi	r25, 0x03	; 3
- 326:	d7 df       	rcall	.-82     	; 0x2d6 <_ZN3LCD5ClearEv>
+ 38c:	8e e1       	ldi	r24, 0x1E	; 30
+ 38e:	93 e0       	ldi	r25, 0x03	; 3
+ 390:	a5 df       	rcall	.-182    	; 0x2dc <_ZN3LCD5ClearEv>
 	MyLCD.PrintString_xy(0, 0, ">");
- 328:	2d e1       	ldi	r18, 0x1D	; 29
- 32a:	32 e0       	ldi	r19, 0x02	; 2
- 32c:	40 e0       	ldi	r20, 0x00	; 0
- 32e:	60 e0       	ldi	r22, 0x00	; 0
- 330:	8e e1       	ldi	r24, 0x1E	; 30
- 332:	93 e0       	ldi	r25, 0x03	; 3
- 334:	b0 df       	rcall	.-160    	; 0x296 <_ZN3LCD14PrintString_xyEccPc>
+ 392:	2d e1       	ldi	r18, 0x1D	; 29
+ 394:	32 e0       	ldi	r19, 0x02	; 2
+ 396:	40 e0       	ldi	r20, 0x00	; 0
+ 398:	60 e0       	ldi	r22, 0x00	; 0
+ 39a:	8e e1       	ldi	r24, 0x1E	; 30
+ 39c:	93 e0       	ldi	r25, 0x03	; 3
+ 39e:	7e df       	rcall	.-260    	; 0x29c <_ZN3LCD14PrintString_xyEccPc>
 	MyLCD.PrintString_xy(0, 1, Displaytext1);
- 336:	98 01       	movw	r18, r16
- 338:	41 e0       	ldi	r20, 0x01	; 1
- 33a:	60 e0       	ldi	r22, 0x00	; 0
- 33c:	8e e1       	ldi	r24, 0x1E	; 30
- 33e:	93 e0       	ldi	r25, 0x03	; 3
- 340:	aa df       	rcall	.-172    	; 0x296 <_ZN3LCD14PrintString_xyEccPc>
+ 3a0:	98 01       	movw	r18, r16
+ 3a2:	41 e0       	ldi	r20, 0x01	; 1
+ 3a4:	60 e0       	ldi	r22, 0x00	; 0
+ 3a6:	8e e1       	ldi	r24, 0x1E	; 30
+ 3a8:	93 e0       	ldi	r25, 0x03	; 3
+ 3aa:	78 df       	rcall	.-272    	; 0x29c <_ZN3LCD14PrintString_xyEccPc>
 	MyLCD.PrintString_xy(1, 0, Displaytext2);
- 342:	9e 01       	movw	r18, r28
- 344:	40 e0       	ldi	r20, 0x00	; 0
- 346:	61 e0       	ldi	r22, 0x01	; 1
- 348:	8e e1       	ldi	r24, 0x1E	; 30
- 34a:	93 e0       	ldi	r25, 0x03	; 3
- 34c:	a4 df       	rcall	.-184    	; 0x296 <_ZN3LCD14PrintString_xyEccPc>
- 34e:	2f e7       	ldi	r18, 0x7F	; 127
- 350:	8a e1       	ldi	r24, 0x1A	; 26
- 352:	96 e0       	ldi	r25, 0x06	; 6
- 354:	21 50       	subi	r18, 0x01	; 1
- 356:	80 40       	sbci	r24, 0x00	; 0
- 358:	90 40       	sbci	r25, 0x00	; 0
- 35a:	e1 f7       	brne	.-8      	; 0x354 <_Z13MenuPosition1iPcS_+0x46>
- 35c:	00 c0       	rjmp	.+0      	; 0x35e <_Z13MenuPosition1iPcS_+0x50>
- 35e:	00 00       	nop
+ 3ac:	9e 01       	movw	r18, r28
+ 3ae:	40 e0       	ldi	r20, 0x00	; 0
+ 3b0:	61 e0       	ldi	r22, 0x01	; 1
+ 3b2:	8e e1       	ldi	r24, 0x1E	; 30
+ 3b4:	93 e0       	ldi	r25, 0x03	; 3
+ 3b6:	72 df       	rcall	.-284    	; 0x29c <_ZN3LCD14PrintString_xyEccPc>
+ 3b8:	2f ef       	ldi	r18, 0xFF	; 255
+ 3ba:	84 e3       	ldi	r24, 0x34	; 52
+ 3bc:	9c e0       	ldi	r25, 0x0C	; 12
+ 3be:	21 50       	subi	r18, 0x01	; 1
+ 3c0:	80 40       	sbci	r24, 0x00	; 0
+ 3c2:	90 40       	sbci	r25, 0x00	; 0
+ 3c4:	e1 f7       	brne	.-8      	; 0x3be <_ZN13VoiceRecorder13MenuPosition1EiPcS0_+0x46>
+ 3c6:	00 c0       	rjmp	.+0      	; 0x3c8 <_ZN13VoiceRecorder13MenuPosition1EiPcS0_+0x50>
+ 3c8:	00 00       	nop
 	_delay_ms(250);
 }
- 360:	df 91       	pop	r29
- 362:	cf 91       	pop	r28
- 364:	1f 91       	pop	r17
- 366:	0f 91       	pop	r16
- 368:	08 95       	ret
+ 3ca:	df 91       	pop	r29
+ 3cc:	cf 91       	pop	r28
+ 3ce:	1f 91       	pop	r17
+ 3d0:	0f 91       	pop	r16
+ 3d2:	08 95       	ret
 
-0000036a <_Z13MenuPosition2iiPcS_>:
+000003d4 <_ZN13VoiceRecorder13MenuPosition2EiiPcS0_>:
 
-void MenuPosition2(int a, int b, char *Displaytext1, char *Displaytext2)
+void VoiceRecorder::MenuPosition2(int a, int b, char *Displaytext1, char *Displaytext2)
 {
- 36a:	ef 92       	push	r14
- 36c:	ff 92       	push	r15
- 36e:	1f 93       	push	r17
- 370:	cf 93       	push	r28
- 372:	df 93       	push	r29
- 374:	16 2f       	mov	r17, r22
- 376:	7a 01       	movw	r14, r20
- 378:	e9 01       	movw	r28, r18
+ 3d4:	ef 92       	push	r14
+ 3d6:	ff 92       	push	r15
+ 3d8:	0f 93       	push	r16
+ 3da:	1f 93       	push	r17
+ 3dc:	cf 93       	push	r28
+ 3de:	c4 2f       	mov	r28, r20
+ 3e0:	79 01       	movw	r14, r18
 	Position = a;
- 37a:	90 93 22 03 	sts	0x0322, r25	; 0x800322 <Position+0x1>
- 37e:	80 93 21 03 	sts	0x0321, r24	; 0x800321 <Position>
+ 3e2:	70 93 22 03 	sts	0x0322, r23	; 0x800322 <Position+0x1>
+ 3e6:	60 93 21 03 	sts	0x0321, r22	; 0x800321 <Position>
 	MyLCD.Clear();
- 382:	8e e1       	ldi	r24, 0x1E	; 30
- 384:	93 e0       	ldi	r25, 0x03	; 3
- 386:	a7 df       	rcall	.-178    	; 0x2d6 <_ZN3LCD5ClearEv>
+ 3ea:	8e e1       	ldi	r24, 0x1E	; 30
+ 3ec:	93 e0       	ldi	r25, 0x03	; 3
+ 3ee:	76 df       	rcall	.-276    	; 0x2dc <_ZN3LCD5ClearEv>
 	MyLCD.PrintString_xy(1, 0, ">");
- 388:	2d e1       	ldi	r18, 0x1D	; 29
- 38a:	32 e0       	ldi	r19, 0x02	; 2
- 38c:	40 e0       	ldi	r20, 0x00	; 0
- 38e:	61 e0       	ldi	r22, 0x01	; 1
- 390:	8e e1       	ldi	r24, 0x1E	; 30
- 392:	93 e0       	ldi	r25, 0x03	; 3
- 394:	80 df       	rcall	.-256    	; 0x296 <_ZN3LCD14PrintString_xyEccPc>
+ 3f0:	2d e1       	ldi	r18, 0x1D	; 29
+ 3f2:	32 e0       	ldi	r19, 0x02	; 2
+ 3f4:	40 e0       	ldi	r20, 0x00	; 0
+ 3f6:	61 e0       	ldi	r22, 0x01	; 1
+ 3f8:	8e e1       	ldi	r24, 0x1E	; 30
+ 3fa:	93 e0       	ldi	r25, 0x03	; 3
+ 3fc:	4f df       	rcall	.-354    	; 0x29c <_ZN3LCD14PrintString_xyEccPc>
 	MyLCD.PrintString_xy(0, b, Displaytext1);
- 396:	97 01       	movw	r18, r14
- 398:	41 2f       	mov	r20, r17
- 39a:	60 e0       	ldi	r22, 0x00	; 0
- 39c:	8e e1       	ldi	r24, 0x1E	; 30
- 39e:	93 e0       	ldi	r25, 0x03	; 3
- 3a0:	7a df       	rcall	.-268    	; 0x296 <_ZN3LCD14PrintString_xyEccPc>
+ 3fe:	97 01       	movw	r18, r14
+ 400:	4c 2f       	mov	r20, r28
+ 402:	60 e0       	ldi	r22, 0x00	; 0
+ 404:	8e e1       	ldi	r24, 0x1E	; 30
+ 406:	93 e0       	ldi	r25, 0x03	; 3
+ 408:	49 df       	rcall	.-366    	; 0x29c <_ZN3LCD14PrintString_xyEccPc>
 	MyLCD.PrintString_xy(1, 1, Displaytext2);
- 3a2:	9e 01       	movw	r18, r28
- 3a4:	41 e0       	ldi	r20, 0x01	; 1
- 3a6:	61 e0       	ldi	r22, 0x01	; 1
- 3a8:	8e e1       	ldi	r24, 0x1E	; 30
- 3aa:	93 e0       	ldi	r25, 0x03	; 3
- 3ac:	74 df       	rcall	.-280    	; 0x296 <_ZN3LCD14PrintString_xyEccPc>
- 3ae:	2f e7       	ldi	r18, 0x7F	; 127
- 3b0:	8a e1       	ldi	r24, 0x1A	; 26
- 3b2:	96 e0       	ldi	r25, 0x06	; 6
- 3b4:	21 50       	subi	r18, 0x01	; 1
- 3b6:	80 40       	sbci	r24, 0x00	; 0
- 3b8:	90 40       	sbci	r25, 0x00	; 0
- 3ba:	e1 f7       	brne	.-8      	; 0x3b4 <_Z13MenuPosition2iiPcS_+0x4a>
- 3bc:	00 c0       	rjmp	.+0      	; 0x3be <_Z13MenuPosition2iiPcS_+0x54>
- 3be:	00 00       	nop
+ 40a:	98 01       	movw	r18, r16
+ 40c:	41 e0       	ldi	r20, 0x01	; 1
+ 40e:	61 e0       	ldi	r22, 0x01	; 1
+ 410:	8e e1       	ldi	r24, 0x1E	; 30
+ 412:	93 e0       	ldi	r25, 0x03	; 3
+ 414:	43 df       	rcall	.-378    	; 0x29c <_ZN3LCD14PrintString_xyEccPc>
+ 416:	2f ef       	ldi	r18, 0xFF	; 255
+ 418:	84 e3       	ldi	r24, 0x34	; 52
+ 41a:	9c e0       	ldi	r25, 0x0C	; 12
+ 41c:	21 50       	subi	r18, 0x01	; 1
+ 41e:	80 40       	sbci	r24, 0x00	; 0
+ 420:	90 40       	sbci	r25, 0x00	; 0
+ 422:	e1 f7       	brne	.-8      	; 0x41c <__LOCK_REGION_LENGTH__+0x1c>
+ 424:	00 c0       	rjmp	.+0      	; 0x426 <__LOCK_REGION_LENGTH__+0x26>
+ 426:	00 00       	nop
 	_delay_ms(250);
 }
- 3c0:	df 91       	pop	r29
- 3c2:	cf 91       	pop	r28
- 3c4:	1f 91       	pop	r17
- 3c6:	ff 90       	pop	r15
- 3c8:	ef 90       	pop	r14
- 3ca:	08 95       	ret
+ 428:	cf 91       	pop	r28
+ 42a:	1f 91       	pop	r17
+ 42c:	0f 91       	pop	r16
+ 42e:	ff 90       	pop	r15
+ 430:	ef 90       	pop	r14
+ 432:	08 95       	ret
 
-000003cc <_Z9LCD_Startv>:
+00000434 <_ZN13VoiceRecorder5StartEv>:
 
-void LCD_Start(void)
+void VoiceRecorder::Start(void)
 {
+ 434:	cf 93       	push	r28
+ 436:	df 93       	push	r29
+ 438:	ec 01       	movw	r28, r24
 	MyLCD.Initialize();
- 3cc:	8e e1       	ldi	r24, 0x1E	; 30
- 3ce:	93 e0       	ldi	r25, 0x03	; 3
- 3d0:	24 df       	rcall	.-440    	; 0x21a <_ZN3LCD10InitializeEv>
+ 43a:	8e e1       	ldi	r24, 0x1E	; 30
+ 43c:	93 e0       	ldi	r25, 0x03	; 3
+ 43e:	ed de       	rcall	.-550    	; 0x21a <_ZN3LCD10InitializeEv>
 	MyLCD.PrintString_xy(0, 4, "Welcome!");
- 3d2:	2f e1       	ldi	r18, 0x1F	; 31
- 3d4:	32 e0       	ldi	r19, 0x02	; 2
- 3d6:	44 e0       	ldi	r20, 0x04	; 4
- 3d8:	60 e0       	ldi	r22, 0x00	; 0
- 3da:	8e e1       	ldi	r24, 0x1E	; 30
- 3dc:	93 e0       	ldi	r25, 0x03	; 3
- 3de:	5b df       	rcall	.-330    	; 0x296 <_ZN3LCD14PrintString_xyEccPc>
- 3e0:	2f ef       	ldi	r18, 0xFF	; 255
- 3e2:	89 e6       	ldi	r24, 0x69	; 105
- 3e4:	98 e1       	ldi	r25, 0x18	; 24
- 3e6:	21 50       	subi	r18, 0x01	; 1
- 3e8:	80 40       	sbci	r24, 0x00	; 0
- 3ea:	90 40       	sbci	r25, 0x00	; 0
- 3ec:	e1 f7       	brne	.-8      	; 0x3e6 <_Z9LCD_Startv+0x1a>
- 3ee:	00 c0       	rjmp	.+0      	; 0x3f0 <_Z9LCD_Startv+0x24>
- 3f0:	00 00       	nop
+ 440:	2f e1       	ldi	r18, 0x1F	; 31
+ 442:	32 e0       	ldi	r19, 0x02	; 2
+ 444:	44 e0       	ldi	r20, 0x04	; 4
+ 446:	60 e0       	ldi	r22, 0x00	; 0
+ 448:	8e e1       	ldi	r24, 0x1E	; 30
+ 44a:	93 e0       	ldi	r25, 0x03	; 3
+ 44c:	27 df       	rcall	.-434    	; 0x29c <_ZN3LCD14PrintString_xyEccPc>
+ 44e:	2f ef       	ldi	r18, 0xFF	; 255
+ 450:	83 ed       	ldi	r24, 0xD3	; 211
+ 452:	90 e3       	ldi	r25, 0x30	; 48
+ 454:	21 50       	subi	r18, 0x01	; 1
+ 456:	80 40       	sbci	r24, 0x00	; 0
+ 458:	90 40       	sbci	r25, 0x00	; 0
+ 45a:	e1 f7       	brne	.-8      	; 0x454 <_ZN13VoiceRecorder5StartEv+0x20>
+ 45c:	00 c0       	rjmp	.+0      	; 0x45e <_ZN13VoiceRecorder5StartEv+0x2a>
+ 45e:	00 00       	nop
 	_delay_ms(1000);
 	MyLCD.Clear();
- 3f2:	8e e1       	ldi	r24, 0x1E	; 30
- 3f4:	93 e0       	ldi	r25, 0x03	; 3
- 3f6:	6f df       	rcall	.-290    	; 0x2d6 <_ZN3LCD5ClearEv>
+ 460:	8e e1       	ldi	r24, 0x1E	; 30
+ 462:	93 e0       	ldi	r25, 0x03	; 3
+ 464:	3b df       	rcall	.-394    	; 0x2dc <_ZN3LCD5ClearEv>
 	MenuPosition1(1, "Record Voice", "Recordings");
- 3f8:	48 e2       	ldi	r20, 0x28	; 40
- 3fa:	52 e0       	ldi	r21, 0x02	; 2
- 3fc:	63 e3       	ldi	r22, 0x33	; 51
- 3fe:	72 e0       	ldi	r23, 0x02	; 2
- 400:	81 e0       	ldi	r24, 0x01	; 1
- 402:	90 e0       	ldi	r25, 0x00	; 0
- 404:	84 cf       	rjmp	.-248    	; 0x30e <_Z13MenuPosition1iPcS_>
- 406:	08 95       	ret
-
-00000408 <_Z9LCD_Enterv>:
+ 466:	28 e2       	ldi	r18, 0x28	; 40
+ 468:	32 e0       	ldi	r19, 0x02	; 2
+ 46a:	43 e3       	ldi	r20, 0x33	; 51
+ 46c:	52 e0       	ldi	r21, 0x02	; 2
+ 46e:	61 e0       	ldi	r22, 0x01	; 1
+ 470:	70 e0       	ldi	r23, 0x00	; 0
+ 472:	ce 01       	movw	r24, r28
+ 474:	81 df       	rcall	.-254    	; 0x378 <_ZN13VoiceRecorder13MenuPosition1EiPcS0_>
 }
+ 476:	df 91       	pop	r29
+ 478:	cf 91       	pop	r28
+ 47a:	08 95       	ret
 
-void LCD_Enter(void)
+0000047c <_ZN13VoiceRecorder5EnterEv>:
+
+void VoiceRecorder::Enter(void)
 {
- 408:	cf 93       	push	r28
- 40a:	df 93       	push	r29
- 40c:	00 d0       	rcall	.+0      	; 0x40e <_Z9LCD_Enterv+0x6>
- 40e:	1f 92       	push	r1
- 410:	cd b7       	in	r28, 0x3d	; 61
- 412:	de b7       	in	r29, 0x3e	; 62
+ 47c:	ef 92       	push	r14
+ 47e:	ff 92       	push	r15
+ 480:	0f 93       	push	r16
+ 482:	1f 93       	push	r17
+ 484:	cf 93       	push	r28
+ 486:	df 93       	push	r29
+ 488:	00 d0       	rcall	.+0      	; 0x48a <_ZN13VoiceRecorder5EnterEv+0xe>
+ 48a:	1f 92       	push	r1
+ 48c:	cd b7       	in	r28, 0x3d	; 61
+ 48e:	de b7       	in	r29, 0x3e	; 62
+ 490:	7c 01       	movw	r14, r24
 	if (Position==1){
- 414:	80 91 21 03 	lds	r24, 0x0321	; 0x800321 <Position>
- 418:	90 91 22 03 	lds	r25, 0x0322	; 0x800322 <Position+0x1>
- 41c:	81 30       	cpi	r24, 0x01	; 1
- 41e:	91 05       	cpc	r25, r1
- 420:	41 f4       	brne	.+16     	; 0x432 <_Z9LCD_Enterv+0x2a>
+ 492:	80 91 21 03 	lds	r24, 0x0321	; 0x800321 <Position>
+ 496:	90 91 22 03 	lds	r25, 0x0322	; 0x800322 <Position+0x1>
+ 49a:	81 30       	cpi	r24, 0x01	; 1
+ 49c:	91 05       	cpc	r25, r1
+ 49e:	49 f4       	brne	.+18     	; 0x4b2 <_ZN13VoiceRecorder5EnterEv+0x36>
 		MenuPosition1(4, "Start Recording", "");
- 422:	40 e6       	ldi	r20, 0x60	; 96
- 424:	52 e0       	ldi	r21, 0x02	; 2
- 426:	60 e4       	ldi	r22, 0x40	; 64
- 428:	72 e0       	ldi	r23, 0x02	; 2
- 42a:	84 e0       	ldi	r24, 0x04	; 4
- 42c:	90 e0       	ldi	r25, 0x00	; 0
- 42e:	6f df       	rcall	.-290    	; 0x30e <_Z13MenuPosition1iPcS_>
- 430:	3e c1       	rjmp	.+636    	; 0x6ae <_Z9LCD_Enterv+0x2a6>
+ 4a0:	20 e6       	ldi	r18, 0x60	; 96
+ 4a2:	32 e0       	ldi	r19, 0x02	; 2
+ 4a4:	40 e4       	ldi	r20, 0x40	; 64
+ 4a6:	52 e0       	ldi	r21, 0x02	; 2
+ 4a8:	64 e0       	ldi	r22, 0x04	; 4
+ 4aa:	70 e0       	ldi	r23, 0x00	; 0
+ 4ac:	c7 01       	movw	r24, r14
+ 4ae:	64 df       	rcall	.-312    	; 0x378 <_ZN13VoiceRecorder13MenuPosition1EiPcS0_>
+ 4b0:	4c c1       	rjmp	.+664    	; 0x74a <_ZN13VoiceRecorder5EnterEv+0x2ce>
 	}
 	else if (Position==2){
- 432:	82 30       	cpi	r24, 0x02	; 2
- 434:	91 05       	cpc	r25, r1
- 436:	e9 f4       	brne	.+58     	; 0x472 <_Z9LCD_Enterv+0x6a>
+ 4b2:	82 30       	cpi	r24, 0x02	; 2
+ 4b4:	91 05       	cpc	r25, r1
+ 4b6:	f1 f4       	brne	.+60     	; 0x4f4 <_ZN13VoiceRecorder5EnterEv+0x78>
         MenuPosition1(17, FileList[FileIndex], FileList[FileIndex + 1]);
- 438:	80 91 1f 03 	lds	r24, 0x031F	; 0x80031f <FileIndex>
- 43c:	90 91 20 03 	lds	r25, 0x0320	; 0x800320 <FileIndex+0x1>
- 440:	9c 01       	movw	r18, r24
- 442:	2f 5f       	subi	r18, 0xFF	; 255
- 444:	3f 4f       	sbci	r19, 0xFF	; 255
- 446:	a9 01       	movw	r20, r18
- 448:	44 0f       	add	r20, r20
- 44a:	55 1f       	adc	r21, r21
- 44c:	44 0f       	add	r20, r20
- 44e:	55 1f       	adc	r21, r21
- 450:	42 0f       	add	r20, r18
- 452:	53 1f       	adc	r21, r19
- 454:	40 50       	subi	r20, 0x00	; 0
- 456:	5e 4f       	sbci	r21, 0xFE	; 254
- 458:	bc 01       	movw	r22, r24
- 45a:	66 0f       	add	r22, r22
- 45c:	77 1f       	adc	r23, r23
- 45e:	66 0f       	add	r22, r22
- 460:	77 1f       	adc	r23, r23
- 462:	68 0f       	add	r22, r24
- 464:	79 1f       	adc	r23, r25
- 466:	60 50       	subi	r22, 0x00	; 0
- 468:	7e 4f       	sbci	r23, 0xFE	; 254
- 46a:	81 e1       	ldi	r24, 0x11	; 17
- 46c:	90 e0       	ldi	r25, 0x00	; 0
- 46e:	4f df       	rcall	.-354    	; 0x30e <_Z13MenuPosition1iPcS_>
- 470:	1e c1       	rjmp	.+572    	; 0x6ae <_Z9LCD_Enterv+0x2a6>
+ 4b8:	80 91 1f 03 	lds	r24, 0x031F	; 0x80031f <FileIndex>
+ 4bc:	90 91 20 03 	lds	r25, 0x0320	; 0x800320 <FileIndex+0x1>
+ 4c0:	9c 01       	movw	r18, r24
+ 4c2:	2f 5f       	subi	r18, 0xFF	; 255
+ 4c4:	3f 4f       	sbci	r19, 0xFF	; 255
+ 4c6:	a9 01       	movw	r20, r18
+ 4c8:	44 0f       	add	r20, r20
+ 4ca:	55 1f       	adc	r21, r21
+ 4cc:	44 0f       	add	r20, r20
+ 4ce:	55 1f       	adc	r21, r21
+ 4d0:	24 0f       	add	r18, r20
+ 4d2:	35 1f       	adc	r19, r21
+ 4d4:	20 50       	subi	r18, 0x00	; 0
+ 4d6:	3e 4f       	sbci	r19, 0xFE	; 254
+ 4d8:	ac 01       	movw	r20, r24
+ 4da:	44 0f       	add	r20, r20
+ 4dc:	55 1f       	adc	r21, r21
+ 4de:	44 0f       	add	r20, r20
+ 4e0:	55 1f       	adc	r21, r21
+ 4e2:	48 0f       	add	r20, r24
+ 4e4:	59 1f       	adc	r21, r25
+ 4e6:	40 50       	subi	r20, 0x00	; 0
+ 4e8:	5e 4f       	sbci	r21, 0xFE	; 254
+ 4ea:	61 e1       	ldi	r22, 0x11	; 17
+ 4ec:	70 e0       	ldi	r23, 0x00	; 0
+ 4ee:	c7 01       	movw	r24, r14
+ 4f0:	43 df       	rcall	.-378    	; 0x378 <_ZN13VoiceRecorder13MenuPosition1EiPcS0_>
+ 4f2:	2b c1       	rjmp	.+598    	; 0x74a <_ZN13VoiceRecorder5EnterEv+0x2ce>
     }
 	else if (Position == 3){
- 472:	83 30       	cpi	r24, 0x03	; 3
- 474:	91 05       	cpc	r25, r1
- 476:	09 f5       	brne	.+66     	; 0x4ba <_Z9LCD_Enterv+0xb2>
+ 4f4:	83 30       	cpi	r24, 0x03	; 3
+ 4f6:	91 05       	cpc	r25, r1
+ 4f8:	09 f5       	brne	.+66     	; 0x53c <_ZN13VoiceRecorder5EnterEv+0xc0>
 		MyLCD.Clear();
- 478:	8e e1       	ldi	r24, 0x1E	; 30
- 47a:	93 e0       	ldi	r25, 0x03	; 3
- 47c:	2c df       	rcall	.-424    	; 0x2d6 <_ZN3LCD5ClearEv>
+ 4fa:	8e e1       	ldi	r24, 0x1E	; 30
+ 4fc:	93 e0       	ldi	r25, 0x03	; 3
+ 4fe:	ee de       	rcall	.-548    	; 0x2dc <_ZN3LCD5ClearEv>
 		MyLCD.PrintString_xy(0, 0, "Confirm factory ");
- 47e:	20 e5       	ldi	r18, 0x50	; 80
- 480:	32 e0       	ldi	r19, 0x02	; 2
- 482:	40 e0       	ldi	r20, 0x00	; 0
- 484:	60 e0       	ldi	r22, 0x00	; 0
- 486:	8e e1       	ldi	r24, 0x1E	; 30
- 488:	93 e0       	ldi	r25, 0x03	; 3
- 48a:	05 df       	rcall	.-502    	; 0x296 <_ZN3LCD14PrintString_xyEccPc>
+ 500:	20 e5       	ldi	r18, 0x50	; 80
+ 502:	32 e0       	ldi	r19, 0x02	; 2
+ 504:	40 e0       	ldi	r20, 0x00	; 0
+ 506:	60 e0       	ldi	r22, 0x00	; 0
+ 508:	8e e1       	ldi	r24, 0x1E	; 30
+ 50a:	93 e0       	ldi	r25, 0x03	; 3
+ 50c:	c7 de       	rcall	.-626    	; 0x29c <_ZN3LCD14PrintString_xyEccPc>
 		MyLCD.PrintString_xy(1, 0, "reset ?");
- 48c:	21 e6       	ldi	r18, 0x61	; 97
- 48e:	32 e0       	ldi	r19, 0x02	; 2
- 490:	40 e0       	ldi	r20, 0x00	; 0
- 492:	61 e0       	ldi	r22, 0x01	; 1
- 494:	8e e1       	ldi	r24, 0x1E	; 30
- 496:	93 e0       	ldi	r25, 0x03	; 3
- 498:	fe de       	rcall	.-516    	; 0x296 <_ZN3LCD14PrintString_xyEccPc>
+ 50e:	21 e6       	ldi	r18, 0x61	; 97
+ 510:	32 e0       	ldi	r19, 0x02	; 2
+ 512:	40 e0       	ldi	r20, 0x00	; 0
+ 514:	61 e0       	ldi	r22, 0x01	; 1
+ 516:	8e e1       	ldi	r24, 0x1E	; 30
+ 518:	93 e0       	ldi	r25, 0x03	; 3
+ 51a:	c0 de       	rcall	.-640    	; 0x29c <_ZN3LCD14PrintString_xyEccPc>
 		Position = 16;
- 49a:	80 e1       	ldi	r24, 0x10	; 16
- 49c:	90 e0       	ldi	r25, 0x00	; 0
- 49e:	90 93 22 03 	sts	0x0322, r25	; 0x800322 <Position+0x1>
- 4a2:	80 93 21 03 	sts	0x0321, r24	; 0x800321 <Position>
- 4a6:	2f e7       	ldi	r18, 0x7F	; 127
- 4a8:	8f e4       	ldi	r24, 0x4F	; 79
- 4aa:	92 e1       	ldi	r25, 0x12	; 18
- 4ac:	21 50       	subi	r18, 0x01	; 1
- 4ae:	80 40       	sbci	r24, 0x00	; 0
- 4b0:	90 40       	sbci	r25, 0x00	; 0
- 4b2:	e1 f7       	brne	.-8      	; 0x4ac <_Z9LCD_Enterv+0xa4>
- 4b4:	00 c0       	rjmp	.+0      	; 0x4b6 <_Z9LCD_Enterv+0xae>
- 4b6:	00 00       	nop
- 4b8:	fa c0       	rjmp	.+500    	; 0x6ae <_Z9LCD_Enterv+0x2a6>
+ 51c:	80 e1       	ldi	r24, 0x10	; 16
+ 51e:	90 e0       	ldi	r25, 0x00	; 0
+ 520:	90 93 22 03 	sts	0x0322, r25	; 0x800322 <Position+0x1>
+ 524:	80 93 21 03 	sts	0x0321, r24	; 0x800321 <Position>
+ 528:	2f ef       	ldi	r18, 0xFF	; 255
+ 52a:	8e e9       	ldi	r24, 0x9E	; 158
+ 52c:	94 e2       	ldi	r25, 0x24	; 36
+ 52e:	21 50       	subi	r18, 0x01	; 1
+ 530:	80 40       	sbci	r24, 0x00	; 0
+ 532:	90 40       	sbci	r25, 0x00	; 0
+ 534:	e1 f7       	brne	.-8      	; 0x52e <_ZN13VoiceRecorder5EnterEv+0xb2>
+ 536:	00 c0       	rjmp	.+0      	; 0x538 <_ZN13VoiceRecorder5EnterEv+0xbc>
+ 538:	00 00       	nop
+ 53a:	07 c1       	rjmp	.+526    	; 0x74a <_ZN13VoiceRecorder5EnterEv+0x2ce>
 		_delay_ms(750);
 	}
     else if (Position==4){
- 4ba:	84 30       	cpi	r24, 0x04	; 4
- 4bc:	91 05       	cpc	r25, r1
- 4be:	51 f4       	brne	.+20     	; 0x4d4 <_Z9LCD_Enterv+0xcc>
+ 53c:	84 30       	cpi	r24, 0x04	; 4
+ 53e:	91 05       	cpc	r25, r1
+ 540:	59 f4       	brne	.+22     	; 0x558 <_ZN13VoiceRecorder5EnterEv+0xdc>
         //startRecording();
 		MenuPosition2(5, 2,"Recording...", "Stop Recording");
- 4c0:	29 e6       	ldi	r18, 0x69	; 105
- 4c2:	32 e0       	ldi	r19, 0x02	; 2
- 4c4:	48 e7       	ldi	r20, 0x78	; 120
- 4c6:	52 e0       	ldi	r21, 0x02	; 2
- 4c8:	62 e0       	ldi	r22, 0x02	; 2
- 4ca:	70 e0       	ldi	r23, 0x00	; 0
- 4cc:	85 e0       	ldi	r24, 0x05	; 5
- 4ce:	90 e0       	ldi	r25, 0x00	; 0
- 4d0:	4c df       	rcall	.-360    	; 0x36a <_Z13MenuPosition2iiPcS_>
- 4d2:	ed c0       	rjmp	.+474    	; 0x6ae <_Z9LCD_Enterv+0x2a6>
+ 542:	09 e6       	ldi	r16, 0x69	; 105
+ 544:	12 e0       	ldi	r17, 0x02	; 2
+ 546:	28 e7       	ldi	r18, 0x78	; 120
+ 548:	32 e0       	ldi	r19, 0x02	; 2
+ 54a:	42 e0       	ldi	r20, 0x02	; 2
+ 54c:	50 e0       	ldi	r21, 0x00	; 0
+ 54e:	65 e0       	ldi	r22, 0x05	; 5
+ 550:	70 e0       	ldi	r23, 0x00	; 0
+ 552:	c7 01       	movw	r24, r14
+ 554:	3f df       	rcall	.-386    	; 0x3d4 <_ZN13VoiceRecorder13MenuPosition2EiiPcS0_>
+ 556:	f9 c0       	rjmp	.+498    	; 0x74a <_ZN13VoiceRecorder5EnterEv+0x2ce>
     }
 	else if (Position==5){
- 4d4:	85 30       	cpi	r24, 0x05	; 5
- 4d6:	91 05       	cpc	r25, r1
- 4d8:	41 f4       	brne	.+16     	; 0x4ea <_Z9LCD_Enterv+0xe2>
+ 558:	85 30       	cpi	r24, 0x05	; 5
+ 55a:	91 05       	cpc	r25, r1
+ 55c:	49 f4       	brne	.+18     	; 0x570 <_ZN13VoiceRecorder5EnterEv+0xf4>
 		//stopRecording();
 		MenuPosition1(1, "Record Voice", "Recordings");
- 4da:	48 e2       	ldi	r20, 0x28	; 40
- 4dc:	52 e0       	ldi	r21, 0x02	; 2
- 4de:	63 e3       	ldi	r22, 0x33	; 51
- 4e0:	72 e0       	ldi	r23, 0x02	; 2
- 4e2:	81 e0       	ldi	r24, 0x01	; 1
- 4e4:	90 e0       	ldi	r25, 0x00	; 0
- 4e6:	13 df       	rcall	.-474    	; 0x30e <_Z13MenuPosition1iPcS_>
+ 55e:	28 e2       	ldi	r18, 0x28	; 40
+ 560:	32 e0       	ldi	r19, 0x02	; 2
+ 562:	43 e3       	ldi	r20, 0x33	; 51
+ 564:	52 e0       	ldi	r21, 0x02	; 2
+ 566:	61 e0       	ldi	r22, 0x01	; 1
+ 568:	70 e0       	ldi	r23, 0x00	; 0
+ 56a:	c7 01       	movw	r24, r14
+ 56c:	05 df       	rcall	.-502    	; 0x378 <_ZN13VoiceRecorder13MenuPosition1EiPcS0_>
 	}
     else if (Position==11){
- 4e8:	e2 c0       	rjmp	.+452    	; 0x6ae <_Z9LCD_Enterv+0x2a6>
- 4ea:	8b 30       	cpi	r24, 0x0B	; 11
- 4ec:	91 05       	cpc	r25, r1
+ 56e:	ed c0       	rjmp	.+474    	; 0x74a <_ZN13VoiceRecorder5EnterEv+0x2ce>
+ 570:	8b 30       	cpi	r24, 0x0B	; 11
+ 572:	91 05       	cpc	r25, r1
         //deleteRecording(nameList[_FileIndex]);
         MyLCD.Clear();
- 4ee:	99 f4       	brne	.+38     	; 0x516 <_Z9LCD_Enterv+0x10e>
- 4f0:	8e e1       	ldi	r24, 0x1E	; 30
- 4f2:	93 e0       	ldi	r25, 0x03	; 3
- 4f4:	f0 de       	rcall	.-544    	; 0x2d6 <_ZN3LCD5ClearEv>
- 4f6:	2f ef       	ldi	r18, 0xFF	; 255
- 4f8:	89 e6       	ldi	r24, 0x69	; 105
- 4fa:	98 e1       	ldi	r25, 0x18	; 24
- 4fc:	21 50       	subi	r18, 0x01	; 1
- 4fe:	80 40       	sbci	r24, 0x00	; 0
- 500:	90 40       	sbci	r25, 0x00	; 0
- 502:	e1 f7       	brne	.-8      	; 0x4fc <_Z9LCD_Enterv+0xf4>
- 504:	00 c0       	rjmp	.+0      	; 0x506 <_Z9LCD_Enterv+0xfe>
+ 574:	a1 f4       	brne	.+40     	; 0x59e <_ZN13VoiceRecorder5EnterEv+0x122>
+ 576:	8e e1       	ldi	r24, 0x1E	; 30
+ 578:	93 e0       	ldi	r25, 0x03	; 3
+ 57a:	b0 de       	rcall	.-672    	; 0x2dc <_ZN3LCD5ClearEv>
+ 57c:	2f ef       	ldi	r18, 0xFF	; 255
+ 57e:	83 ed       	ldi	r24, 0xD3	; 211
+ 580:	90 e3       	ldi	r25, 0x30	; 48
+ 582:	21 50       	subi	r18, 0x01	; 1
+ 584:	80 40       	sbci	r24, 0x00	; 0
+ 586:	90 40       	sbci	r25, 0x00	; 0
+ 588:	e1 f7       	brne	.-8      	; 0x582 <_ZN13VoiceRecorder5EnterEv+0x106>
+ 58a:	00 c0       	rjmp	.+0      	; 0x58c <_ZN13VoiceRecorder5EnterEv+0x110>
         _FileIndex = 0;
         for (int i = 0; i<100; i++){
             nameList[i] = "";
         }*/
         _delay_ms(1000);
         MenuPosition1(17, "", "");
- 506:	00 00       	nop
- 508:	40 e6       	ldi	r20, 0x60	; 96
- 50a:	52 e0       	ldi	r21, 0x02	; 2
- 50c:	ba 01       	movw	r22, r20
- 50e:	81 e1       	ldi	r24, 0x11	; 17
- 510:	90 e0       	ldi	r25, 0x00	; 0
- 512:	fd de       	rcall	.-518    	; 0x30e <_Z13MenuPosition1iPcS_>
- 514:	cc c0       	rjmp	.+408    	; 0x6ae <_Z9LCD_Enterv+0x2a6>
+ 58c:	00 00       	nop
+ 58e:	20 e6       	ldi	r18, 0x60	; 96
+ 590:	32 e0       	ldi	r19, 0x02	; 2
+ 592:	a9 01       	movw	r20, r18
+ 594:	61 e1       	ldi	r22, 0x11	; 17
+ 596:	70 e0       	ldi	r23, 0x00	; 0
+ 598:	c7 01       	movw	r24, r14
+ 59a:	ee de       	rcall	.-548    	; 0x378 <_ZN13VoiceRecorder13MenuPosition1EiPcS0_>
+ 59c:	d6 c0       	rjmp	.+428    	; 0x74a <_ZN13VoiceRecorder5EnterEv+0x2ce>
     }
 
     else if (Position==6){
- 516:	86 30       	cpi	r24, 0x06	; 6
- 518:	91 05       	cpc	r25, r1
+ 59e:	86 30       	cpi	r24, 0x06	; 6
+ 5a0:	91 05       	cpc	r25, r1
+ 5a2:	59 f4       	brne	.+22     	; 0x5ba <_ZN13VoiceRecorder5EnterEv+0x13e>
         //startPlayback(nameList[_FileIndex]);
 		//_delay_ms(1000);
 		MenuPosition2(14, 3, "Playing...", "Stop");
- 51a:	51 f4       	brne	.+20     	; 0x530 <_Z9LCD_Enterv+0x128>
- 51c:	25 e8       	ldi	r18, 0x85	; 133
- 51e:	32 e0       	ldi	r19, 0x02	; 2
- 520:	4a e8       	ldi	r20, 0x8A	; 138
- 522:	52 e0       	ldi	r21, 0x02	; 2
- 524:	63 e0       	ldi	r22, 0x03	; 3
- 526:	70 e0       	ldi	r23, 0x00	; 0
- 528:	8e e0       	ldi	r24, 0x0E	; 14
- 52a:	90 e0       	ldi	r25, 0x00	; 0
- 52c:	1e df       	rcall	.-452    	; 0x36a <_Z13MenuPosition2iiPcS_>
+ 5a4:	05 e8       	ldi	r16, 0x85	; 133
+ 5a6:	12 e0       	ldi	r17, 0x02	; 2
+ 5a8:	2a e8       	ldi	r18, 0x8A	; 138
+ 5aa:	32 e0       	ldi	r19, 0x02	; 2
+ 5ac:	43 e0       	ldi	r20, 0x03	; 3
+ 5ae:	50 e0       	ldi	r21, 0x00	; 0
+ 5b0:	6e e0       	ldi	r22, 0x0E	; 14
+ 5b2:	70 e0       	ldi	r23, 0x00	; 0
+ 5b4:	c7 01       	movw	r24, r14
+ 5b6:	0e df       	rcall	.-484    	; 0x3d4 <_ZN13VoiceRecorder13MenuPosition2EiiPcS0_>
     }
     else if (Position==7){
- 52e:	bf c0       	rjmp	.+382    	; 0x6ae <_Z9LCD_Enterv+0x2a6>
- 530:	87 30       	cpi	r24, 0x07	; 7
+ 5b8:	c8 c0       	rjmp	.+400    	; 0x74a <_ZN13VoiceRecorder5EnterEv+0x2ce>
+ 5ba:	87 30       	cpi	r24, 0x07	; 7
         MyLCD.Clear();
- 532:	91 05       	cpc	r25, r1
- 534:	59 f5       	brne	.+86     	; 0x58c <_Z9LCD_Enterv+0x184>
- 536:	8e e1       	ldi	r24, 0x1E	; 30
- 538:	93 e0       	ldi	r25, 0x03	; 3
+ 5bc:	91 05       	cpc	r25, r1
+ 5be:	59 f5       	brne	.+86     	; 0x616 <_ZN13VoiceRecorder5EnterEv+0x19a>
+ 5c0:	8e e1       	ldi	r24, 0x1E	; 30
+ 5c2:	93 e0       	ldi	r25, 0x03	; 3
 		MyLCD.PrintString_xy(0, 5, "Volume");
- 53a:	cd de       	rcall	.-614    	; 0x2d6 <_ZN3LCD5ClearEv>
- 53c:	2e eb       	ldi	r18, 0xBE	; 190
- 53e:	32 e0       	ldi	r19, 0x02	; 2
- 540:	45 e0       	ldi	r20, 0x05	; 5
- 542:	60 e0       	ldi	r22, 0x00	; 0
- 544:	8e e1       	ldi	r24, 0x1E	; 30
- 546:	93 e0       	ldi	r25, 0x03	; 3
+ 5c4:	8b de       	rcall	.-746    	; 0x2dc <_ZN3LCD5ClearEv>
+ 5c6:	2e eb       	ldi	r18, 0xBE	; 190
+ 5c8:	32 e0       	ldi	r19, 0x02	; 2
+ 5ca:	45 e0       	ldi	r20, 0x05	; 5
+ 5cc:	60 e0       	ldi	r22, 0x00	; 0
+ 5ce:	8e e1       	ldi	r24, 0x1E	; 30
+ 5d0:	93 e0       	ldi	r25, 0x03	; 3
     } else if (__radix < 2 || __radix > 36) {
 	*__s = 0;
 	return __s;
     } else {
 	extern char *__itoa_ncheck (int, char *, unsigned char);
 	return __itoa_ncheck (__val, __s, __radix);
- 548:	a6 de       	rcall	.-692    	; 0x296 <_ZN3LCD14PrintString_xyEccPc>
- 54a:	4a e0       	ldi	r20, 0x0A	; 10
- 54c:	be 01       	movw	r22, r28
- 54e:	6f 5f       	subi	r22, 0xFF	; 255
- 550:	7f 4f       	sbci	r23, 0xFF	; 255
- 552:	80 91 1b 02 	lds	r24, 0x021B	; 0x80021b <Volume>
- 556:	90 91 1c 02 	lds	r25, 0x021C	; 0x80021c <Volume+0x1>
+ 5d2:	64 de       	rcall	.-824    	; 0x29c <_ZN3LCD14PrintString_xyEccPc>
+ 5d4:	4a e0       	ldi	r20, 0x0A	; 10
+ 5d6:	be 01       	movw	r22, r28
+ 5d8:	6f 5f       	subi	r22, 0xFF	; 255
+ 5da:	7f 4f       	sbci	r23, 0xFF	; 255
+ 5dc:	80 91 1b 02 	lds	r24, 0x021B	; 0x80021b <Volume>
+ 5e0:	90 91 1c 02 	lds	r25, 0x021C	; 0x80021c <Volume+0x1>
 		char List[4];
 		itoa(Volume,List,10);
 		MyLCD.PrintString_xy(1, 7, List);
- 55a:	37 d3       	rcall	.+1646   	; 0xbca <__itoa_ncheck>
- 55c:	9e 01       	movw	r18, r28
- 55e:	2f 5f       	subi	r18, 0xFF	; 255
- 560:	3f 4f       	sbci	r19, 0xFF	; 255
- 562:	47 e0       	ldi	r20, 0x07	; 7
- 564:	61 e0       	ldi	r22, 0x01	; 1
- 566:	8e e1       	ldi	r24, 0x1E	; 30
- 568:	93 e0       	ldi	r25, 0x03	; 3
- 56a:	95 de       	rcall	.-726    	; 0x296 <_ZN3LCD14PrintString_xyEccPc>
+ 5e4:	2a d3       	rcall	.+1620   	; 0xc3a <__itoa_ncheck>
+ 5e6:	9e 01       	movw	r18, r28
+ 5e8:	2f 5f       	subi	r18, 0xFF	; 255
+ 5ea:	3f 4f       	sbci	r19, 0xFF	; 255
+ 5ec:	47 e0       	ldi	r20, 0x07	; 7
+ 5ee:	61 e0       	ldi	r22, 0x01	; 1
+ 5f0:	8e e1       	ldi	r24, 0x1E	; 30
+ 5f2:	93 e0       	ldi	r25, 0x03	; 3
+ 5f4:	53 de       	rcall	.-858    	; 0x29c <_ZN3LCD14PrintString_xyEccPc>
 		Position = 15;
- 56c:	8f e0       	ldi	r24, 0x0F	; 15
- 56e:	90 e0       	ldi	r25, 0x00	; 0
- 570:	90 93 22 03 	sts	0x0322, r25	; 0x800322 <Position+0x1>
- 574:	80 93 21 03 	sts	0x0321, r24	; 0x800321 <Position>
- 578:	2f ef       	ldi	r18, 0xFF	; 255
- 57a:	84 e3       	ldi	r24, 0x34	; 52
- 57c:	9c e0       	ldi	r25, 0x0C	; 12
- 57e:	21 50       	subi	r18, 0x01	; 1
- 580:	80 40       	sbci	r24, 0x00	; 0
- 582:	90 40       	sbci	r25, 0x00	; 0
- 584:	e1 f7       	brne	.-8      	; 0x57e <_Z9LCD_Enterv+0x176>
- 586:	00 c0       	rjmp	.+0      	; 0x588 <_Z9LCD_Enterv+0x180>
- 588:	00 00       	nop
+ 5f6:	8f e0       	ldi	r24, 0x0F	; 15
+ 5f8:	90 e0       	ldi	r25, 0x00	; 0
+ 5fa:	90 93 22 03 	sts	0x0322, r25	; 0x800322 <Position+0x1>
+ 5fe:	80 93 21 03 	sts	0x0321, r24	; 0x800321 <Position>
+ 602:	2f ef       	ldi	r18, 0xFF	; 255
+ 604:	89 e6       	ldi	r24, 0x69	; 105
+ 606:	98 e1       	ldi	r25, 0x18	; 24
+ 608:	21 50       	subi	r18, 0x01	; 1
+ 60a:	80 40       	sbci	r24, 0x00	; 0
+ 60c:	90 40       	sbci	r25, 0x00	; 0
+ 60e:	e1 f7       	brne	.-8      	; 0x608 <_ZN13VoiceRecorder5EnterEv+0x18c>
+ 610:	00 c0       	rjmp	.+0      	; 0x612 <_ZN13VoiceRecorder5EnterEv+0x196>
+ 612:	00 00       	nop
 		_delay_ms(500);
     }
     else if (Position == 8){
- 58a:	91 c0       	rjmp	.+290    	; 0x6ae <_Z9LCD_Enterv+0x2a6>
- 58c:	88 30       	cpi	r24, 0x08	; 8
- 58e:	91 05       	cpc	r25, r1
+ 614:	9a c0       	rjmp	.+308    	; 0x74a <_ZN13VoiceRecorder5EnterEv+0x2ce>
+ 616:	88 30       	cpi	r24, 0x08	; 8
+ 618:	91 05       	cpc	r25, r1
         MenuPosition1(12, "High Pitch", "Low Pitch");
- 590:	41 f4       	brne	.+16     	; 0x5a2 <_Z9LCD_Enterv+0x19a>
- 592:	45 e9       	ldi	r20, 0x95	; 149
- 594:	52 e0       	ldi	r21, 0x02	; 2
- 596:	6f e9       	ldi	r22, 0x9F	; 159
- 598:	72 e0       	ldi	r23, 0x02	; 2
- 59a:	8c e0       	ldi	r24, 0x0C	; 12
- 59c:	90 e0       	ldi	r25, 0x00	; 0
- 59e:	b7 de       	rcall	.-658    	; 0x30e <_Z13MenuPosition1iPcS_>
+ 61a:	49 f4       	brne	.+18     	; 0x62e <_ZN13VoiceRecorder5EnterEv+0x1b2>
+ 61c:	25 e9       	ldi	r18, 0x95	; 149
+ 61e:	32 e0       	ldi	r19, 0x02	; 2
+ 620:	4f e9       	ldi	r20, 0x9F	; 159
+ 622:	52 e0       	ldi	r21, 0x02	; 2
+ 624:	6c e0       	ldi	r22, 0x0C	; 12
+ 626:	70 e0       	ldi	r23, 0x00	; 0
+ 628:	c7 01       	movw	r24, r14
+ 62a:	a6 de       	rcall	.-692    	; 0x378 <_ZN13VoiceRecorder13MenuPosition1EiPcS0_>
     }
 	else if (Position == 9){
- 5a0:	86 c0       	rjmp	.+268    	; 0x6ae <_Z9LCD_Enterv+0x2a6>
- 5a2:	89 30       	cpi	r24, 0x09	; 9
- 5a4:	91 05       	cpc	r25, r1
+ 62c:	8e c0       	rjmp	.+284    	; 0x74a <_ZN13VoiceRecorder5EnterEv+0x2ce>
+ 62e:	89 30       	cpi	r24, 0x09	; 9
+ 630:	91 05       	cpc	r25, r1
 		//echofunction();
 		//_delay_ms(1000);
 		MenuPosition2(14, 3, "Playing...", "Stop");
- 5a6:	51 f4       	brne	.+20     	; 0x5bc <_Z9LCD_Enterv+0x1b4>
- 5a8:	25 e8       	ldi	r18, 0x85	; 133
- 5aa:	32 e0       	ldi	r19, 0x02	; 2
- 5ac:	4a e8       	ldi	r20, 0x8A	; 138
- 5ae:	52 e0       	ldi	r21, 0x02	; 2
- 5b0:	63 e0       	ldi	r22, 0x03	; 3
- 5b2:	70 e0       	ldi	r23, 0x00	; 0
- 5b4:	8e e0       	ldi	r24, 0x0E	; 14
- 5b6:	90 e0       	ldi	r25, 0x00	; 0
- 5b8:	d8 de       	rcall	.-592    	; 0x36a <_Z13MenuPosition2iiPcS_>
+ 632:	59 f4       	brne	.+22     	; 0x64a <_ZN13VoiceRecorder5EnterEv+0x1ce>
+ 634:	05 e8       	ldi	r16, 0x85	; 133
+ 636:	12 e0       	ldi	r17, 0x02	; 2
+ 638:	2a e8       	ldi	r18, 0x8A	; 138
+ 63a:	32 e0       	ldi	r19, 0x02	; 2
+ 63c:	43 e0       	ldi	r20, 0x03	; 3
+ 63e:	50 e0       	ldi	r21, 0x00	; 0
+ 640:	6e e0       	ldi	r22, 0x0E	; 14
+ 642:	70 e0       	ldi	r23, 0x00	; 0
+ 644:	c7 01       	movw	r24, r14
+ 646:	c6 de       	rcall	.-628    	; 0x3d4 <_ZN13VoiceRecorder13MenuPosition2EiiPcS0_>
 	}
 	else if (Position == 10){
- 5ba:	79 c0       	rjmp	.+242    	; 0x6ae <_Z9LCD_Enterv+0x2a6>
- 5bc:	8a 30       	cpi	r24, 0x0A	; 10
- 5be:	91 05       	cpc	r25, r1
+ 648:	80 c0       	rjmp	.+256    	; 0x74a <_ZN13VoiceRecorder5EnterEv+0x2ce>
+ 64a:	8a 30       	cpi	r24, 0x0A	; 10
+ 64c:	91 05       	cpc	r25, r1
 		//echofunction();
 		//_delay_ms(1000);
 		MenuPosition2(14, 3, "Playing...", "Stop");
- 5c0:	51 f4       	brne	.+20     	; 0x5d6 <_Z9LCD_Enterv+0x1ce>
- 5c2:	25 e8       	ldi	r18, 0x85	; 133
- 5c4:	32 e0       	ldi	r19, 0x02	; 2
- 5c6:	4a e8       	ldi	r20, 0x8A	; 138
- 5c8:	52 e0       	ldi	r21, 0x02	; 2
- 5ca:	63 e0       	ldi	r22, 0x03	; 3
- 5cc:	70 e0       	ldi	r23, 0x00	; 0
- 5ce:	8e e0       	ldi	r24, 0x0E	; 14
- 5d0:	90 e0       	ldi	r25, 0x00	; 0
- 5d2:	cb de       	rcall	.-618    	; 0x36a <_Z13MenuPosition2iiPcS_>
+ 64e:	59 f4       	brne	.+22     	; 0x666 <_ZN13VoiceRecorder5EnterEv+0x1ea>
+ 650:	05 e8       	ldi	r16, 0x85	; 133
+ 652:	12 e0       	ldi	r17, 0x02	; 2
+ 654:	2a e8       	ldi	r18, 0x8A	; 138
+ 656:	32 e0       	ldi	r19, 0x02	; 2
+ 658:	43 e0       	ldi	r20, 0x03	; 3
+ 65a:	50 e0       	ldi	r21, 0x00	; 0
+ 65c:	6e e0       	ldi	r22, 0x0E	; 14
+ 65e:	70 e0       	ldi	r23, 0x00	; 0
+ 660:	c7 01       	movw	r24, r14
+ 662:	b8 de       	rcall	.-656    	; 0x3d4 <_ZN13VoiceRecorder13MenuPosition2EiiPcS0_>
 	}
     else if (Position == 12){
- 5d4:	6c c0       	rjmp	.+216    	; 0x6ae <_Z9LCD_Enterv+0x2a6>
- 5d6:	8c 30       	cpi	r24, 0x0C	; 12
- 5d8:	91 05       	cpc	r25, r1
+ 664:	72 c0       	rjmp	.+228    	; 0x74a <_ZN13VoiceRecorder5EnterEv+0x2ce>
+ 666:	8c 30       	cpi	r24, 0x0C	; 12
+ 668:	91 05       	cpc	r25, r1
         //freq_shift(nameList[_FileIndex], 1500);
 		//_delay_ms(1000);
         MenuPosition2(14, 3, "Playing...", "Stop");
- 5da:	51 f4       	brne	.+20     	; 0x5f0 <_Z9LCD_Enterv+0x1e8>
- 5dc:	25 e8       	ldi	r18, 0x85	; 133
- 5de:	32 e0       	ldi	r19, 0x02	; 2
- 5e0:	4a e8       	ldi	r20, 0x8A	; 138
- 5e2:	52 e0       	ldi	r21, 0x02	; 2
- 5e4:	63 e0       	ldi	r22, 0x03	; 3
- 5e6:	70 e0       	ldi	r23, 0x00	; 0
- 5e8:	8e e0       	ldi	r24, 0x0E	; 14
- 5ea:	90 e0       	ldi	r25, 0x00	; 0
- 5ec:	be de       	rcall	.-644    	; 0x36a <_Z13MenuPosition2iiPcS_>
+ 66a:	59 f4       	brne	.+22     	; 0x682 <_ZN13VoiceRecorder5EnterEv+0x206>
+ 66c:	05 e8       	ldi	r16, 0x85	; 133
+ 66e:	12 e0       	ldi	r17, 0x02	; 2
+ 670:	2a e8       	ldi	r18, 0x8A	; 138
+ 672:	32 e0       	ldi	r19, 0x02	; 2
+ 674:	43 e0       	ldi	r20, 0x03	; 3
+ 676:	50 e0       	ldi	r21, 0x00	; 0
+ 678:	6e e0       	ldi	r22, 0x0E	; 14
+ 67a:	70 e0       	ldi	r23, 0x00	; 0
+ 67c:	c7 01       	movw	r24, r14
+ 67e:	aa de       	rcall	.-684    	; 0x3d4 <_ZN13VoiceRecorder13MenuPosition2EiiPcS0_>
     }
     else if (Position == 13){
- 5ee:	5f c0       	rjmp	.+190    	; 0x6ae <_Z9LCD_Enterv+0x2a6>
- 5f0:	8d 30       	cpi	r24, 0x0D	; 13
- 5f2:	91 05       	cpc	r25, r1
+ 680:	64 c0       	rjmp	.+200    	; 0x74a <_ZN13VoiceRecorder5EnterEv+0x2ce>
+ 682:	8d 30       	cpi	r24, 0x0D	; 13
+ 684:	91 05       	cpc	r25, r1
         //freq_shift(nameList[_FileIndex], 1500);
 		//_delay_ms(1000);
 		MenuPosition2(14, 3, "Playing...", "Stop");
- 5f4:	51 f4       	brne	.+20     	; 0x60a <_Z9LCD_Enterv+0x202>
- 5f6:	25 e8       	ldi	r18, 0x85	; 133
- 5f8:	32 e0       	ldi	r19, 0x02	; 2
- 5fa:	4a e8       	ldi	r20, 0x8A	; 138
- 5fc:	52 e0       	ldi	r21, 0x02	; 2
- 5fe:	63 e0       	ldi	r22, 0x03	; 3
- 600:	70 e0       	ldi	r23, 0x00	; 0
- 602:	8e e0       	ldi	r24, 0x0E	; 14
- 604:	90 e0       	ldi	r25, 0x00	; 0
- 606:	b1 de       	rcall	.-670    	; 0x36a <_Z13MenuPosition2iiPcS_>
- 608:	52 c0       	rjmp	.+164    	; 0x6ae <_Z9LCD_Enterv+0x2a6>
+ 686:	59 f4       	brne	.+22     	; 0x69e <_ZN13VoiceRecorder5EnterEv+0x222>
+ 688:	05 e8       	ldi	r16, 0x85	; 133
+ 68a:	12 e0       	ldi	r17, 0x02	; 2
+ 68c:	2a e8       	ldi	r18, 0x8A	; 138
+ 68e:	32 e0       	ldi	r19, 0x02	; 2
+ 690:	43 e0       	ldi	r20, 0x03	; 3
+ 692:	50 e0       	ldi	r21, 0x00	; 0
+ 694:	6e e0       	ldi	r22, 0x0E	; 14
+ 696:	70 e0       	ldi	r23, 0x00	; 0
+ 698:	c7 01       	movw	r24, r14
+ 69a:	9c de       	rcall	.-712    	; 0x3d4 <_ZN13VoiceRecorder13MenuPosition2EiiPcS0_>
+ 69c:	56 c0       	rjmp	.+172    	; 0x74a <_ZN13VoiceRecorder5EnterEv+0x2ce>
     }
 	else if (Position==14){
- 60a:	8e 30       	cpi	r24, 0x0E	; 14
- 60c:	91 05       	cpc	r25, r1
- 60e:	e9 f4       	brne	.+58     	; 0x64a <_Z9LCD_Enterv+0x242>
+ 69e:	8e 30       	cpi	r24, 0x0E	; 14
+ 6a0:	91 05       	cpc	r25, r1
+ 6a2:	f1 f4       	brne	.+60     	; 0x6e0 <_ZN13VoiceRecorder5EnterEv+0x264>
 		//stopPlayback(nameList[_FileIndex]);
 		//_delay_ms(1000);
 		MenuPosition1(17, FileList[FileIndex], FileList[FileIndex + 1]);
- 610:	80 91 1f 03 	lds	r24, 0x031F	; 0x80031f <FileIndex>
- 614:	90 91 20 03 	lds	r25, 0x0320	; 0x800320 <FileIndex+0x1>
- 618:	9c 01       	movw	r18, r24
- 61a:	2f 5f       	subi	r18, 0xFF	; 255
- 61c:	3f 4f       	sbci	r19, 0xFF	; 255
- 61e:	a9 01       	movw	r20, r18
- 620:	44 0f       	add	r20, r20
- 622:	55 1f       	adc	r21, r21
- 624:	44 0f       	add	r20, r20
- 626:	55 1f       	adc	r21, r21
- 628:	42 0f       	add	r20, r18
- 62a:	53 1f       	adc	r21, r19
- 62c:	40 50       	subi	r20, 0x00	; 0
- 62e:	5e 4f       	sbci	r21, 0xFE	; 254
- 630:	bc 01       	movw	r22, r24
- 632:	66 0f       	add	r22, r22
- 634:	77 1f       	adc	r23, r23
- 636:	66 0f       	add	r22, r22
- 638:	77 1f       	adc	r23, r23
- 63a:	68 0f       	add	r22, r24
- 63c:	79 1f       	adc	r23, r25
- 63e:	60 50       	subi	r22, 0x00	; 0
- 640:	7e 4f       	sbci	r23, 0xFE	; 254
- 642:	81 e1       	ldi	r24, 0x11	; 17
- 644:	90 e0       	ldi	r25, 0x00	; 0
+ 6a4:	80 91 1f 03 	lds	r24, 0x031F	; 0x80031f <FileIndex>
+ 6a8:	90 91 20 03 	lds	r25, 0x0320	; 0x800320 <FileIndex+0x1>
+ 6ac:	9c 01       	movw	r18, r24
+ 6ae:	2f 5f       	subi	r18, 0xFF	; 255
+ 6b0:	3f 4f       	sbci	r19, 0xFF	; 255
+ 6b2:	a9 01       	movw	r20, r18
+ 6b4:	44 0f       	add	r20, r20
+ 6b6:	55 1f       	adc	r21, r21
+ 6b8:	44 0f       	add	r20, r20
+ 6ba:	55 1f       	adc	r21, r21
+ 6bc:	24 0f       	add	r18, r20
+ 6be:	35 1f       	adc	r19, r21
+ 6c0:	20 50       	subi	r18, 0x00	; 0
+ 6c2:	3e 4f       	sbci	r19, 0xFE	; 254
+ 6c4:	ac 01       	movw	r20, r24
+ 6c6:	44 0f       	add	r20, r20
+ 6c8:	55 1f       	adc	r21, r21
+ 6ca:	44 0f       	add	r20, r20
+ 6cc:	55 1f       	adc	r21, r21
+ 6ce:	48 0f       	add	r20, r24
+ 6d0:	59 1f       	adc	r21, r25
+ 6d2:	40 50       	subi	r20, 0x00	; 0
+ 6d4:	5e 4f       	sbci	r21, 0xFE	; 254
+ 6d6:	61 e1       	ldi	r22, 0x11	; 17
+ 6d8:	70 e0       	ldi	r23, 0x00	; 0
+ 6da:	c7 01       	movw	r24, r14
 	}
 	else if (Position == 15){
- 646:	63 de       	rcall	.-826    	; 0x30e <_Z13MenuPosition1iPcS_>
- 648:	32 c0       	rjmp	.+100    	; 0x6ae <_Z9LCD_Enterv+0x2a6>
- 64a:	8f 30       	cpi	r24, 0x0F	; 15
+ 6dc:	4d de       	rcall	.-870    	; 0x378 <_ZN13VoiceRecorder13MenuPosition1EiPcS0_>
+ 6de:	35 c0       	rjmp	.+106    	; 0x74a <_ZN13VoiceRecorder5EnterEv+0x2ce>
+ 6e0:	8f 30       	cpi	r24, 0x0F	; 15
 		 MenuPosition1(7, "Change Volume", "Change Pitch");
- 64c:	91 05       	cpc	r25, r1
- 64e:	41 f4       	brne	.+16     	; 0x660 <_Z9LCD_Enterv+0x258>
- 650:	4a ea       	ldi	r20, 0xAA	; 170
- 652:	52 e0       	ldi	r21, 0x02	; 2
- 654:	67 eb       	ldi	r22, 0xB7	; 183
- 656:	72 e0       	ldi	r23, 0x02	; 2
- 658:	87 e0       	ldi	r24, 0x07	; 7
- 65a:	90 e0       	ldi	r25, 0x00	; 0
+ 6e2:	91 05       	cpc	r25, r1
+ 6e4:	49 f4       	brne	.+18     	; 0x6f8 <_ZN13VoiceRecorder5EnterEv+0x27c>
+ 6e6:	2a ea       	ldi	r18, 0xAA	; 170
+ 6e8:	32 e0       	ldi	r19, 0x02	; 2
+ 6ea:	47 eb       	ldi	r20, 0xB7	; 183
+ 6ec:	52 e0       	ldi	r21, 0x02	; 2
+ 6ee:	67 e0       	ldi	r22, 0x07	; 7
+ 6f0:	70 e0       	ldi	r23, 0x00	; 0
+ 6f2:	c7 01       	movw	r24, r14
 	}
 	else if (Position == 16){
- 65c:	58 de       	rcall	.-848    	; 0x30e <_Z13MenuPosition1iPcS_>
- 65e:	27 c0       	rjmp	.+78     	; 0x6ae <_Z9LCD_Enterv+0x2a6>
- 660:	80 31       	cpi	r24, 0x10	; 16
+ 6f4:	41 de       	rcall	.-894    	; 0x378 <_ZN13VoiceRecorder13MenuPosition1EiPcS0_>
+ 6f6:	29 c0       	rjmp	.+82     	; 0x74a <_ZN13VoiceRecorder5EnterEv+0x2ce>
+ 6f8:	80 31       	cpi	r24, 0x10	; 16
 		 //reset()
 		 MyLCD.Clear();
- 662:	91 05       	cpc	r25, r1
- 664:	d9 f4       	brne	.+54     	; 0x69c <_Z9LCD_Enterv+0x294>
- 666:	8e e1       	ldi	r24, 0x1E	; 30
- 668:	93 e0       	ldi	r25, 0x03	; 3
+ 6fa:	91 05       	cpc	r25, r1
+ 6fc:	e1 f4       	brne	.+56     	; 0x736 <_ZN13VoiceRecorder5EnterEv+0x2ba>
+ 6fe:	8e e1       	ldi	r24, 0x1E	; 30
+ 700:	93 e0       	ldi	r25, 0x03	; 3
 		 MyLCD.PrintString_xy(0, 0, "Reseting Success");
- 66a:	35 de       	rcall	.-918    	; 0x2d6 <_ZN3LCD5ClearEv>
- 66c:	25 ec       	ldi	r18, 0xC5	; 197
- 66e:	32 e0       	ldi	r19, 0x02	; 2
- 670:	40 e0       	ldi	r20, 0x00	; 0
- 672:	60 e0       	ldi	r22, 0x00	; 0
- 674:	8e e1       	ldi	r24, 0x1E	; 30
- 676:	93 e0       	ldi	r25, 0x03	; 3
- 678:	0e de       	rcall	.-996    	; 0x296 <_ZN3LCD14PrintString_xyEccPc>
- 67a:	2f e7       	ldi	r18, 0x7F	; 127
- 67c:	8f e4       	ldi	r24, 0x4F	; 79
- 67e:	92 e1       	ldi	r25, 0x12	; 18
- 680:	21 50       	subi	r18, 0x01	; 1
- 682:	80 40       	sbci	r24, 0x00	; 0
- 684:	90 40       	sbci	r25, 0x00	; 0
- 686:	e1 f7       	brne	.-8      	; 0x680 <_Z9LCD_Enterv+0x278>
+ 702:	ec dd       	rcall	.-1064   	; 0x2dc <_ZN3LCD5ClearEv>
+ 704:	25 ec       	ldi	r18, 0xC5	; 197
+ 706:	32 e0       	ldi	r19, 0x02	; 2
+ 708:	40 e0       	ldi	r20, 0x00	; 0
+ 70a:	60 e0       	ldi	r22, 0x00	; 0
+ 70c:	8e e1       	ldi	r24, 0x1E	; 30
+ 70e:	93 e0       	ldi	r25, 0x03	; 3
+ 710:	c5 dd       	rcall	.-1142   	; 0x29c <_ZN3LCD14PrintString_xyEccPc>
+ 712:	2f ef       	ldi	r18, 0xFF	; 255
+ 714:	8e e9       	ldi	r24, 0x9E	; 158
+ 716:	94 e2       	ldi	r25, 0x24	; 36
+ 718:	21 50       	subi	r18, 0x01	; 1
+ 71a:	80 40       	sbci	r24, 0x00	; 0
+ 71c:	90 40       	sbci	r25, 0x00	; 0
+ 71e:	e1 f7       	brne	.-8      	; 0x718 <_ZN13VoiceRecorder5EnterEv+0x29c>
 		 _delay_ms(750);
 		 MenuPosition1(1, "Record Voice", "Recordings");
- 688:	00 c0       	rjmp	.+0      	; 0x68a <_Z9LCD_Enterv+0x282>
- 68a:	00 00       	nop
- 68c:	48 e2       	ldi	r20, 0x28	; 40
- 68e:	52 e0       	ldi	r21, 0x02	; 2
- 690:	63 e3       	ldi	r22, 0x33	; 51
- 692:	72 e0       	ldi	r23, 0x02	; 2
- 694:	81 e0       	ldi	r24, 0x01	; 1
- 696:	90 e0       	ldi	r25, 0x00	; 0
- 698:	3a de       	rcall	.-908    	; 0x30e <_Z13MenuPosition1iPcS_>
+ 720:	00 c0       	rjmp	.+0      	; 0x722 <_ZN13VoiceRecorder5EnterEv+0x2a6>
+ 722:	00 00       	nop
+ 724:	28 e2       	ldi	r18, 0x28	; 40
+ 726:	32 e0       	ldi	r19, 0x02	; 2
+ 728:	43 e3       	ldi	r20, 0x33	; 51
+ 72a:	52 e0       	ldi	r21, 0x02	; 2
+ 72c:	61 e0       	ldi	r22, 0x01	; 1
+ 72e:	70 e0       	ldi	r23, 0x00	; 0
+ 730:	c7 01       	movw	r24, r14
+ 732:	22 de       	rcall	.-956    	; 0x378 <_ZN13VoiceRecorder13MenuPosition1EiPcS0_>
 	}
 	else if (Position>=17){
- 69a:	09 c0       	rjmp	.+18     	; 0x6ae <_Z9LCD_Enterv+0x2a6>
- 69c:	41 97       	sbiw	r24, 0x11	; 17
+ 734:	0a c0       	rjmp	.+20     	; 0x74a <_ZN13VoiceRecorder5EnterEv+0x2ce>
+ 736:	41 97       	sbiw	r24, 0x11	; 17
 		MenuPosition1(6, "Play Recording", "Change Volume");
- 69e:	3c f0       	brlt	.+14     	; 0x6ae <_Z9LCD_Enterv+0x2a6>
- 6a0:	47 eb       	ldi	r20, 0xB7	; 183
- 6a2:	52 e0       	ldi	r21, 0x02	; 2
- 6a4:	66 ed       	ldi	r22, 0xD6	; 214
- 6a6:	72 e0       	ldi	r23, 0x02	; 2
- 6a8:	86 e0       	ldi	r24, 0x06	; 6
- 6aa:	90 e0       	ldi	r25, 0x00	; 0
- 6ac:	30 de       	rcall	.-928    	; 0x30e <_Z13MenuPosition1iPcS_>
+ 738:	44 f0       	brlt	.+16     	; 0x74a <_ZN13VoiceRecorder5EnterEv+0x2ce>
+ 73a:	27 eb       	ldi	r18, 0xB7	; 183
+ 73c:	32 e0       	ldi	r19, 0x02	; 2
+ 73e:	46 ed       	ldi	r20, 0xD6	; 214
+ 740:	52 e0       	ldi	r21, 0x02	; 2
+ 742:	66 e0       	ldi	r22, 0x06	; 6
+ 744:	70 e0       	ldi	r23, 0x00	; 0
+ 746:	c7 01       	movw	r24, r14
+ 748:	17 de       	rcall	.-978    	; 0x378 <_ZN13VoiceRecorder13MenuPosition1EiPcS0_>
 	}
 }
- 6ae:	0f 90       	pop	r0
- 6b0:	0f 90       	pop	r0
- 6b2:	0f 90       	pop	r0
- 6b4:	0f 90       	pop	r0
- 6b6:	df 91       	pop	r29
- 6b8:	cf 91       	pop	r28
- 6ba:	08 95       	ret
+ 74a:	0f 90       	pop	r0
+ 74c:	0f 90       	pop	r0
+ 74e:	0f 90       	pop	r0
+ 750:	0f 90       	pop	r0
+ 752:	df 91       	pop	r29
+ 754:	cf 91       	pop	r28
+ 756:	1f 91       	pop	r17
+ 758:	0f 91       	pop	r16
+ 75a:	ff 90       	pop	r15
+ 75c:	ef 90       	pop	r14
+ 75e:	08 95       	ret
 
-000006bc <_Z6LCD_Upv>:
+00000760 <_ZN13VoiceRecorder2UpEv>:
 
-void LCD_Up(void)
+void VoiceRecorder::Up(void)
 {
- 6bc:	cf 93       	push	r28
- 6be:	df 93       	push	r29
- 6c0:	00 d0       	rcall	.+0      	; 0x6c2 <_Z6LCD_Upv+0x6>
- 6c2:	1f 92       	push	r1
- 6c4:	cd b7       	in	r28, 0x3d	; 61
- 6c6:	de b7       	in	r29, 0x3e	; 62
+ 760:	cf 93       	push	r28
+ 762:	df 93       	push	r29
+ 764:	00 d0       	rcall	.+0      	; 0x766 <_ZN13VoiceRecorder2UpEv+0x6>
+ 766:	1f 92       	push	r1
+ 768:	cd b7       	in	r28, 0x3d	; 61
+ 76a:	de b7       	in	r29, 0x3e	; 62
 	if (Position == 1)
- 6c8:	80 91 21 03 	lds	r24, 0x0321	; 0x800321 <Position>
- 6cc:	90 91 22 03 	lds	r25, 0x0322	; 0x800322 <Position+0x1>
- 6d0:	81 30       	cpi	r24, 0x01	; 1
- 6d2:	91 05       	cpc	r25, r1
- 6d4:	41 f4       	brne	.+16     	; 0x6e6 <_Z6LCD_Upv+0x2a>
+ 76c:	60 91 21 03 	lds	r22, 0x0321	; 0x800321 <Position>
+ 770:	70 91 22 03 	lds	r23, 0x0322	; 0x800322 <Position+0x1>
+ 774:	61 30       	cpi	r22, 0x01	; 1
+ 776:	71 05       	cpc	r23, r1
+ 778:	41 f4       	brne	.+16     	; 0x78a <_ZN13VoiceRecorder2UpEv+0x2a>
 	{
 		MenuPosition1(3, "Factory Reset", "Record Voice");
- 6d6:	43 e3       	ldi	r20, 0x33	; 51
- 6d8:	52 e0       	ldi	r21, 0x02	; 2
- 6da:	65 ee       	ldi	r22, 0xE5	; 229
- 6dc:	72 e0       	ldi	r23, 0x02	; 2
- 6de:	83 e0       	ldi	r24, 0x03	; 3
- 6e0:	90 e0       	ldi	r25, 0x00	; 0
- 6e2:	15 de       	rcall	.-982    	; 0x30e <_Z13MenuPosition1iPcS_>
- 6e4:	e3 c0       	rjmp	.+454    	; 0x8ac <_Z6LCD_Upv+0x1f0>
+ 77a:	23 e3       	ldi	r18, 0x33	; 51
+ 77c:	32 e0       	ldi	r19, 0x02	; 2
+ 77e:	45 ee       	ldi	r20, 0xE5	; 229
+ 780:	52 e0       	ldi	r21, 0x02	; 2
+ 782:	63 e0       	ldi	r22, 0x03	; 3
+ 784:	70 e0       	ldi	r23, 0x00	; 0
+ 786:	f8 dd       	rcall	.-1040   	; 0x378 <_ZN13VoiceRecorder13MenuPosition1EiPcS0_>
+ 788:	e4 c0       	rjmp	.+456    	; 0x952 <_ZN13VoiceRecorder2UpEv+0x1f2>
 	}
 	else if (Position == 2)
- 6e6:	82 30       	cpi	r24, 0x02	; 2
- 6e8:	91 05       	cpc	r25, r1
- 6ea:	41 f4       	brne	.+16     	; 0x6fc <_Z6LCD_Upv+0x40>
+ 78a:	62 30       	cpi	r22, 0x02	; 2
+ 78c:	71 05       	cpc	r23, r1
+ 78e:	41 f4       	brne	.+16     	; 0x7a0 <_ZN13VoiceRecorder2UpEv+0x40>
 	{
 		MenuPosition1(1, "Record Voice", "Recordings");
- 6ec:	48 e2       	ldi	r20, 0x28	; 40
- 6ee:	52 e0       	ldi	r21, 0x02	; 2
- 6f0:	63 e3       	ldi	r22, 0x33	; 51
- 6f2:	72 e0       	ldi	r23, 0x02	; 2
- 6f4:	81 e0       	ldi	r24, 0x01	; 1
- 6f6:	90 e0       	ldi	r25, 0x00	; 0
- 6f8:	0a de       	rcall	.-1004   	; 0x30e <_Z13MenuPosition1iPcS_>
- 6fa:	d8 c0       	rjmp	.+432    	; 0x8ac <_Z6LCD_Upv+0x1f0>
+ 790:	28 e2       	ldi	r18, 0x28	; 40
+ 792:	32 e0       	ldi	r19, 0x02	; 2
+ 794:	43 e3       	ldi	r20, 0x33	; 51
+ 796:	52 e0       	ldi	r21, 0x02	; 2
+ 798:	61 e0       	ldi	r22, 0x01	; 1
+ 79a:	70 e0       	ldi	r23, 0x00	; 0
+ 79c:	ed dd       	rcall	.-1062   	; 0x378 <_ZN13VoiceRecorder13MenuPosition1EiPcS0_>
+ 79e:	d9 c0       	rjmp	.+434    	; 0x952 <_ZN13VoiceRecorder2UpEv+0x1f2>
 	}
 	else if (Position == 3)
- 6fc:	83 30       	cpi	r24, 0x03	; 3
- 6fe:	91 05       	cpc	r25, r1
- 700:	41 f4       	brne	.+16     	; 0x712 <_Z6LCD_Upv+0x56>
+ 7a0:	63 30       	cpi	r22, 0x03	; 3
+ 7a2:	71 05       	cpc	r23, r1
+ 7a4:	41 f4       	brne	.+16     	; 0x7b6 <_ZN13VoiceRecorder2UpEv+0x56>
 	{
 		MenuPosition1(2, "Recordings", "Factory Reset");
- 702:	45 ee       	ldi	r20, 0xE5	; 229
- 704:	52 e0       	ldi	r21, 0x02	; 2
- 706:	68 e2       	ldi	r22, 0x28	; 40
- 708:	72 e0       	ldi	r23, 0x02	; 2
- 70a:	82 e0       	ldi	r24, 0x02	; 2
- 70c:	90 e0       	ldi	r25, 0x00	; 0
- 70e:	ff dd       	rcall	.-1026   	; 0x30e <_Z13MenuPosition1iPcS_>
- 710:	cd c0       	rjmp	.+410    	; 0x8ac <_Z6LCD_Upv+0x1f0>
+ 7a6:	25 ee       	ldi	r18, 0xE5	; 229
+ 7a8:	32 e0       	ldi	r19, 0x02	; 2
+ 7aa:	48 e2       	ldi	r20, 0x28	; 40
+ 7ac:	52 e0       	ldi	r21, 0x02	; 2
+ 7ae:	62 e0       	ldi	r22, 0x02	; 2
+ 7b0:	70 e0       	ldi	r23, 0x00	; 0
+ 7b2:	e2 dd       	rcall	.-1084   	; 0x378 <_ZN13VoiceRecorder13MenuPosition1EiPcS0_>
+ 7b4:	ce c0       	rjmp	.+412    	; 0x952 <_ZN13VoiceRecorder2UpEv+0x1f2>
 	}
 	else if (Position == 4)
- 712:	84 30       	cpi	r24, 0x04	; 4
- 714:	91 05       	cpc	r25, r1
- 716:	41 f4       	brne	.+16     	; 0x728 <_Z6LCD_Upv+0x6c>
+ 7b6:	64 30       	cpi	r22, 0x04	; 4
+ 7b8:	71 05       	cpc	r23, r1
+ 7ba:	41 f4       	brne	.+16     	; 0x7cc <_ZN13VoiceRecorder2UpEv+0x6c>
 	{
 		MenuPosition1(4, "Start Recording", "");
- 718:	40 e6       	ldi	r20, 0x60	; 96
- 71a:	52 e0       	ldi	r21, 0x02	; 2
- 71c:	60 e4       	ldi	r22, 0x40	; 64
- 71e:	72 e0       	ldi	r23, 0x02	; 2
- 720:	84 e0       	ldi	r24, 0x04	; 4
- 722:	90 e0       	ldi	r25, 0x00	; 0
- 724:	f4 dd       	rcall	.-1048   	; 0x30e <_Z13MenuPosition1iPcS_>
- 726:	c2 c0       	rjmp	.+388    	; 0x8ac <_Z6LCD_Upv+0x1f0>
+ 7bc:	20 e6       	ldi	r18, 0x60	; 96
+ 7be:	32 e0       	ldi	r19, 0x02	; 2
+ 7c0:	40 e4       	ldi	r20, 0x40	; 64
+ 7c2:	52 e0       	ldi	r21, 0x02	; 2
+ 7c4:	64 e0       	ldi	r22, 0x04	; 4
+ 7c6:	70 e0       	ldi	r23, 0x00	; 0
+ 7c8:	d7 dd       	rcall	.-1106   	; 0x378 <_ZN13VoiceRecorder13MenuPosition1EiPcS0_>
+ 7ca:	c3 c0       	rjmp	.+390    	; 0x952 <_ZN13VoiceRecorder2UpEv+0x1f2>
 	}
 	else if (Position == 7)
- 728:	87 30       	cpi	r24, 0x07	; 7
- 72a:	91 05       	cpc	r25, r1
- 72c:	41 f4       	brne	.+16     	; 0x73e <_Z6LCD_Upv+0x82>
+ 7cc:	67 30       	cpi	r22, 0x07	; 7
+ 7ce:	71 05       	cpc	r23, r1
+ 7d0:	41 f4       	brne	.+16     	; 0x7e2 <_ZN13VoiceRecorder2UpEv+0x82>
 	{
 		MenuPosition1(6, "Play Recording", "Change Volume");
- 72e:	47 eb       	ldi	r20, 0xB7	; 183
- 730:	52 e0       	ldi	r21, 0x02	; 2
- 732:	66 ed       	ldi	r22, 0xD6	; 214
- 734:	72 e0       	ldi	r23, 0x02	; 2
- 736:	86 e0       	ldi	r24, 0x06	; 6
- 738:	90 e0       	ldi	r25, 0x00	; 0
- 73a:	e9 dd       	rcall	.-1070   	; 0x30e <_Z13MenuPosition1iPcS_>
- 73c:	b7 c0       	rjmp	.+366    	; 0x8ac <_Z6LCD_Upv+0x1f0>
+ 7d2:	27 eb       	ldi	r18, 0xB7	; 183
+ 7d4:	32 e0       	ldi	r19, 0x02	; 2
+ 7d6:	46 ed       	ldi	r20, 0xD6	; 214
+ 7d8:	52 e0       	ldi	r21, 0x02	; 2
+ 7da:	66 e0       	ldi	r22, 0x06	; 6
+ 7dc:	70 e0       	ldi	r23, 0x00	; 0
+ 7de:	cc dd       	rcall	.-1128   	; 0x378 <_ZN13VoiceRecorder13MenuPosition1EiPcS0_>
+ 7e0:	b8 c0       	rjmp	.+368    	; 0x952 <_ZN13VoiceRecorder2UpEv+0x1f2>
 	}
 	else if (Position == 8)
- 73e:	88 30       	cpi	r24, 0x08	; 8
- 740:	91 05       	cpc	r25, r1
- 742:	41 f4       	brne	.+16     	; 0x754 <_Z6LCD_Upv+0x98>
+ 7e2:	68 30       	cpi	r22, 0x08	; 8
+ 7e4:	71 05       	cpc	r23, r1
+ 7e6:	41 f4       	brne	.+16     	; 0x7f8 <_ZN13VoiceRecorder2UpEv+0x98>
 	{
 		MenuPosition1(7, "Change Volume", "Change Pitch");
- 744:	4a ea       	ldi	r20, 0xAA	; 170
- 746:	52 e0       	ldi	r21, 0x02	; 2
- 748:	67 eb       	ldi	r22, 0xB7	; 183
- 74a:	72 e0       	ldi	r23, 0x02	; 2
- 74c:	87 e0       	ldi	r24, 0x07	; 7
- 74e:	90 e0       	ldi	r25, 0x00	; 0
- 750:	de dd       	rcall	.-1092   	; 0x30e <_Z13MenuPosition1iPcS_>
- 752:	ac c0       	rjmp	.+344    	; 0x8ac <_Z6LCD_Upv+0x1f0>
+ 7e8:	2a ea       	ldi	r18, 0xAA	; 170
+ 7ea:	32 e0       	ldi	r19, 0x02	; 2
+ 7ec:	47 eb       	ldi	r20, 0xB7	; 183
+ 7ee:	52 e0       	ldi	r21, 0x02	; 2
+ 7f0:	67 e0       	ldi	r22, 0x07	; 7
+ 7f2:	70 e0       	ldi	r23, 0x00	; 0
+ 7f4:	c1 dd       	rcall	.-1150   	; 0x378 <_ZN13VoiceRecorder13MenuPosition1EiPcS0_>
+ 7f6:	ad c0       	rjmp	.+346    	; 0x952 <_ZN13VoiceRecorder2UpEv+0x1f2>
 	}
 	else if (Position == 9)
- 754:	89 30       	cpi	r24, 0x09	; 9
- 756:	91 05       	cpc	r25, r1
- 758:	41 f4       	brne	.+16     	; 0x76a <_Z6LCD_Upv+0xae>
+ 7f8:	69 30       	cpi	r22, 0x09	; 9
+ 7fa:	71 05       	cpc	r23, r1
+ 7fc:	41 f4       	brne	.+16     	; 0x80e <_ZN13VoiceRecorder2UpEv+0xae>
 	{
 		MenuPosition1(8, "Change Pitch", "Include Echo");
- 75a:	43 ef       	ldi	r20, 0xF3	; 243
- 75c:	52 e0       	ldi	r21, 0x02	; 2
- 75e:	6a ea       	ldi	r22, 0xAA	; 170
- 760:	72 e0       	ldi	r23, 0x02	; 2
- 762:	88 e0       	ldi	r24, 0x08	; 8
- 764:	90 e0       	ldi	r25, 0x00	; 0
- 766:	d3 dd       	rcall	.-1114   	; 0x30e <_Z13MenuPosition1iPcS_>
- 768:	a1 c0       	rjmp	.+322    	; 0x8ac <_Z6LCD_Upv+0x1f0>
+ 7fe:	23 ef       	ldi	r18, 0xF3	; 243
+ 800:	32 e0       	ldi	r19, 0x02	; 2
+ 802:	4a ea       	ldi	r20, 0xAA	; 170
+ 804:	52 e0       	ldi	r21, 0x02	; 2
+ 806:	68 e0       	ldi	r22, 0x08	; 8
+ 808:	70 e0       	ldi	r23, 0x00	; 0
+ 80a:	b6 dd       	rcall	.-1172   	; 0x378 <_ZN13VoiceRecorder13MenuPosition1EiPcS0_>
+ 80c:	a2 c0       	rjmp	.+324    	; 0x952 <_ZN13VoiceRecorder2UpEv+0x1f2>
 	}
 	else if (Position == 10)
- 76a:	8a 30       	cpi	r24, 0x0A	; 10
- 76c:	91 05       	cpc	r25, r1
+ 80e:	6a 30       	cpi	r22, 0x0A	; 10
+ 810:	71 05       	cpc	r23, r1
 	{
 		MenuPosition1(9, "Include Echo", "Fast Forward");
- 76e:	41 f4       	brne	.+16     	; 0x780 <_Z6LCD_Upv+0xc4>
- 770:	40 e0       	ldi	r20, 0x00	; 0
- 772:	53 e0       	ldi	r21, 0x03	; 3
- 774:	63 ef       	ldi	r22, 0xF3	; 243
- 776:	72 e0       	ldi	r23, 0x02	; 2
- 778:	89 e0       	ldi	r24, 0x09	; 9
- 77a:	90 e0       	ldi	r25, 0x00	; 0
- 77c:	c8 dd       	rcall	.-1136   	; 0x30e <_Z13MenuPosition1iPcS_>
- 77e:	96 c0       	rjmp	.+300    	; 0x8ac <_Z6LCD_Upv+0x1f0>
+ 812:	41 f4       	brne	.+16     	; 0x824 <_ZN13VoiceRecorder2UpEv+0xc4>
+ 814:	20 e0       	ldi	r18, 0x00	; 0
+ 816:	33 e0       	ldi	r19, 0x03	; 3
+ 818:	43 ef       	ldi	r20, 0xF3	; 243
+ 81a:	52 e0       	ldi	r21, 0x02	; 2
+ 81c:	69 e0       	ldi	r22, 0x09	; 9
+ 81e:	70 e0       	ldi	r23, 0x00	; 0
+ 820:	ab dd       	rcall	.-1194   	; 0x378 <_ZN13VoiceRecorder13MenuPosition1EiPcS0_>
+ 822:	97 c0       	rjmp	.+302    	; 0x952 <_ZN13VoiceRecorder2UpEv+0x1f2>
 	}
 	else if (Position == 11)
- 780:	8b 30       	cpi	r24, 0x0B	; 11
- 782:	91 05       	cpc	r25, r1
+ 824:	6b 30       	cpi	r22, 0x0B	; 11
+ 826:	71 05       	cpc	r23, r1
 	{
 		MenuPosition1(10, "Fast Forward", "DeleteRecording");
- 784:	41 f4       	brne	.+16     	; 0x796 <_Z6LCD_Upv+0xda>
- 786:	4d e0       	ldi	r20, 0x0D	; 13
- 788:	53 e0       	ldi	r21, 0x03	; 3
- 78a:	60 e0       	ldi	r22, 0x00	; 0
- 78c:	73 e0       	ldi	r23, 0x03	; 3
- 78e:	8a e0       	ldi	r24, 0x0A	; 10
- 790:	90 e0       	ldi	r25, 0x00	; 0
- 792:	bd dd       	rcall	.-1158   	; 0x30e <_Z13MenuPosition1iPcS_>
- 794:	8b c0       	rjmp	.+278    	; 0x8ac <_Z6LCD_Upv+0x1f0>
+ 828:	41 f4       	brne	.+16     	; 0x83a <_ZN13VoiceRecorder2UpEv+0xda>
+ 82a:	2d e0       	ldi	r18, 0x0D	; 13
+ 82c:	33 e0       	ldi	r19, 0x03	; 3
+ 82e:	40 e0       	ldi	r20, 0x00	; 0
+ 830:	53 e0       	ldi	r21, 0x03	; 3
+ 832:	6a e0       	ldi	r22, 0x0A	; 10
+ 834:	70 e0       	ldi	r23, 0x00	; 0
+ 836:	a0 dd       	rcall	.-1216   	; 0x378 <_ZN13VoiceRecorder13MenuPosition1EiPcS0_>
+ 838:	8c c0       	rjmp	.+280    	; 0x952 <_ZN13VoiceRecorder2UpEv+0x1f2>
 	}
 	else if (Position == 13)
- 796:	8d 30       	cpi	r24, 0x0D	; 13
- 798:	91 05       	cpc	r25, r1
+ 83a:	6d 30       	cpi	r22, 0x0D	; 13
+ 83c:	71 05       	cpc	r23, r1
 	{
 		MenuPosition1(12, "High Pitch", "Low Pitch");
- 79a:	41 f4       	brne	.+16     	; 0x7ac <_Z6LCD_Upv+0xf0>
- 79c:	45 e9       	ldi	r20, 0x95	; 149
- 79e:	52 e0       	ldi	r21, 0x02	; 2
- 7a0:	6f e9       	ldi	r22, 0x9F	; 159
- 7a2:	72 e0       	ldi	r23, 0x02	; 2
- 7a4:	8c e0       	ldi	r24, 0x0C	; 12
- 7a6:	90 e0       	ldi	r25, 0x00	; 0
- 7a8:	b2 dd       	rcall	.-1180   	; 0x30e <_Z13MenuPosition1iPcS_>
- 7aa:	80 c0       	rjmp	.+256    	; 0x8ac <_Z6LCD_Upv+0x1f0>
+ 83e:	41 f4       	brne	.+16     	; 0x850 <_ZN13VoiceRecorder2UpEv+0xf0>
+ 840:	25 e9       	ldi	r18, 0x95	; 149
+ 842:	32 e0       	ldi	r19, 0x02	; 2
+ 844:	4f e9       	ldi	r20, 0x9F	; 159
+ 846:	52 e0       	ldi	r21, 0x02	; 2
+ 848:	6c e0       	ldi	r22, 0x0C	; 12
+ 84a:	70 e0       	ldi	r23, 0x00	; 0
+ 84c:	95 dd       	rcall	.-1238   	; 0x378 <_ZN13VoiceRecorder13MenuPosition1EiPcS0_>
+ 84e:	81 c0       	rjmp	.+258    	; 0x952 <_ZN13VoiceRecorder2UpEv+0x1f2>
 	}
 	else if (Position == 15)
- 7ac:	8f 30       	cpi	r24, 0x0F	; 15
- 7ae:	91 05       	cpc	r25, r1
- 7b0:	b9 f5       	brne	.+110    	; 0x820 <_Z6LCD_Upv+0x164>
+ 850:	6f 30       	cpi	r22, 0x0F	; 15
+ 852:	71 05       	cpc	r23, r1
+ 854:	b9 f5       	brne	.+110    	; 0x8c4 <_ZN13VoiceRecorder2UpEv+0x164>
 	{
 		if (Volume != 7){
- 7b2:	80 91 1b 02 	lds	r24, 0x021B	; 0x80021b <Volume>
- 7b6:	90 91 1c 02 	lds	r25, 0x021C	; 0x80021c <Volume+0x1>
- 7ba:	87 30       	cpi	r24, 0x07	; 7
- 7bc:	91 05       	cpc	r25, r1
+ 856:	80 91 1b 02 	lds	r24, 0x021B	; 0x80021b <Volume>
+ 85a:	90 91 1c 02 	lds	r25, 0x021C	; 0x80021c <Volume+0x1>
+ 85e:	87 30       	cpi	r24, 0x07	; 7
+ 860:	91 05       	cpc	r25, r1
 			Volume++;
- 7be:	29 f0       	breq	.+10     	; 0x7ca <_Z6LCD_Upv+0x10e>
- 7c0:	01 96       	adiw	r24, 0x01	; 1
- 7c2:	90 93 1c 02 	sts	0x021C, r25	; 0x80021c <Volume+0x1>
+ 862:	29 f0       	breq	.+10     	; 0x86e <_ZN13VoiceRecorder2UpEv+0x10e>
+ 864:	01 96       	adiw	r24, 0x01	; 1
+ 866:	90 93 1c 02 	sts	0x021C, r25	; 0x80021c <Volume+0x1>
 		}
 		MyLCD.Clear();
- 7c6:	80 93 1b 02 	sts	0x021B, r24	; 0x80021b <Volume>
- 7ca:	8e e1       	ldi	r24, 0x1E	; 30
- 7cc:	93 e0       	ldi	r25, 0x03	; 3
+ 86a:	80 93 1b 02 	sts	0x021B, r24	; 0x80021b <Volume>
+ 86e:	8e e1       	ldi	r24, 0x1E	; 30
+ 870:	93 e0       	ldi	r25, 0x03	; 3
 		MyLCD.PrintString_xy(0, 5, "Volume");
- 7ce:	83 dd       	rcall	.-1274   	; 0x2d6 <_ZN3LCD5ClearEv>
- 7d0:	2e eb       	ldi	r18, 0xBE	; 190
- 7d2:	32 e0       	ldi	r19, 0x02	; 2
- 7d4:	45 e0       	ldi	r20, 0x05	; 5
- 7d6:	60 e0       	ldi	r22, 0x00	; 0
- 7d8:	8e e1       	ldi	r24, 0x1E	; 30
- 7da:	93 e0       	ldi	r25, 0x03	; 3
- 7dc:	5c dd       	rcall	.-1352   	; 0x296 <_ZN3LCD14PrintString_xyEccPc>
- 7de:	4a e0       	ldi	r20, 0x0A	; 10
- 7e0:	be 01       	movw	r22, r28
- 7e2:	6f 5f       	subi	r22, 0xFF	; 255
- 7e4:	7f 4f       	sbci	r23, 0xFF	; 255
- 7e6:	80 91 1b 02 	lds	r24, 0x021B	; 0x80021b <Volume>
- 7ea:	90 91 1c 02 	lds	r25, 0x021C	; 0x80021c <Volume+0x1>
+ 872:	34 dd       	rcall	.-1432   	; 0x2dc <_ZN3LCD5ClearEv>
+ 874:	2e eb       	ldi	r18, 0xBE	; 190
+ 876:	32 e0       	ldi	r19, 0x02	; 2
+ 878:	45 e0       	ldi	r20, 0x05	; 5
+ 87a:	60 e0       	ldi	r22, 0x00	; 0
+ 87c:	8e e1       	ldi	r24, 0x1E	; 30
+ 87e:	93 e0       	ldi	r25, 0x03	; 3
+ 880:	0d dd       	rcall	.-1510   	; 0x29c <_ZN3LCD14PrintString_xyEccPc>
+ 882:	4a e0       	ldi	r20, 0x0A	; 10
+ 884:	be 01       	movw	r22, r28
+ 886:	6f 5f       	subi	r22, 0xFF	; 255
+ 888:	7f 4f       	sbci	r23, 0xFF	; 255
+ 88a:	80 91 1b 02 	lds	r24, 0x021B	; 0x80021b <Volume>
+ 88e:	90 91 1c 02 	lds	r25, 0x021C	; 0x80021c <Volume+0x1>
 		char List[4];
 		itoa(Volume,List,10);
 		MyLCD.PrintString_xy(1, 7, List);
- 7ee:	ed d1       	rcall	.+986    	; 0xbca <__itoa_ncheck>
- 7f0:	9e 01       	movw	r18, r28
- 7f2:	2f 5f       	subi	r18, 0xFF	; 255
- 7f4:	3f 4f       	sbci	r19, 0xFF	; 255
- 7f6:	47 e0       	ldi	r20, 0x07	; 7
- 7f8:	61 e0       	ldi	r22, 0x01	; 1
- 7fa:	8e e1       	ldi	r24, 0x1E	; 30
- 7fc:	93 e0       	ldi	r25, 0x03	; 3
- 7fe:	4b dd       	rcall	.-1386   	; 0x296 <_ZN3LCD14PrintString_xyEccPc>
+ 892:	d3 d1       	rcall	.+934    	; 0xc3a <__itoa_ncheck>
+ 894:	9e 01       	movw	r18, r28
+ 896:	2f 5f       	subi	r18, 0xFF	; 255
+ 898:	3f 4f       	sbci	r19, 0xFF	; 255
+ 89a:	47 e0       	ldi	r20, 0x07	; 7
+ 89c:	61 e0       	ldi	r22, 0x01	; 1
+ 89e:	8e e1       	ldi	r24, 0x1E	; 30
+ 8a0:	93 e0       	ldi	r25, 0x03	; 3
+ 8a2:	fc dc       	rcall	.-1544   	; 0x29c <_ZN3LCD14PrintString_xyEccPc>
 		Position = 15;
- 800:	8f e0       	ldi	r24, 0x0F	; 15
- 802:	90 e0       	ldi	r25, 0x00	; 0
- 804:	90 93 22 03 	sts	0x0322, r25	; 0x800322 <Position+0x1>
- 808:	80 93 21 03 	sts	0x0321, r24	; 0x800321 <Position>
- 80c:	2f ef       	ldi	r18, 0xFF	; 255
- 80e:	84 e3       	ldi	r24, 0x34	; 52
- 810:	9c e0       	ldi	r25, 0x0C	; 12
- 812:	21 50       	subi	r18, 0x01	; 1
- 814:	80 40       	sbci	r24, 0x00	; 0
- 816:	90 40       	sbci	r25, 0x00	; 0
- 818:	e1 f7       	brne	.-8      	; 0x812 <_Z6LCD_Upv+0x156>
- 81a:	00 c0       	rjmp	.+0      	; 0x81c <_Z6LCD_Upv+0x160>
- 81c:	00 00       	nop
- 81e:	46 c0       	rjmp	.+140    	; 0x8ac <_Z6LCD_Upv+0x1f0>
+ 8a4:	8f e0       	ldi	r24, 0x0F	; 15
+ 8a6:	90 e0       	ldi	r25, 0x00	; 0
+ 8a8:	90 93 22 03 	sts	0x0322, r25	; 0x800322 <Position+0x1>
+ 8ac:	80 93 21 03 	sts	0x0321, r24	; 0x800321 <Position>
+ 8b0:	2f ef       	ldi	r18, 0xFF	; 255
+ 8b2:	89 e6       	ldi	r24, 0x69	; 105
+ 8b4:	98 e1       	ldi	r25, 0x18	; 24
+ 8b6:	21 50       	subi	r18, 0x01	; 1
+ 8b8:	80 40       	sbci	r24, 0x00	; 0
+ 8ba:	90 40       	sbci	r25, 0x00	; 0
+ 8bc:	e1 f7       	brne	.-8      	; 0x8b6 <_ZN13VoiceRecorder2UpEv+0x156>
+ 8be:	00 c0       	rjmp	.+0      	; 0x8c0 <_ZN13VoiceRecorder2UpEv+0x160>
+ 8c0:	00 00       	nop
+ 8c2:	47 c0       	rjmp	.+142    	; 0x952 <_ZN13VoiceRecorder2UpEv+0x1f2>
 		_delay_ms(500);
 	}
 	else if (Position==17){
- 820:	81 31       	cpi	r24, 0x11	; 17
- 822:	91 05       	cpc	r25, r1
- 824:	e9 f4       	brne	.+58     	; 0x860 <_Z6LCD_Upv+0x1a4>
+ 8c4:	61 31       	cpi	r22, 0x11	; 17
+ 8c6:	71 05       	cpc	r23, r1
+ 8c8:	e9 f4       	brne	.+58     	; 0x904 <_ZN13VoiceRecorder2UpEv+0x1a4>
 		FileIndex = FileIndex;
- 826:	80 91 1f 03 	lds	r24, 0x031F	; 0x80031f <FileIndex>
- 82a:	90 91 20 03 	lds	r25, 0x0320	; 0x800320 <FileIndex+0x1>
+ 8ca:	40 91 1f 03 	lds	r20, 0x031F	; 0x80031f <FileIndex>
+ 8ce:	50 91 20 03 	lds	r21, 0x0320	; 0x800320 <FileIndex+0x1>
 		MenuPosition1(17, FileList[FileIndex], FileList[FileIndex + 1]);
- 82e:	9c 01       	movw	r18, r24
- 830:	2f 5f       	subi	r18, 0xFF	; 255
- 832:	3f 4f       	sbci	r19, 0xFF	; 255
- 834:	a9 01       	movw	r20, r18
- 836:	44 0f       	add	r20, r20
- 838:	55 1f       	adc	r21, r21
- 83a:	44 0f       	add	r20, r20
- 83c:	55 1f       	adc	r21, r21
- 83e:	42 0f       	add	r20, r18
- 840:	53 1f       	adc	r21, r19
- 842:	40 50       	subi	r20, 0x00	; 0
- 844:	5e 4f       	sbci	r21, 0xFE	; 254
- 846:	bc 01       	movw	r22, r24
- 848:	66 0f       	add	r22, r22
- 84a:	77 1f       	adc	r23, r23
- 84c:	66 0f       	add	r22, r22
- 84e:	77 1f       	adc	r23, r23
- 850:	68 0f       	add	r22, r24
- 852:	79 1f       	adc	r23, r25
- 854:	60 50       	subi	r22, 0x00	; 0
- 856:	7e 4f       	sbci	r23, 0xFE	; 254
- 858:	81 e1       	ldi	r24, 0x11	; 17
- 85a:	90 e0       	ldi	r25, 0x00	; 0
- 85c:	58 dd       	rcall	.-1360   	; 0x30e <_Z13MenuPosition1iPcS_>
- 85e:	26 c0       	rjmp	.+76     	; 0x8ac <_Z6LCD_Upv+0x1f0>
+ 8d2:	9a 01       	movw	r18, r20
+ 8d4:	2f 5f       	subi	r18, 0xFF	; 255
+ 8d6:	3f 4f       	sbci	r19, 0xFF	; 255
+ 8d8:	b9 01       	movw	r22, r18
+ 8da:	66 0f       	add	r22, r22
+ 8dc:	77 1f       	adc	r23, r23
+ 8de:	66 0f       	add	r22, r22
+ 8e0:	77 1f       	adc	r23, r23
+ 8e2:	26 0f       	add	r18, r22
+ 8e4:	37 1f       	adc	r19, r23
+ 8e6:	20 50       	subi	r18, 0x00	; 0
+ 8e8:	3e 4f       	sbci	r19, 0xFE	; 254
+ 8ea:	ba 01       	movw	r22, r20
+ 8ec:	66 0f       	add	r22, r22
+ 8ee:	77 1f       	adc	r23, r23
+ 8f0:	66 0f       	add	r22, r22
+ 8f2:	77 1f       	adc	r23, r23
+ 8f4:	46 0f       	add	r20, r22
+ 8f6:	57 1f       	adc	r21, r23
+ 8f8:	40 50       	subi	r20, 0x00	; 0
+ 8fa:	5e 4f       	sbci	r21, 0xFE	; 254
+ 8fc:	61 e1       	ldi	r22, 0x11	; 17
+ 8fe:	70 e0       	ldi	r23, 0x00	; 0
+ 900:	3b dd       	rcall	.-1418   	; 0x378 <_ZN13VoiceRecorder13MenuPosition1EiPcS0_>
+ 902:	27 c0       	rjmp	.+78     	; 0x952 <_ZN13VoiceRecorder2UpEv+0x1f2>
 	}
 	else if (Position>17){
- 860:	82 31       	cpi	r24, 0x12	; 18
- 862:	91 05       	cpc	r25, r1
- 864:	1c f1       	brlt	.+70     	; 0x8ac <_Z6LCD_Upv+0x1f0>
+ 904:	62 31       	cpi	r22, 0x12	; 18
+ 906:	71 05       	cpc	r23, r1
+ 908:	24 f1       	brlt	.+72     	; 0x952 <_ZN13VoiceRecorder2UpEv+0x1f2>
 		FileIndex --;
- 866:	40 91 1f 03 	lds	r20, 0x031F	; 0x80031f <FileIndex>
- 86a:	50 91 20 03 	lds	r21, 0x0320	; 0x800320 <FileIndex+0x1>
- 86e:	9a 01       	movw	r18, r20
- 870:	21 50       	subi	r18, 0x01	; 1
- 872:	31 09       	sbc	r19, r1
- 874:	30 93 20 03 	sts	0x0320, r19	; 0x800320 <FileIndex+0x1>
- 878:	20 93 1f 03 	sts	0x031F, r18	; 0x80031f <FileIndex>
+ 90a:	20 91 1f 03 	lds	r18, 0x031F	; 0x80031f <FileIndex>
+ 90e:	30 91 20 03 	lds	r19, 0x0320	; 0x800320 <FileIndex+0x1>
+ 912:	a9 01       	movw	r20, r18
+ 914:	41 50       	subi	r20, 0x01	; 1
+ 916:	51 09       	sbc	r21, r1
+ 918:	50 93 20 03 	sts	0x0320, r21	; 0x800320 <FileIndex+0x1>
+ 91c:	40 93 1f 03 	sts	0x031F, r20	; 0x80031f <FileIndex>
 		Position--;
- 87c:	01 97       	sbiw	r24, 0x01	; 1
- 87e:	90 93 22 03 	sts	0x0322, r25	; 0x800322 <Position+0x1>
- 882:	80 93 21 03 	sts	0x0321, r24	; 0x800321 <Position>
+ 920:	61 50       	subi	r22, 0x01	; 1
+ 922:	71 09       	sbc	r23, r1
+ 924:	70 93 22 03 	sts	0x0322, r23	; 0x800322 <Position+0x1>
+ 928:	60 93 21 03 	sts	0x0321, r22	; 0x800321 <Position>
 		MenuPosition1(Position, FileList[FileIndex], FileList[FileIndex + 1]);
- 886:	ba 01       	movw	r22, r20
- 888:	66 0f       	add	r22, r22
- 88a:	77 1f       	adc	r23, r23
- 88c:	66 0f       	add	r22, r22
- 88e:	77 1f       	adc	r23, r23
- 890:	46 0f       	add	r20, r22
- 892:	57 1f       	adc	r21, r23
- 894:	40 50       	subi	r20, 0x00	; 0
- 896:	5e 4f       	sbci	r21, 0xFE	; 254
- 898:	b9 01       	movw	r22, r18
- 89a:	66 0f       	add	r22, r22
- 89c:	77 1f       	adc	r23, r23
- 89e:	66 0f       	add	r22, r22
- 8a0:	77 1f       	adc	r23, r23
- 8a2:	62 0f       	add	r22, r18
- 8a4:	73 1f       	adc	r23, r19
- 8a6:	60 50       	subi	r22, 0x00	; 0
- 8a8:	7e 4f       	sbci	r23, 0xFE	; 254
- 8aa:	31 dd       	rcall	.-1438   	; 0x30e <_Z13MenuPosition1iPcS_>
+ 92c:	f9 01       	movw	r30, r18
+ 92e:	ee 0f       	add	r30, r30
+ 930:	ff 1f       	adc	r31, r31
+ 932:	ee 0f       	add	r30, r30
+ 934:	ff 1f       	adc	r31, r31
+ 936:	2e 0f       	add	r18, r30
+ 938:	3f 1f       	adc	r19, r31
+ 93a:	20 50       	subi	r18, 0x00	; 0
+ 93c:	3e 4f       	sbci	r19, 0xFE	; 254
+ 93e:	fa 01       	movw	r30, r20
+ 940:	ee 0f       	add	r30, r30
+ 942:	ff 1f       	adc	r31, r31
+ 944:	ee 0f       	add	r30, r30
+ 946:	ff 1f       	adc	r31, r31
+ 948:	4e 0f       	add	r20, r30
+ 94a:	5f 1f       	adc	r21, r31
+ 94c:	40 50       	subi	r20, 0x00	; 0
+ 94e:	5e 4f       	sbci	r21, 0xFE	; 254
+ 950:	13 dd       	rcall	.-1498   	; 0x378 <_ZN13VoiceRecorder13MenuPosition1EiPcS0_>
 	}
 }
- 8ac:	0f 90       	pop	r0
- 8ae:	0f 90       	pop	r0
- 8b0:	0f 90       	pop	r0
- 8b2:	0f 90       	pop	r0
- 8b4:	df 91       	pop	r29
- 8b6:	cf 91       	pop	r28
- 8b8:	08 95       	ret
+ 952:	0f 90       	pop	r0
+ 954:	0f 90       	pop	r0
+ 956:	0f 90       	pop	r0
+ 958:	0f 90       	pop	r0
+ 95a:	df 91       	pop	r29
+ 95c:	cf 91       	pop	r28
+ 95e:	08 95       	ret
 
-000008ba <_Z8LCD_Downv>:
+00000960 <_ZN13VoiceRecorder4DownEv>:
 
-void LCD_Down(void)
+void VoiceRecorder::Down(void)
 {
- 8ba:	cf 93       	push	r28
- 8bc:	df 93       	push	r29
- 8be:	00 d0       	rcall	.+0      	; 0x8c0 <_Z8LCD_Downv+0x6>
- 8c0:	1f 92       	push	r1
- 8c2:	cd b7       	in	r28, 0x3d	; 61
- 8c4:	de b7       	in	r29, 0x3e	; 62
+ 960:	cf 93       	push	r28
+ 962:	df 93       	push	r29
+ 964:	00 d0       	rcall	.+0      	; 0x966 <_ZN13VoiceRecorder4DownEv+0x6>
+ 966:	1f 92       	push	r1
+ 968:	cd b7       	in	r28, 0x3d	; 61
+ 96a:	de b7       	in	r29, 0x3e	; 62
 	if (Position == 1)
- 8c6:	80 91 21 03 	lds	r24, 0x0321	; 0x800321 <Position>
- 8ca:	90 91 22 03 	lds	r25, 0x0322	; 0x800322 <Position+0x1>
- 8ce:	81 30       	cpi	r24, 0x01	; 1
- 8d0:	91 05       	cpc	r25, r1
- 8d2:	41 f4       	brne	.+16     	; 0x8e4 <_Z8LCD_Downv+0x2a>
+ 96c:	60 91 21 03 	lds	r22, 0x0321	; 0x800321 <Position>
+ 970:	70 91 22 03 	lds	r23, 0x0322	; 0x800322 <Position+0x1>
+ 974:	61 30       	cpi	r22, 0x01	; 1
+ 976:	71 05       	cpc	r23, r1
+ 978:	41 f4       	brne	.+16     	; 0x98a <_ZN13VoiceRecorder4DownEv+0x2a>
 	{
 		MenuPosition1(2, "Recordings", "Factory Reset");
- 8d4:	45 ee       	ldi	r20, 0xE5	; 229
- 8d6:	52 e0       	ldi	r21, 0x02	; 2
- 8d8:	68 e2       	ldi	r22, 0x28	; 40
- 8da:	72 e0       	ldi	r23, 0x02	; 2
- 8dc:	82 e0       	ldi	r24, 0x02	; 2
- 8de:	90 e0       	ldi	r25, 0x00	; 0
- 8e0:	16 dd       	rcall	.-1492   	; 0x30e <_Z13MenuPosition1iPcS_>
- 8e2:	d0 c0       	rjmp	.+416    	; 0xa84 <_Z8LCD_Downv+0x1ca>
+ 97a:	25 ee       	ldi	r18, 0xE5	; 229
+ 97c:	32 e0       	ldi	r19, 0x02	; 2
+ 97e:	48 e2       	ldi	r20, 0x28	; 40
+ 980:	52 e0       	ldi	r21, 0x02	; 2
+ 982:	62 e0       	ldi	r22, 0x02	; 2
+ 984:	70 e0       	ldi	r23, 0x00	; 0
+ 986:	f8 dc       	rcall	.-1552   	; 0x378 <_ZN13VoiceRecorder13MenuPosition1EiPcS0_>
+ 988:	d1 c0       	rjmp	.+418    	; 0xb2c <_ZN13VoiceRecorder4DownEv+0x1cc>
 	}
 	else if (Position == 2)
- 8e4:	82 30       	cpi	r24, 0x02	; 2
- 8e6:	91 05       	cpc	r25, r1
- 8e8:	41 f4       	brne	.+16     	; 0x8fa <_Z8LCD_Downv+0x40>
+ 98a:	62 30       	cpi	r22, 0x02	; 2
+ 98c:	71 05       	cpc	r23, r1
+ 98e:	41 f4       	brne	.+16     	; 0x9a0 <_ZN13VoiceRecorder4DownEv+0x40>
 	{
 		MenuPosition1(3, "Factory Reset", "Record Voice");
- 8ea:	43 e3       	ldi	r20, 0x33	; 51
- 8ec:	52 e0       	ldi	r21, 0x02	; 2
- 8ee:	65 ee       	ldi	r22, 0xE5	; 229
- 8f0:	72 e0       	ldi	r23, 0x02	; 2
- 8f2:	83 e0       	ldi	r24, 0x03	; 3
- 8f4:	90 e0       	ldi	r25, 0x00	; 0
- 8f6:	0b dd       	rcall	.-1514   	; 0x30e <_Z13MenuPosition1iPcS_>
- 8f8:	c5 c0       	rjmp	.+394    	; 0xa84 <_Z8LCD_Downv+0x1ca>
+ 990:	23 e3       	ldi	r18, 0x33	; 51
+ 992:	32 e0       	ldi	r19, 0x02	; 2
+ 994:	45 ee       	ldi	r20, 0xE5	; 229
+ 996:	52 e0       	ldi	r21, 0x02	; 2
+ 998:	63 e0       	ldi	r22, 0x03	; 3
+ 99a:	70 e0       	ldi	r23, 0x00	; 0
+ 99c:	ed dc       	rcall	.-1574   	; 0x378 <_ZN13VoiceRecorder13MenuPosition1EiPcS0_>
+ 99e:	c6 c0       	rjmp	.+396    	; 0xb2c <_ZN13VoiceRecorder4DownEv+0x1cc>
 	}
 	else if (Position == 3)
- 8fa:	83 30       	cpi	r24, 0x03	; 3
- 8fc:	91 05       	cpc	r25, r1
- 8fe:	41 f4       	brne	.+16     	; 0x910 <_Z8LCD_Downv+0x56>
+ 9a0:	63 30       	cpi	r22, 0x03	; 3
+ 9a2:	71 05       	cpc	r23, r1
+ 9a4:	41 f4       	brne	.+16     	; 0x9b6 <_ZN13VoiceRecorder4DownEv+0x56>
 	{
 		MenuPosition1(1, "Record Voice", "Recordings");
- 900:	48 e2       	ldi	r20, 0x28	; 40
- 902:	52 e0       	ldi	r21, 0x02	; 2
- 904:	63 e3       	ldi	r22, 0x33	; 51
- 906:	72 e0       	ldi	r23, 0x02	; 2
- 908:	81 e0       	ldi	r24, 0x01	; 1
- 90a:	90 e0       	ldi	r25, 0x00	; 0
- 90c:	00 dd       	rcall	.-1536   	; 0x30e <_Z13MenuPosition1iPcS_>
- 90e:	ba c0       	rjmp	.+372    	; 0xa84 <_Z8LCD_Downv+0x1ca>
+ 9a6:	28 e2       	ldi	r18, 0x28	; 40
+ 9a8:	32 e0       	ldi	r19, 0x02	; 2
+ 9aa:	43 e3       	ldi	r20, 0x33	; 51
+ 9ac:	52 e0       	ldi	r21, 0x02	; 2
+ 9ae:	61 e0       	ldi	r22, 0x01	; 1
+ 9b0:	70 e0       	ldi	r23, 0x00	; 0
+ 9b2:	e2 dc       	rcall	.-1596   	; 0x378 <_ZN13VoiceRecorder13MenuPosition1EiPcS0_>
+ 9b4:	bb c0       	rjmp	.+374    	; 0xb2c <_ZN13VoiceRecorder4DownEv+0x1cc>
 	}
 	else if (Position == 6)
- 910:	86 30       	cpi	r24, 0x06	; 6
- 912:	91 05       	cpc	r25, r1
- 914:	41 f4       	brne	.+16     	; 0x926 <_Z8LCD_Downv+0x6c>
+ 9b6:	66 30       	cpi	r22, 0x06	; 6
+ 9b8:	71 05       	cpc	r23, r1
+ 9ba:	41 f4       	brne	.+16     	; 0x9cc <_ZN13VoiceRecorder4DownEv+0x6c>
 	{
 		MenuPosition1(7, "Change Volume", "Change Pitch");
- 916:	4a ea       	ldi	r20, 0xAA	; 170
- 918:	52 e0       	ldi	r21, 0x02	; 2
- 91a:	67 eb       	ldi	r22, 0xB7	; 183
- 91c:	72 e0       	ldi	r23, 0x02	; 2
- 91e:	87 e0       	ldi	r24, 0x07	; 7
- 920:	90 e0       	ldi	r25, 0x00	; 0
- 922:	f5 dc       	rcall	.-1558   	; 0x30e <_Z13MenuPosition1iPcS_>
- 924:	af c0       	rjmp	.+350    	; 0xa84 <_Z8LCD_Downv+0x1ca>
+ 9bc:	2a ea       	ldi	r18, 0xAA	; 170
+ 9be:	32 e0       	ldi	r19, 0x02	; 2
+ 9c0:	47 eb       	ldi	r20, 0xB7	; 183
+ 9c2:	52 e0       	ldi	r21, 0x02	; 2
+ 9c4:	67 e0       	ldi	r22, 0x07	; 7
+ 9c6:	70 e0       	ldi	r23, 0x00	; 0
+ 9c8:	d7 dc       	rcall	.-1618   	; 0x378 <_ZN13VoiceRecorder13MenuPosition1EiPcS0_>
+ 9ca:	b0 c0       	rjmp	.+352    	; 0xb2c <_ZN13VoiceRecorder4DownEv+0x1cc>
 	}
 	else if (Position == 7)
- 926:	87 30       	cpi	r24, 0x07	; 7
- 928:	91 05       	cpc	r25, r1
- 92a:	41 f4       	brne	.+16     	; 0x93c <_Z8LCD_Downv+0x82>
+ 9cc:	67 30       	cpi	r22, 0x07	; 7
+ 9ce:	71 05       	cpc	r23, r1
+ 9d0:	41 f4       	brne	.+16     	; 0x9e2 <_ZN13VoiceRecorder4DownEv+0x82>
 	{
 		MenuPosition1(8, "Change Pitch", "Include Echo");
- 92c:	43 ef       	ldi	r20, 0xF3	; 243
- 92e:	52 e0       	ldi	r21, 0x02	; 2
- 930:	6a ea       	ldi	r22, 0xAA	; 170
- 932:	72 e0       	ldi	r23, 0x02	; 2
- 934:	88 e0       	ldi	r24, 0x08	; 8
- 936:	90 e0       	ldi	r25, 0x00	; 0
- 938:	ea dc       	rcall	.-1580   	; 0x30e <_Z13MenuPosition1iPcS_>
- 93a:	a4 c0       	rjmp	.+328    	; 0xa84 <_Z8LCD_Downv+0x1ca>
+ 9d2:	23 ef       	ldi	r18, 0xF3	; 243
+ 9d4:	32 e0       	ldi	r19, 0x02	; 2
+ 9d6:	4a ea       	ldi	r20, 0xAA	; 170
+ 9d8:	52 e0       	ldi	r21, 0x02	; 2
+ 9da:	68 e0       	ldi	r22, 0x08	; 8
+ 9dc:	70 e0       	ldi	r23, 0x00	; 0
+ 9de:	cc dc       	rcall	.-1640   	; 0x378 <_ZN13VoiceRecorder13MenuPosition1EiPcS0_>
+ 9e0:	a5 c0       	rjmp	.+330    	; 0xb2c <_ZN13VoiceRecorder4DownEv+0x1cc>
 	}
 	else if (Position == 8)
- 93c:	88 30       	cpi	r24, 0x08	; 8
- 93e:	91 05       	cpc	r25, r1
- 940:	41 f4       	brne	.+16     	; 0x952 <_Z8LCD_Downv+0x98>
+ 9e2:	68 30       	cpi	r22, 0x08	; 8
+ 9e4:	71 05       	cpc	r23, r1
+ 9e6:	41 f4       	brne	.+16     	; 0x9f8 <_ZN13VoiceRecorder4DownEv+0x98>
 	{
 		MenuPosition1(9, "Include Echo", "Fast Forward");
- 942:	40 e0       	ldi	r20, 0x00	; 0
- 944:	53 e0       	ldi	r21, 0x03	; 3
- 946:	63 ef       	ldi	r22, 0xF3	; 243
- 948:	72 e0       	ldi	r23, 0x02	; 2
- 94a:	89 e0       	ldi	r24, 0x09	; 9
- 94c:	90 e0       	ldi	r25, 0x00	; 0
- 94e:	df dc       	rcall	.-1602   	; 0x30e <_Z13MenuPosition1iPcS_>
- 950:	99 c0       	rjmp	.+306    	; 0xa84 <_Z8LCD_Downv+0x1ca>
+ 9e8:	20 e0       	ldi	r18, 0x00	; 0
+ 9ea:	33 e0       	ldi	r19, 0x03	; 3
+ 9ec:	43 ef       	ldi	r20, 0xF3	; 243
+ 9ee:	52 e0       	ldi	r21, 0x02	; 2
+ 9f0:	69 e0       	ldi	r22, 0x09	; 9
+ 9f2:	70 e0       	ldi	r23, 0x00	; 0
+ 9f4:	c1 dc       	rcall	.-1662   	; 0x378 <_ZN13VoiceRecorder13MenuPosition1EiPcS0_>
+ 9f6:	9a c0       	rjmp	.+308    	; 0xb2c <_ZN13VoiceRecorder4DownEv+0x1cc>
 	}
 	else if (Position == 9)
- 952:	89 30       	cpi	r24, 0x09	; 9
- 954:	91 05       	cpc	r25, r1
- 956:	41 f4       	brne	.+16     	; 0x968 <_Z8LCD_Downv+0xae>
+ 9f8:	69 30       	cpi	r22, 0x09	; 9
+ 9fa:	71 05       	cpc	r23, r1
+ 9fc:	41 f4       	brne	.+16     	; 0xa0e <_ZN13VoiceRecorder4DownEv+0xae>
 	{
 		MenuPosition1(10, "Fast Forward", "DeleteRecording");
- 958:	4d e0       	ldi	r20, 0x0D	; 13
- 95a:	53 e0       	ldi	r21, 0x03	; 3
- 95c:	60 e0       	ldi	r22, 0x00	; 0
- 95e:	73 e0       	ldi	r23, 0x03	; 3
- 960:	8a e0       	ldi	r24, 0x0A	; 10
- 962:	90 e0       	ldi	r25, 0x00	; 0
- 964:	d4 dc       	rcall	.-1624   	; 0x30e <_Z13MenuPosition1iPcS_>
- 966:	8e c0       	rjmp	.+284    	; 0xa84 <_Z8LCD_Downv+0x1ca>
+ 9fe:	2d e0       	ldi	r18, 0x0D	; 13
+ a00:	33 e0       	ldi	r19, 0x03	; 3
+ a02:	40 e0       	ldi	r20, 0x00	; 0
+ a04:	53 e0       	ldi	r21, 0x03	; 3
+ a06:	6a e0       	ldi	r22, 0x0A	; 10
+ a08:	70 e0       	ldi	r23, 0x00	; 0
+ a0a:	b6 dc       	rcall	.-1684   	; 0x378 <_ZN13VoiceRecorder13MenuPosition1EiPcS0_>
+ a0c:	8f c0       	rjmp	.+286    	; 0xb2c <_ZN13VoiceRecorder4DownEv+0x1cc>
 	}
 	else if (Position == 10)
- 968:	8a 30       	cpi	r24, 0x0A	; 10
- 96a:	91 05       	cpc	r25, r1
+ a0e:	6a 30       	cpi	r22, 0x0A	; 10
+ a10:	71 05       	cpc	r23, r1
 	{
 		MenuPosition1(11, "DeleteRecording", "");
- 96c:	41 f4       	brne	.+16     	; 0x97e <_Z8LCD_Downv+0xc4>
- 96e:	40 e6       	ldi	r20, 0x60	; 96
- 970:	52 e0       	ldi	r21, 0x02	; 2
- 972:	6d e0       	ldi	r22, 0x0D	; 13
- 974:	73 e0       	ldi	r23, 0x03	; 3
- 976:	8b e0       	ldi	r24, 0x0B	; 11
- 978:	90 e0       	ldi	r25, 0x00	; 0
- 97a:	c9 dc       	rcall	.-1646   	; 0x30e <_Z13MenuPosition1iPcS_>
- 97c:	83 c0       	rjmp	.+262    	; 0xa84 <_Z8LCD_Downv+0x1ca>
+ a12:	41 f4       	brne	.+16     	; 0xa24 <_ZN13VoiceRecorder4DownEv+0xc4>
+ a14:	20 e6       	ldi	r18, 0x60	; 96
+ a16:	32 e0       	ldi	r19, 0x02	; 2
+ a18:	4d e0       	ldi	r20, 0x0D	; 13
+ a1a:	53 e0       	ldi	r21, 0x03	; 3
+ a1c:	6b e0       	ldi	r22, 0x0B	; 11
+ a1e:	70 e0       	ldi	r23, 0x00	; 0
+ a20:	ab dc       	rcall	.-1706   	; 0x378 <_ZN13VoiceRecorder13MenuPosition1EiPcS0_>
+ a22:	84 c0       	rjmp	.+264    	; 0xb2c <_ZN13VoiceRecorder4DownEv+0x1cc>
 	}
 	else if (Position == 12)
- 97e:	8c 30       	cpi	r24, 0x0C	; 12
- 980:	91 05       	cpc	r25, r1
+ a24:	6c 30       	cpi	r22, 0x0C	; 12
+ a26:	71 05       	cpc	r23, r1
 	{
 		MenuPosition1(13, "Low Pitch", "");
- 982:	41 f4       	brne	.+16     	; 0x994 <_Z8LCD_Downv+0xda>
- 984:	40 e6       	ldi	r20, 0x60	; 96
- 986:	52 e0       	ldi	r21, 0x02	; 2
- 988:	65 e9       	ldi	r22, 0x95	; 149
- 98a:	72 e0       	ldi	r23, 0x02	; 2
- 98c:	8d e0       	ldi	r24, 0x0D	; 13
- 98e:	90 e0       	ldi	r25, 0x00	; 0
- 990:	be dc       	rcall	.-1668   	; 0x30e <_Z13MenuPosition1iPcS_>
- 992:	78 c0       	rjmp	.+240    	; 0xa84 <_Z8LCD_Downv+0x1ca>
+ a28:	41 f4       	brne	.+16     	; 0xa3a <_ZN13VoiceRecorder4DownEv+0xda>
+ a2a:	20 e6       	ldi	r18, 0x60	; 96
+ a2c:	32 e0       	ldi	r19, 0x02	; 2
+ a2e:	45 e9       	ldi	r20, 0x95	; 149
+ a30:	52 e0       	ldi	r21, 0x02	; 2
+ a32:	6d e0       	ldi	r22, 0x0D	; 13
+ a34:	70 e0       	ldi	r23, 0x00	; 0
+ a36:	a0 dc       	rcall	.-1728   	; 0x378 <_ZN13VoiceRecorder13MenuPosition1EiPcS0_>
+ a38:	79 c0       	rjmp	.+242    	; 0xb2c <_ZN13VoiceRecorder4DownEv+0x1cc>
 	}
 	else if (Position == 15)
- 994:	8f 30       	cpi	r24, 0x0F	; 15
- 996:	91 05       	cpc	r25, r1
- 998:	b9 f5       	brne	.+110    	; 0xa08 <_Z8LCD_Downv+0x14e>
+ a3a:	6f 30       	cpi	r22, 0x0F	; 15
+ a3c:	71 05       	cpc	r23, r1
+ a3e:	b9 f5       	brne	.+110    	; 0xaae <_ZN13VoiceRecorder4DownEv+0x14e>
 	{
 		if (Volume != 7){
- 99a:	80 91 1b 02 	lds	r24, 0x021B	; 0x80021b <Volume>
- 99e:	90 91 1c 02 	lds	r25, 0x021C	; 0x80021c <Volume+0x1>
- 9a2:	87 30       	cpi	r24, 0x07	; 7
- 9a4:	91 05       	cpc	r25, r1
+ a40:	80 91 1b 02 	lds	r24, 0x021B	; 0x80021b <Volume>
+ a44:	90 91 1c 02 	lds	r25, 0x021C	; 0x80021c <Volume+0x1>
+ a48:	87 30       	cpi	r24, 0x07	; 7
+ a4a:	91 05       	cpc	r25, r1
 			Volume++;
- 9a6:	29 f0       	breq	.+10     	; 0x9b2 <_Z8LCD_Downv+0xf8>
- 9a8:	01 96       	adiw	r24, 0x01	; 1
- 9aa:	90 93 1c 02 	sts	0x021C, r25	; 0x80021c <Volume+0x1>
- 9ae:	80 93 1b 02 	sts	0x021B, r24	; 0x80021b <Volume>
+ a4c:	29 f0       	breq	.+10     	; 0xa58 <_ZN13VoiceRecorder4DownEv+0xf8>
+ a4e:	01 96       	adiw	r24, 0x01	; 1
+ a50:	90 93 1c 02 	sts	0x021C, r25	; 0x80021c <Volume+0x1>
+ a54:	80 93 1b 02 	sts	0x021B, r24	; 0x80021b <Volume>
 		}
 		MyLCD.Clear();
- 9b2:	8e e1       	ldi	r24, 0x1E	; 30
- 9b4:	93 e0       	ldi	r25, 0x03	; 3
+ a58:	8e e1       	ldi	r24, 0x1E	; 30
+ a5a:	93 e0       	ldi	r25, 0x03	; 3
 		MyLCD.PrintString_xy(0, 5, "Volume");
- 9b6:	8f dc       	rcall	.-1762   	; 0x2d6 <_ZN3LCD5ClearEv>
- 9b8:	2e eb       	ldi	r18, 0xBE	; 190
- 9ba:	32 e0       	ldi	r19, 0x02	; 2
- 9bc:	45 e0       	ldi	r20, 0x05	; 5
- 9be:	60 e0       	ldi	r22, 0x00	; 0
- 9c0:	8e e1       	ldi	r24, 0x1E	; 30
- 9c2:	93 e0       	ldi	r25, 0x03	; 3
- 9c4:	68 dc       	rcall	.-1840   	; 0x296 <_ZN3LCD14PrintString_xyEccPc>
- 9c6:	4a e0       	ldi	r20, 0x0A	; 10
- 9c8:	be 01       	movw	r22, r28
- 9ca:	6f 5f       	subi	r22, 0xFF	; 255
- 9cc:	7f 4f       	sbci	r23, 0xFF	; 255
- 9ce:	80 91 1b 02 	lds	r24, 0x021B	; 0x80021b <Volume>
- 9d2:	90 91 1c 02 	lds	r25, 0x021C	; 0x80021c <Volume+0x1>
+ a5c:	3f dc       	rcall	.-1922   	; 0x2dc <_ZN3LCD5ClearEv>
+ a5e:	2e eb       	ldi	r18, 0xBE	; 190
+ a60:	32 e0       	ldi	r19, 0x02	; 2
+ a62:	45 e0       	ldi	r20, 0x05	; 5
+ a64:	60 e0       	ldi	r22, 0x00	; 0
+ a66:	8e e1       	ldi	r24, 0x1E	; 30
+ a68:	93 e0       	ldi	r25, 0x03	; 3
+ a6a:	18 dc       	rcall	.-2000   	; 0x29c <_ZN3LCD14PrintString_xyEccPc>
+ a6c:	4a e0       	ldi	r20, 0x0A	; 10
+ a6e:	be 01       	movw	r22, r28
+ a70:	6f 5f       	subi	r22, 0xFF	; 255
+ a72:	7f 4f       	sbci	r23, 0xFF	; 255
+ a74:	80 91 1b 02 	lds	r24, 0x021B	; 0x80021b <Volume>
+ a78:	90 91 1c 02 	lds	r25, 0x021C	; 0x80021c <Volume+0x1>
 		char List[4];
 		itoa(Volume,List,10);
 		MyLCD.PrintString_xy(1, 7, List);
- 9d6:	f9 d0       	rcall	.+498    	; 0xbca <__itoa_ncheck>
- 9d8:	9e 01       	movw	r18, r28
- 9da:	2f 5f       	subi	r18, 0xFF	; 255
- 9dc:	3f 4f       	sbci	r19, 0xFF	; 255
- 9de:	47 e0       	ldi	r20, 0x07	; 7
- 9e0:	61 e0       	ldi	r22, 0x01	; 1
- 9e2:	8e e1       	ldi	r24, 0x1E	; 30
- 9e4:	93 e0       	ldi	r25, 0x03	; 3
- 9e6:	57 dc       	rcall	.-1874   	; 0x296 <_ZN3LCD14PrintString_xyEccPc>
+ a7c:	de d0       	rcall	.+444    	; 0xc3a <__itoa_ncheck>
+ a7e:	9e 01       	movw	r18, r28
+ a80:	2f 5f       	subi	r18, 0xFF	; 255
+ a82:	3f 4f       	sbci	r19, 0xFF	; 255
+ a84:	47 e0       	ldi	r20, 0x07	; 7
+ a86:	61 e0       	ldi	r22, 0x01	; 1
+ a88:	8e e1       	ldi	r24, 0x1E	; 30
+ a8a:	93 e0       	ldi	r25, 0x03	; 3
+ a8c:	07 dc       	rcall	.-2034   	; 0x29c <_ZN3LCD14PrintString_xyEccPc>
 		Position = 15;
- 9e8:	8f e0       	ldi	r24, 0x0F	; 15
- 9ea:	90 e0       	ldi	r25, 0x00	; 0
- 9ec:	90 93 22 03 	sts	0x0322, r25	; 0x800322 <Position+0x1>
- 9f0:	80 93 21 03 	sts	0x0321, r24	; 0x800321 <Position>
- 9f4:	2f ef       	ldi	r18, 0xFF	; 255
- 9f6:	84 e3       	ldi	r24, 0x34	; 52
- 9f8:	9c e0       	ldi	r25, 0x0C	; 12
- 9fa:	21 50       	subi	r18, 0x01	; 1
- 9fc:	80 40       	sbci	r24, 0x00	; 0
- 9fe:	90 40       	sbci	r25, 0x00	; 0
- a00:	e1 f7       	brne	.-8      	; 0x9fa <_Z8LCD_Downv+0x140>
- a02:	00 c0       	rjmp	.+0      	; 0xa04 <_Z8LCD_Downv+0x14a>
- a04:	00 00       	nop
- a06:	3e c0       	rjmp	.+124    	; 0xa84 <_Z8LCD_Downv+0x1ca>
+ a8e:	8f e0       	ldi	r24, 0x0F	; 15
+ a90:	90 e0       	ldi	r25, 0x00	; 0
+ a92:	90 93 22 03 	sts	0x0322, r25	; 0x800322 <Position+0x1>
+ a96:	80 93 21 03 	sts	0x0321, r24	; 0x800321 <Position>
+ a9a:	2f ef       	ldi	r18, 0xFF	; 255
+ a9c:	89 e6       	ldi	r24, 0x69	; 105
+ a9e:	98 e1       	ldi	r25, 0x18	; 24
+ aa0:	21 50       	subi	r18, 0x01	; 1
+ aa2:	80 40       	sbci	r24, 0x00	; 0
+ aa4:	90 40       	sbci	r25, 0x00	; 0
+ aa6:	e1 f7       	brne	.-8      	; 0xaa0 <_ZN13VoiceRecorder4DownEv+0x140>
+ aa8:	00 c0       	rjmp	.+0      	; 0xaaa <_ZN13VoiceRecorder4DownEv+0x14a>
+ aaa:	00 00       	nop
+ aac:	3f c0       	rjmp	.+126    	; 0xb2c <_ZN13VoiceRecorder4DownEv+0x1cc>
 		_delay_ms(500);
 	}
 	else if (Position>=17){
- a08:	81 31       	cpi	r24, 0x11	; 17
- a0a:	91 05       	cpc	r25, r1
- a0c:	dc f1       	brlt	.+118    	; 0xa84 <_Z8LCD_Downv+0x1ca>
+ aae:	61 31       	cpi	r22, 0x11	; 17
+ ab0:	71 05       	cpc	r23, r1
+ ab2:	e4 f1       	brlt	.+120    	; 0xb2c <_ZN13VoiceRecorder4DownEv+0x1cc>
 		if (FileIndex >= N - 1){
- a0e:	20 91 19 02 	lds	r18, 0x0219	; 0x800219 <N>
- a12:	30 91 1a 02 	lds	r19, 0x021A	; 0x80021a <N+0x1>
- a16:	21 50       	subi	r18, 0x01	; 1
- a18:	31 09       	sbc	r19, r1
- a1a:	60 91 1f 03 	lds	r22, 0x031F	; 0x80031f <FileIndex>
- a1e:	70 91 20 03 	lds	r23, 0x0320	; 0x800320 <FileIndex+0x1>
- a22:	62 17       	cp	r22, r18
- a24:	73 07       	cpc	r23, r19
+ ab4:	20 91 19 02 	lds	r18, 0x0219	; 0x800219 <N>
+ ab8:	30 91 1a 02 	lds	r19, 0x021A	; 0x80021a <N+0x1>
+ abc:	21 50       	subi	r18, 0x01	; 1
+ abe:	31 09       	sbc	r19, r1
+ ac0:	40 91 1f 03 	lds	r20, 0x031F	; 0x80031f <FileIndex>
+ ac4:	50 91 20 03 	lds	r21, 0x0320	; 0x800320 <FileIndex+0x1>
+ ac8:	42 17       	cp	r20, r18
+ aca:	53 07       	cpc	r21, r19
 			MenuPosition1(Position, FileList[FileIndex], "");
- a26:	6c f0       	brlt	.+26     	; 0xa42 <_Z8LCD_Downv+0x188>
- a28:	9b 01       	movw	r18, r22
- a2a:	22 0f       	add	r18, r18
- a2c:	33 1f       	adc	r19, r19
- a2e:	22 0f       	add	r18, r18
- a30:	33 1f       	adc	r19, r19
- a32:	62 0f       	add	r22, r18
- a34:	73 1f       	adc	r23, r19
- a36:	60 50       	subi	r22, 0x00	; 0
- a38:	7e 4f       	sbci	r23, 0xFE	; 254
- a3a:	40 e6       	ldi	r20, 0x60	; 96
- a3c:	52 e0       	ldi	r21, 0x02	; 2
- a3e:	67 dc       	rcall	.-1842   	; 0x30e <_Z13MenuPosition1iPcS_>
- a40:	21 c0       	rjmp	.+66     	; 0xa84 <_Z8LCD_Downv+0x1ca>
+ acc:	6c f0       	brlt	.+26     	; 0xae8 <_ZN13VoiceRecorder4DownEv+0x188>
+ ace:	9a 01       	movw	r18, r20
+ ad0:	22 0f       	add	r18, r18
+ ad2:	33 1f       	adc	r19, r19
+ ad4:	22 0f       	add	r18, r18
+ ad6:	33 1f       	adc	r19, r19
+ ad8:	42 0f       	add	r20, r18
+ ada:	53 1f       	adc	r21, r19
+ adc:	40 50       	subi	r20, 0x00	; 0
+ ade:	5e 4f       	sbci	r21, 0xFE	; 254
+ ae0:	20 e6       	ldi	r18, 0x60	; 96
+ ae2:	32 e0       	ldi	r19, 0x02	; 2
+ ae4:	49 dc       	rcall	.-1902   	; 0x378 <_ZN13VoiceRecorder13MenuPosition1EiPcS0_>
+ ae6:	22 c0       	rjmp	.+68     	; 0xb2c <_ZN13VoiceRecorder4DownEv+0x1cc>
 		}
 		else{
 			FileIndex++;
- a42:	6f 5f       	subi	r22, 0xFF	; 255
- a44:	7f 4f       	sbci	r23, 0xFF	; 255
- a46:	70 93 20 03 	sts	0x0320, r23	; 0x800320 <FileIndex+0x1>
- a4a:	60 93 1f 03 	sts	0x031F, r22	; 0x80031f <FileIndex>
+ ae8:	4f 5f       	subi	r20, 0xFF	; 255
+ aea:	5f 4f       	sbci	r21, 0xFF	; 255
+ aec:	50 93 20 03 	sts	0x0320, r21	; 0x800320 <FileIndex+0x1>
+ af0:	40 93 1f 03 	sts	0x031F, r20	; 0x80031f <FileIndex>
 			Position++;
- a4e:	01 96       	adiw	r24, 0x01	; 1
- a50:	90 93 22 03 	sts	0x0322, r25	; 0x800322 <Position+0x1>
- a54:	80 93 21 03 	sts	0x0321, r24	; 0x800321 <Position>
+ af4:	6f 5f       	subi	r22, 0xFF	; 255
+ af6:	7f 4f       	sbci	r23, 0xFF	; 255
+ af8:	70 93 22 03 	sts	0x0322, r23	; 0x800322 <Position+0x1>
+ afc:	60 93 21 03 	sts	0x0321, r22	; 0x800321 <Position>
 			MenuPosition1(Position, FileList[FileIndex], FileList[FileIndex + 1]);
- a58:	9b 01       	movw	r18, r22
- a5a:	2f 5f       	subi	r18, 0xFF	; 255
- a5c:	3f 4f       	sbci	r19, 0xFF	; 255
- a5e:	a9 01       	movw	r20, r18
- a60:	44 0f       	add	r20, r20
- a62:	55 1f       	adc	r21, r21
- a64:	44 0f       	add	r20, r20
- a66:	55 1f       	adc	r21, r21
- a68:	42 0f       	add	r20, r18
- a6a:	53 1f       	adc	r21, r19
- a6c:	40 50       	subi	r20, 0x00	; 0
- a6e:	5e 4f       	sbci	r21, 0xFE	; 254
- a70:	9b 01       	movw	r18, r22
- a72:	22 0f       	add	r18, r18
- a74:	33 1f       	adc	r19, r19
- a76:	22 0f       	add	r18, r18
- a78:	33 1f       	adc	r19, r19
- a7a:	62 0f       	add	r22, r18
- a7c:	73 1f       	adc	r23, r19
- a7e:	60 50       	subi	r22, 0x00	; 0
- a80:	7e 4f       	sbci	r23, 0xFE	; 254
- a82:	45 dc       	rcall	.-1910   	; 0x30e <_Z13MenuPosition1iPcS_>
+ b00:	9a 01       	movw	r18, r20
+ b02:	2f 5f       	subi	r18, 0xFF	; 255
+ b04:	3f 4f       	sbci	r19, 0xFF	; 255
+ b06:	f9 01       	movw	r30, r18
+ b08:	ee 0f       	add	r30, r30
+ b0a:	ff 1f       	adc	r31, r31
+ b0c:	ee 0f       	add	r30, r30
+ b0e:	ff 1f       	adc	r31, r31
+ b10:	2e 0f       	add	r18, r30
+ b12:	3f 1f       	adc	r19, r31
+ b14:	20 50       	subi	r18, 0x00	; 0
+ b16:	3e 4f       	sbci	r19, 0xFE	; 254
+ b18:	fa 01       	movw	r30, r20
+ b1a:	ee 0f       	add	r30, r30
+ b1c:	ff 1f       	adc	r31, r31
+ b1e:	ee 0f       	add	r30, r30
+ b20:	ff 1f       	adc	r31, r31
+ b22:	4e 0f       	add	r20, r30
+ b24:	5f 1f       	adc	r21, r31
+ b26:	40 50       	subi	r20, 0x00	; 0
+ b28:	5e 4f       	sbci	r21, 0xFE	; 254
+ b2a:	26 dc       	rcall	.-1972   	; 0x378 <_ZN13VoiceRecorder13MenuPosition1EiPcS0_>
 		}
 	}
 }
- a84:	0f 90       	pop	r0
- a86:	0f 90       	pop	r0
- a88:	0f 90       	pop	r0
- a8a:	0f 90       	pop	r0
- a8c:	df 91       	pop	r29
- a8e:	cf 91       	pop	r28
- a90:	08 95       	ret
+ b2c:	0f 90       	pop	r0
+ b2e:	0f 90       	pop	r0
+ b30:	0f 90       	pop	r0
+ b32:	0f 90       	pop	r0
+ b34:	df 91       	pop	r29
+ b36:	cf 91       	pop	r28
+ b38:	08 95       	ret
 
-00000a92 <_Z8LCD_Backv>:
+00000b3a <_ZN13VoiceRecorder4BackEv>:
 
-void LCD_Back(void)
+void VoiceRecorder::Back(void)
 {
 	if (Position == 1 || Position ==2 || Position == 3) {
- a92:	80 91 21 03 	lds	r24, 0x0321	; 0x800321 <Position>
- a96:	90 91 22 03 	lds	r25, 0x0322	; 0x800322 <Position+0x1>
- a9a:	9c 01       	movw	r18, r24
- a9c:	21 50       	subi	r18, 0x01	; 1
- a9e:	31 09       	sbc	r19, r1
- aa0:	23 30       	cpi	r18, 0x03	; 3
- aa2:	31 05       	cpc	r19, r1
- aa4:	40 f4       	brcc	.+16     	; 0xab6 <_Z8LCD_Backv+0x24>
+ b3a:	20 91 21 03 	lds	r18, 0x0321	; 0x800321 <Position>
+ b3e:	30 91 22 03 	lds	r19, 0x0322	; 0x800322 <Position+0x1>
+ b42:	a9 01       	movw	r20, r18
+ b44:	41 50       	subi	r20, 0x01	; 1
+ b46:	51 09       	sbc	r21, r1
+ b48:	43 30       	cpi	r20, 0x03	; 3
+ b4a:	51 05       	cpc	r21, r1
+ b4c:	40 f4       	brcc	.+16     	; 0xb5e <_ZN13VoiceRecorder4BackEv+0x24>
 		MenuPosition1(1, "Record Voice", "Recordings");
- aa6:	48 e2       	ldi	r20, 0x28	; 40
- aa8:	52 e0       	ldi	r21, 0x02	; 2
- aaa:	63 e3       	ldi	r22, 0x33	; 51
- aac:	72 e0       	ldi	r23, 0x02	; 2
- aae:	81 e0       	ldi	r24, 0x01	; 1
- ab0:	90 e0       	ldi	r25, 0x00	; 0
- ab2:	2d cc       	rjmp	.-1958   	; 0x30e <_Z13MenuPosition1iPcS_>
- ab4:	08 95       	ret
+ b4e:	28 e2       	ldi	r18, 0x28	; 40
+ b50:	32 e0       	ldi	r19, 0x02	; 2
+ b52:	43 e3       	ldi	r20, 0x33	; 51
+ b54:	52 e0       	ldi	r21, 0x02	; 2
+ b56:	61 e0       	ldi	r22, 0x01	; 1
+ b58:	70 e0       	ldi	r23, 0x00	; 0
+ b5a:	0e cc       	rjmp	.-2020   	; 0x378 <_ZN13VoiceRecorder13MenuPosition1EiPcS0_>
+ b5c:	08 95       	ret
 	}
 	else if (Position == 4 || Position == 5){
- ab6:	9c 01       	movw	r18, r24
- ab8:	24 50       	subi	r18, 0x04	; 4
- aba:	31 09       	sbc	r19, r1
- abc:	22 30       	cpi	r18, 0x02	; 2
- abe:	31 05       	cpc	r19, r1
- ac0:	40 f4       	brcc	.+16     	; 0xad2 <_Z8LCD_Backv+0x40>
+ b5e:	a9 01       	movw	r20, r18
+ b60:	44 50       	subi	r20, 0x04	; 4
+ b62:	51 09       	sbc	r21, r1
+ b64:	42 30       	cpi	r20, 0x02	; 2
+ b66:	51 05       	cpc	r21, r1
+ b68:	40 f4       	brcc	.+16     	; 0xb7a <_ZN13VoiceRecorder4BackEv+0x40>
 		MenuPosition1(1, "Record Voice", "Recordings");
- ac2:	48 e2       	ldi	r20, 0x28	; 40
- ac4:	52 e0       	ldi	r21, 0x02	; 2
- ac6:	63 e3       	ldi	r22, 0x33	; 51
- ac8:	72 e0       	ldi	r23, 0x02	; 2
- aca:	81 e0       	ldi	r24, 0x01	; 1
- acc:	90 e0       	ldi	r25, 0x00	; 0
- ace:	1f cc       	rjmp	.-1986   	; 0x30e <_Z13MenuPosition1iPcS_>
- ad0:	08 95       	ret
+ b6a:	28 e2       	ldi	r18, 0x28	; 40
+ b6c:	32 e0       	ldi	r19, 0x02	; 2
+ b6e:	43 e3       	ldi	r20, 0x33	; 51
+ b70:	52 e0       	ldi	r21, 0x02	; 2
+ b72:	61 e0       	ldi	r22, 0x01	; 1
+ b74:	70 e0       	ldi	r23, 0x00	; 0
+ b76:	00 cc       	rjmp	.-2048   	; 0x378 <_ZN13VoiceRecorder13MenuPosition1EiPcS0_>
+ b78:	08 95       	ret
 	}
 	else if (Position==17){
- ad2:	81 31       	cpi	r24, 0x11	; 17
- ad4:	91 05       	cpc	r25, r1
- ad6:	41 f4       	brne	.+16     	; 0xae8 <_Z8LCD_Backv+0x56>
+ b7a:	21 31       	cpi	r18, 0x11	; 17
+ b7c:	31 05       	cpc	r19, r1
+ b7e:	41 f4       	brne	.+16     	; 0xb90 <_ZN13VoiceRecorder4BackEv+0x56>
 		MenuPosition1(2, "Recordings", "Change Volume");
- ad8:	47 eb       	ldi	r20, 0xB7	; 183
- ada:	52 e0       	ldi	r21, 0x02	; 2
- adc:	68 e2       	ldi	r22, 0x28	; 40
- ade:	72 e0       	ldi	r23, 0x02	; 2
- ae0:	82 e0       	ldi	r24, 0x02	; 2
- ae2:	90 e0       	ldi	r25, 0x00	; 0
- ae4:	14 cc       	rjmp	.-2008   	; 0x30e <_Z13MenuPosition1iPcS_>
- ae6:	08 95       	ret
+ b80:	27 eb       	ldi	r18, 0xB7	; 183
+ b82:	32 e0       	ldi	r19, 0x02	; 2
+ b84:	48 e2       	ldi	r20, 0x28	; 40
+ b86:	52 e0       	ldi	r21, 0x02	; 2
+ b88:	62 e0       	ldi	r22, 0x02	; 2
+ b8a:	70 e0       	ldi	r23, 0x00	; 0
+ b8c:	f5 cb       	rjmp	.-2070   	; 0x378 <_ZN13VoiceRecorder13MenuPosition1EiPcS0_>
+ b8e:	08 95       	ret
 	}
 	else if (Position == 6 || Position == 7 || Position == 8 || Position == 9 || Position == 10 || Position == 11){
- ae8:	9c 01       	movw	r18, r24
- aea:	26 50       	subi	r18, 0x06	; 6
- aec:	31 09       	sbc	r19, r1
- aee:	26 30       	cpi	r18, 0x06	; 6
- af0:	31 05       	cpc	r19, r1
- af2:	e8 f4       	brcc	.+58     	; 0xb2e <_Z8LCD_Backv+0x9c>
+ b90:	a9 01       	movw	r20, r18
+ b92:	46 50       	subi	r20, 0x06	; 6
+ b94:	51 09       	sbc	r21, r1
+ b96:	46 30       	cpi	r20, 0x06	; 6
+ b98:	51 05       	cpc	r21, r1
+ b9a:	e8 f4       	brcc	.+58     	; 0xbd6 <_ZN13VoiceRecorder4BackEv+0x9c>
 		MenuPosition1(17, FileList[FileIndex], FileList[FileIndex + 1]);
- af4:	80 91 1f 03 	lds	r24, 0x031F	; 0x80031f <FileIndex>
- af8:	90 91 20 03 	lds	r25, 0x0320	; 0x800320 <FileIndex+0x1>
- afc:	9c 01       	movw	r18, r24
- afe:	2f 5f       	subi	r18, 0xFF	; 255
- b00:	3f 4f       	sbci	r19, 0xFF	; 255
- b02:	a9 01       	movw	r20, r18
- b04:	44 0f       	add	r20, r20
- b06:	55 1f       	adc	r21, r21
- b08:	44 0f       	add	r20, r20
- b0a:	55 1f       	adc	r21, r21
- b0c:	42 0f       	add	r20, r18
- b0e:	53 1f       	adc	r21, r19
- b10:	40 50       	subi	r20, 0x00	; 0
- b12:	5e 4f       	sbci	r21, 0xFE	; 254
- b14:	bc 01       	movw	r22, r24
- b16:	66 0f       	add	r22, r22
- b18:	77 1f       	adc	r23, r23
- b1a:	66 0f       	add	r22, r22
- b1c:	77 1f       	adc	r23, r23
- b1e:	68 0f       	add	r22, r24
- b20:	79 1f       	adc	r23, r25
- b22:	60 50       	subi	r22, 0x00	; 0
- b24:	7e 4f       	sbci	r23, 0xFE	; 254
- b26:	81 e1       	ldi	r24, 0x11	; 17
- b28:	90 e0       	ldi	r25, 0x00	; 0
- b2a:	f1 cb       	rjmp	.-2078   	; 0x30e <_Z13MenuPosition1iPcS_>
- b2c:	08 95       	ret
+ b9c:	40 91 1f 03 	lds	r20, 0x031F	; 0x80031f <FileIndex>
+ ba0:	50 91 20 03 	lds	r21, 0x0320	; 0x800320 <FileIndex+0x1>
+ ba4:	9a 01       	movw	r18, r20
+ ba6:	2f 5f       	subi	r18, 0xFF	; 255
+ ba8:	3f 4f       	sbci	r19, 0xFF	; 255
+ baa:	b9 01       	movw	r22, r18
+ bac:	66 0f       	add	r22, r22
+ bae:	77 1f       	adc	r23, r23
+ bb0:	66 0f       	add	r22, r22
+ bb2:	77 1f       	adc	r23, r23
+ bb4:	26 0f       	add	r18, r22
+ bb6:	37 1f       	adc	r19, r23
+ bb8:	20 50       	subi	r18, 0x00	; 0
+ bba:	3e 4f       	sbci	r19, 0xFE	; 254
+ bbc:	ba 01       	movw	r22, r20
+ bbe:	66 0f       	add	r22, r22
+ bc0:	77 1f       	adc	r23, r23
+ bc2:	66 0f       	add	r22, r22
+ bc4:	77 1f       	adc	r23, r23
+ bc6:	46 0f       	add	r20, r22
+ bc8:	57 1f       	adc	r21, r23
+ bca:	40 50       	subi	r20, 0x00	; 0
+ bcc:	5e 4f       	sbci	r21, 0xFE	; 254
+ bce:	61 e1       	ldi	r22, 0x11	; 17
+ bd0:	70 e0       	ldi	r23, 0x00	; 0
+ bd2:	d2 cb       	rjmp	.-2140   	; 0x378 <_ZN13VoiceRecorder13MenuPosition1EiPcS0_>
+ bd4:	08 95       	ret
 	}
 	else if (Position == 12 || Position == 13){
- b2e:	9c 01       	movw	r18, r24
- b30:	2c 50       	subi	r18, 0x0C	; 12
- b32:	31 09       	sbc	r19, r1
- b34:	22 30       	cpi	r18, 0x02	; 2
- b36:	31 05       	cpc	r19, r1
- b38:	40 f4       	brcc	.+16     	; 0xb4a <_Z8LCD_Backv+0xb8>
+ bd6:	a9 01       	movw	r20, r18
+ bd8:	4c 50       	subi	r20, 0x0C	; 12
+ bda:	51 09       	sbc	r21, r1
+ bdc:	42 30       	cpi	r20, 0x02	; 2
+ bde:	51 05       	cpc	r21, r1
+ be0:	40 f4       	brcc	.+16     	; 0xbf2 <_ZN13VoiceRecorder4BackEv+0xb8>
 		MenuPosition1(8, "Change Pitch", "Include Echo");
- b3a:	43 ef       	ldi	r20, 0xF3	; 243
- b3c:	52 e0       	ldi	r21, 0x02	; 2
- b3e:	6a ea       	ldi	r22, 0xAA	; 170
- b40:	72 e0       	ldi	r23, 0x02	; 2
- b42:	88 e0       	ldi	r24, 0x08	; 8
- b44:	90 e0       	ldi	r25, 0x00	; 0
- b46:	e3 cb       	rjmp	.-2106   	; 0x30e <_Z13MenuPosition1iPcS_>
- b48:	08 95       	ret
+ be2:	23 ef       	ldi	r18, 0xF3	; 243
+ be4:	32 e0       	ldi	r19, 0x02	; 2
+ be6:	4a ea       	ldi	r20, 0xAA	; 170
+ be8:	52 e0       	ldi	r21, 0x02	; 2
+ bea:	68 e0       	ldi	r22, 0x08	; 8
+ bec:	70 e0       	ldi	r23, 0x00	; 0
+ bee:	c4 cb       	rjmp	.-2168   	; 0x378 <_ZN13VoiceRecorder13MenuPosition1EiPcS0_>
+ bf0:	08 95       	ret
 	}
 	else if (Position == 18){
- b4a:	82 31       	cpi	r24, 0x12	; 18
- b4c:	91 05       	cpc	r25, r1
- b4e:	41 f4       	brne	.+16     	; 0xb60 <_Z8LCD_Backv+0xce>
+ bf2:	22 31       	cpi	r18, 0x12	; 18
+ bf4:	31 05       	cpc	r19, r1
+ bf6:	41 f4       	brne	.+16     	; 0xc08 <_ZN13VoiceRecorder4BackEv+0xce>
 		MenuPosition1(7, "Change Volume", "Change Pitch");
- b50:	4a ea       	ldi	r20, 0xAA	; 170
- b52:	52 e0       	ldi	r21, 0x02	; 2
- b54:	67 eb       	ldi	r22, 0xB7	; 183
- b56:	72 e0       	ldi	r23, 0x02	; 2
- b58:	87 e0       	ldi	r24, 0x07	; 7
- b5a:	90 e0       	ldi	r25, 0x00	; 0
- b5c:	d8 cb       	rjmp	.-2128   	; 0x30e <_Z13MenuPosition1iPcS_>
- b5e:	08 95       	ret
+ bf8:	2a ea       	ldi	r18, 0xAA	; 170
+ bfa:	32 e0       	ldi	r19, 0x02	; 2
+ bfc:	47 eb       	ldi	r20, 0xB7	; 183
+ bfe:	52 e0       	ldi	r21, 0x02	; 2
+ c00:	67 e0       	ldi	r22, 0x07	; 7
+ c02:	70 e0       	ldi	r23, 0x00	; 0
+ c04:	b9 cb       	rjmp	.-2190   	; 0x378 <_ZN13VoiceRecorder13MenuPosition1EiPcS0_>
+ c06:	08 95       	ret
 	}
 	else if (Position == 16){
- b60:	40 97       	sbiw	r24, 0x10	; 16
- b62:	39 f4       	brne	.+14     	; 0xb72 <_Z8LCD_Backv+0xe0>
+ c08:	20 31       	cpi	r18, 0x10	; 16
+ c0a:	31 05       	cpc	r19, r1
+ c0c:	39 f4       	brne	.+14     	; 0xc1c <_ZN13VoiceRecorder4BackEv+0xe2>
 		MenuPosition1(3, "Factory Reset", "Record Voice");
- b64:	43 e3       	ldi	r20, 0x33	; 51
- b66:	52 e0       	ldi	r21, 0x02	; 2
- b68:	65 ee       	ldi	r22, 0xE5	; 229
- b6a:	72 e0       	ldi	r23, 0x02	; 2
- b6c:	83 e0       	ldi	r24, 0x03	; 3
- b6e:	90 e0       	ldi	r25, 0x00	; 0
- b70:	ce cb       	rjmp	.-2148   	; 0x30e <_Z13MenuPosition1iPcS_>
- b72:	08 95       	ret
+ c0e:	23 e3       	ldi	r18, 0x33	; 51
+ c10:	32 e0       	ldi	r19, 0x02	; 2
+ c12:	45 ee       	ldi	r20, 0xE5	; 229
+ c14:	52 e0       	ldi	r21, 0x02	; 2
+ c16:	63 e0       	ldi	r22, 0x03	; 3
+ c18:	70 e0       	ldi	r23, 0x00	; 0
+ c1a:	ae cb       	rjmp	.-2212   	; 0x378 <_ZN13VoiceRecorder13MenuPosition1EiPcS0_>
+ c1c:	08 95       	ret
 
-00000b74 <main>:
+00000c1e <_GLOBAL__sub_I_Position>:
 	}
-}
+ c1e:	6f ef       	ldi	r22, 0xFF	; 255
+ c20:	7f ef       	ldi	r23, 0xFF	; 255
+ c22:	81 e0       	ldi	r24, 0x01	; 1
+ c24:	90 e0       	ldi	r25, 0x00	; 0
+ c26:	9c cb       	rjmp	.-2248   	; 0x360 <_Z41__static_initialization_and_destruction_0ii>
+ c28:	08 95       	ret
 
-int main(void)
-{
-    LCD_Start();
- b74:	2b dc       	rcall	.-1962   	; 0x3cc <_Z9LCD_Startv>
-	ButtonDirection = 0x00;
- b76:	10 92 01 01 	sts	0x0101, r1	; 0x800101 <__TEXT_REGION_LENGTH__+0x7c0101>
-	ButtonCommand = 0x00;
- b7a:	10 92 00 01 	sts	0x0100, r1	; 0x800100 <__TEXT_REGION_LENGTH__+0x7c0100>
-    while (1) 
-    {
-		if (ButtonCommand & (1<< UpButton))
- b7e:	80 91 00 01 	lds	r24, 0x0100	; 0x800100 <__TEXT_REGION_LENGTH__+0x7c0100>
- b82:	83 ff       	sbrs	r24, 3
-		{
-			LCD_Up();
- b84:	02 c0       	rjmp	.+4      	; 0xb8a <main+0x16>
- b86:	9a dd       	rcall	.-1228   	; 0x6bc <_Z6LCD_Upv>
- b88:	fa cf       	rjmp	.-12     	; 0xb7e <main+0xa>
-		}
-		
-		else if (ButtonCommand & (1<< DownButton))
- b8a:	80 91 00 01 	lds	r24, 0x0100	; 0x800100 <__TEXT_REGION_LENGTH__+0x7c0100>
- b8e:	84 ff       	sbrs	r24, 4
-		{
-			LCD_Down();
- b90:	02 c0       	rjmp	.+4      	; 0xb96 <main+0x22>
- b92:	93 de       	rcall	.-730    	; 0x8ba <_Z8LCD_Downv>
- b94:	f4 cf       	rjmp	.-24     	; 0xb7e <main+0xa>
-		}
-		
-		else if (ButtonCommand & (1<< EnterButton))
- b96:	80 91 00 01 	lds	r24, 0x0100	; 0x800100 <__TEXT_REGION_LENGTH__+0x7c0100>
- b9a:	85 ff       	sbrs	r24, 5
-		{
-			LCD_Enter();
- b9c:	02 c0       	rjmp	.+4      	; 0xba2 <main+0x2e>
- b9e:	34 dc       	rcall	.-1944   	; 0x408 <_Z9LCD_Enterv>
- ba0:	ee cf       	rjmp	.-36     	; 0xb7e <main+0xa>
-		}
-		else if (ButtonCommand & (1<< BackButton))
- ba2:	80 91 00 01 	lds	r24, 0x0100	; 0x800100 <__TEXT_REGION_LENGTH__+0x7c0100>
- ba6:	86 ff       	sbrs	r24, 6
-		{
-			LCD_Back();
- ba8:	ea cf       	rjmp	.-44     	; 0xb7e <main+0xa>
- baa:	73 df       	rcall	.-282    	; 0xa92 <_Z8LCD_Backv>
- bac:	e8 cf       	rjmp	.-48     	; 0xb7e <main+0xa>
+00000c2a <__tablejump2__>:
+ c2a:	ee 0f       	add	r30, r30
+ c2c:	ff 1f       	adc	r31, r31
+ c2e:	88 1f       	adc	r24, r24
+ c30:	8b bf       	out	0x3b, r24	; 59
+ c32:	07 90       	elpm	r0, Z+
+ c34:	f6 91       	elpm	r31, Z
+ c36:	e0 2d       	mov	r30, r0
+ c38:	19 94       	eijmp
 
-00000bae <_GLOBAL__sub_I_Position>:
-		}
-    }
-}
- bae:	6f ef       	ldi	r22, 0xFF	; 255
- bb0:	7f ef       	ldi	r23, 0xFF	; 255
- bb2:	81 e0       	ldi	r24, 0x01	; 1
- bb4:	90 e0       	ldi	r25, 0x00	; 0
- bb6:	a0 cb       	rjmp	.-2240   	; 0x2f8 <_Z41__static_initialization_and_destruction_0ii>
- bb8:	08 95       	ret
+00000c3a <__itoa_ncheck>:
+ c3a:	bb 27       	eor	r27, r27
+ c3c:	4a 30       	cpi	r20, 0x0A	; 10
+ c3e:	31 f4       	brne	.+12     	; 0xc4c <__itoa_ncheck+0x12>
+ c40:	99 23       	and	r25, r25
+ c42:	22 f4       	brpl	.+8      	; 0xc4c <__itoa_ncheck+0x12>
+ c44:	bd e2       	ldi	r27, 0x2D	; 45
+ c46:	90 95       	com	r25
+ c48:	81 95       	neg	r24
+ c4a:	9f 4f       	sbci	r25, 0xFF	; 255
+ c4c:	01 c0       	rjmp	.+2      	; 0xc50 <__utoa_common>
 
-00000bba <__tablejump2__>:
- bba:	ee 0f       	add	r30, r30
- bbc:	ff 1f       	adc	r31, r31
- bbe:	88 1f       	adc	r24, r24
- bc0:	8b bf       	out	0x3b, r24	; 59
- bc2:	07 90       	elpm	r0, Z+
- bc4:	f6 91       	elpm	r31, Z
- bc6:	e0 2d       	mov	r30, r0
- bc8:	19 94       	eijmp
+00000c4e <__utoa_ncheck>:
+ c4e:	bb 27       	eor	r27, r27
 
-00000bca <__itoa_ncheck>:
- bca:	bb 27       	eor	r27, r27
- bcc:	4a 30       	cpi	r20, 0x0A	; 10
- bce:	31 f4       	brne	.+12     	; 0xbdc <__itoa_ncheck+0x12>
- bd0:	99 23       	and	r25, r25
- bd2:	22 f4       	brpl	.+8      	; 0xbdc <__itoa_ncheck+0x12>
- bd4:	bd e2       	ldi	r27, 0x2D	; 45
- bd6:	90 95       	com	r25
- bd8:	81 95       	neg	r24
- bda:	9f 4f       	sbci	r25, 0xFF	; 255
- bdc:	01 c0       	rjmp	.+2      	; 0xbe0 <__utoa_common>
+00000c50 <__utoa_common>:
+ c50:	fb 01       	movw	r30, r22
+ c52:	55 27       	eor	r21, r21
+ c54:	aa 27       	eor	r26, r26
+ c56:	88 0f       	add	r24, r24
+ c58:	99 1f       	adc	r25, r25
+ c5a:	aa 1f       	adc	r26, r26
+ c5c:	a4 17       	cp	r26, r20
+ c5e:	10 f0       	brcs	.+4      	; 0xc64 <__utoa_common+0x14>
+ c60:	a4 1b       	sub	r26, r20
+ c62:	83 95       	inc	r24
+ c64:	50 51       	subi	r21, 0x10	; 16
+ c66:	b9 f7       	brne	.-18     	; 0xc56 <__utoa_common+0x6>
+ c68:	a0 5d       	subi	r26, 0xD0	; 208
+ c6a:	aa 33       	cpi	r26, 0x3A	; 58
+ c6c:	08 f0       	brcs	.+2      	; 0xc70 <__utoa_common+0x20>
+ c6e:	a9 5d       	subi	r26, 0xD9	; 217
+ c70:	a1 93       	st	Z+, r26
+ c72:	00 97       	sbiw	r24, 0x00	; 0
+ c74:	79 f7       	brne	.-34     	; 0xc54 <__utoa_common+0x4>
+ c76:	b1 11       	cpse	r27, r1
+ c78:	b1 93       	st	Z+, r27
+ c7a:	11 92       	st	Z+, r1
+ c7c:	cb 01       	movw	r24, r22
+ c7e:	00 c0       	rjmp	.+0      	; 0xc80 <strrev>
 
-00000bde <__utoa_ncheck>:
- bde:	bb 27       	eor	r27, r27
+00000c80 <strrev>:
+ c80:	dc 01       	movw	r26, r24
+ c82:	fc 01       	movw	r30, r24
+ c84:	67 2f       	mov	r22, r23
+ c86:	71 91       	ld	r23, Z+
+ c88:	77 23       	and	r23, r23
+ c8a:	e1 f7       	brne	.-8      	; 0xc84 <strrev+0x4>
+ c8c:	32 97       	sbiw	r30, 0x02	; 2
+ c8e:	04 c0       	rjmp	.+8      	; 0xc98 <strrev+0x18>
+ c90:	7c 91       	ld	r23, X
+ c92:	6d 93       	st	X+, r22
+ c94:	70 83       	st	Z, r23
+ c96:	62 91       	ld	r22, -Z
+ c98:	ae 17       	cp	r26, r30
+ c9a:	bf 07       	cpc	r27, r31
+ c9c:	c8 f3       	brcs	.-14     	; 0xc90 <strrev+0x10>
+ c9e:	08 95       	ret
 
-00000be0 <__utoa_common>:
- be0:	fb 01       	movw	r30, r22
- be2:	55 27       	eor	r21, r21
- be4:	aa 27       	eor	r26, r26
- be6:	88 0f       	add	r24, r24
- be8:	99 1f       	adc	r25, r25
- bea:	aa 1f       	adc	r26, r26
- bec:	a4 17       	cp	r26, r20
- bee:	10 f0       	brcs	.+4      	; 0xbf4 <__utoa_common+0x14>
- bf0:	a4 1b       	sub	r26, r20
- bf2:	83 95       	inc	r24
- bf4:	50 51       	subi	r21, 0x10	; 16
- bf6:	b9 f7       	brne	.-18     	; 0xbe6 <__utoa_common+0x6>
- bf8:	a0 5d       	subi	r26, 0xD0	; 208
- bfa:	aa 33       	cpi	r26, 0x3A	; 58
- bfc:	08 f0       	brcs	.+2      	; 0xc00 <__utoa_common+0x20>
- bfe:	a9 5d       	subi	r26, 0xD9	; 217
- c00:	a1 93       	st	Z+, r26
- c02:	00 97       	sbiw	r24, 0x00	; 0
- c04:	79 f7       	brne	.-34     	; 0xbe4 <__utoa_common+0x4>
- c06:	b1 11       	cpse	r27, r1
- c08:	b1 93       	st	Z+, r27
- c0a:	11 92       	st	Z+, r1
- c0c:	cb 01       	movw	r24, r22
- c0e:	00 c0       	rjmp	.+0      	; 0xc10 <strrev>
+00000ca0 <_exit>:
+ ca0:	f8 94       	cli
 
-00000c10 <strrev>:
- c10:	dc 01       	movw	r26, r24
- c12:	fc 01       	movw	r30, r24
- c14:	67 2f       	mov	r22, r23
- c16:	71 91       	ld	r23, Z+
- c18:	77 23       	and	r23, r23
- c1a:	e1 f7       	brne	.-8      	; 0xc14 <strrev+0x4>
- c1c:	32 97       	sbiw	r30, 0x02	; 2
- c1e:	04 c0       	rjmp	.+8      	; 0xc28 <strrev+0x18>
- c20:	7c 91       	ld	r23, X
- c22:	6d 93       	st	X+, r22
- c24:	70 83       	st	Z, r23
- c26:	62 91       	ld	r22, -Z
- c28:	ae 17       	cp	r26, r30
- c2a:	bf 07       	cpc	r27, r31
- c2c:	c8 f3       	brcs	.-14     	; 0xc20 <strrev+0x10>
- c2e:	08 95       	ret
-
-00000c30 <_exit>:
- c30:	f8 94       	cli
-
-00000c32 <__stop_program>:
- c32:	ff cf       	rjmp	.-2      	; 0xc32 <__stop_program>
+00000ca2 <__stop_program>:
+ ca2:	ff cf       	rjmp	.-2      	; 0xca2 <__stop_program>
