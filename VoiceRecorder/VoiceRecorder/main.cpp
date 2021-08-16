@@ -6,12 +6,12 @@
  */ 
 #include <avr/io.h>
 #include "VoiceRecorder.h"
-#define UpButton PINH3
-#define DownButton PINH4
-#define EnterButton PINH5
-#define BackButton PINH6
-#define ButtonDirection DDRH
-#define ButtonCommand PINH
+#define UpButton PIND1
+#define DownButton PIND2
+#define EnterButton PIND3
+#define BackButton PIND4
+#define ButtonDirection DDRD
+#define ButtonCommand PIND
 
 
 

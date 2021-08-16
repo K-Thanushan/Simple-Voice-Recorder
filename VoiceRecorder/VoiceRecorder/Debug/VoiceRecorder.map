@@ -249,7 +249,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000      0xca4
+.text           0x00000000      0xc5c
  *(.vectors)
  .vectors       0x00000000       0xe4 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/gcc/dev/atmega2560/avr6/crtatmega2560.o
                 0x00000000                __vector_default
@@ -392,54 +392,54 @@ END GROUP
  .text._ZN3LCD5ClearEv
                 0x000002dc       0x22 LCD.o
                 0x000002dc                _ZN3LCD5ClearEv
- .text.main     0x000002fe       0x62 main.o
+ .text.main     0x000002fe       0x4e main.o
                 0x000002fe                main
  .text._Z41__static_initialization_and_destruction_0ii
-                0x00000360       0x16 VoiceRecorder.o
+                0x0000034c       0x16 VoiceRecorder.o
  .text._ZN13VoiceRecorderC2Ei
-                0x00000376        0x2 VoiceRecorder.o
-                0x00000376                _ZN13VoiceRecorderC2Ei
-                0x00000376                _ZN13VoiceRecorderC1Ei
+                0x00000362        0x2 VoiceRecorder.o
+                0x00000362                _ZN13VoiceRecorderC2Ei
+                0x00000362                _ZN13VoiceRecorderC1Ei
  .text._ZN13VoiceRecorder13MenuPosition1EiPcS0_
-                0x00000378       0x5c VoiceRecorder.o
-                0x00000378                _ZN13VoiceRecorder13MenuPosition1EiPcS0_
+                0x00000364       0x5c VoiceRecorder.o
+                0x00000364                _ZN13VoiceRecorder13MenuPosition1EiPcS0_
  .text._ZN13VoiceRecorder13MenuPosition2EiiPcS0_
-                0x000003d4       0x60 VoiceRecorder.o
-                0x000003d4                _ZN13VoiceRecorder13MenuPosition2EiiPcS0_
+                0x000003c0       0x60 VoiceRecorder.o
+                0x000003c0                _ZN13VoiceRecorder13MenuPosition2EiiPcS0_
  .text._ZN13VoiceRecorder5StartEv
-                0x00000434       0x48 VoiceRecorder.o
-                0x00000434                _ZN13VoiceRecorder5StartEv
+                0x00000420       0x48 VoiceRecorder.o
+                0x00000420                _ZN13VoiceRecorder5StartEv
  .text._ZN13VoiceRecorder5EnterEv
-                0x0000047c      0x2e4 VoiceRecorder.o
-                0x0000047c                _ZN13VoiceRecorder5EnterEv
+                0x00000468      0x2b2 VoiceRecorder.o
+                0x00000468                _ZN13VoiceRecorder5EnterEv
  .text._ZN13VoiceRecorder2UpEv
-                0x00000760      0x200 VoiceRecorder.o
-                0x00000760                _ZN13VoiceRecorder2UpEv
+                0x0000071a      0x200 VoiceRecorder.o
+                0x0000071a                _ZN13VoiceRecorder2UpEv
  .text._ZN13VoiceRecorder4DownEv
-                0x00000960      0x1da VoiceRecorder.o
-                0x00000960                _ZN13VoiceRecorder4DownEv
+                0x0000091a      0x1d8 VoiceRecorder.o
+                0x0000091a                _ZN13VoiceRecorder4DownEv
  .text._ZN13VoiceRecorder4BackEv
-                0x00000b3a       0xe4 VoiceRecorder.o
-                0x00000b3a                _ZN13VoiceRecorder4BackEv
+                0x00000af2       0xe4 VoiceRecorder.o
+                0x00000af2                _ZN13VoiceRecorder4BackEv
  .text._GLOBAL__sub_I_Position
-                0x00000c1e        0xc VoiceRecorder.o
- .text.libgcc   0x00000c2a       0x10 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr6\libgcc.a(_tablejump2.o)
-                0x00000c2a                __tablejump2__
+                0x00000bd6        0xc VoiceRecorder.o
+ .text.libgcc   0x00000be2       0x10 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr6\libgcc.a(_tablejump2.o)
+                0x00000be2                __tablejump2__
  .text.avr-libc
-                0x00000c3a       0x14 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr6\libc.a(itoa_ncheck.o)
-                0x00000c3a                __itoa_ncheck
+                0x00000bf2       0x14 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr6\libc.a(itoa_ncheck.o)
+                0x00000bf2                __itoa_ncheck
  .text.avr-libc
-                0x00000c4e       0x32 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr6\libc.a(utoa_ncheck.o)
-                0x00000c4e                __utoa_ncheck
-                0x00000c50                __utoa_common
+                0x00000c06       0x32 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr6\libc.a(utoa_ncheck.o)
+                0x00000c06                __utoa_ncheck
+                0x00000c08                __utoa_common
  .text.avr-libc
-                0x00000c80       0x20 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr6\libc.a(strrev.o)
-                0x00000c80                strrev
-                0x00000ca0                . = ALIGN (0x2)
+                0x00000c38       0x20 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr6\libc.a(strrev.o)
+                0x00000c38                strrev
+                0x00000c58                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x00000ca0        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr6\libgcc.a(_exit.o)
-                0x00000ca0                _exit
-                0x00000ca0                exit
+ .fini9         0x00000c58        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr6\libgcc.a(_exit.o)
+                0x00000c58                _exit
+                0x00000c58                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -458,11 +458,11 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x00000ca0        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr6\libgcc.a(_exit.o)
+ .fini0         0x00000c58        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr6\libgcc.a(_exit.o)
  *(.fini0)
-                0x00000ca4                _etext = .
+                0x00000c5c                _etext = .
 
-.data           0x00800200      0x11e load address 0x00000ca4
+.data           0x00800200      0x100 load address 0x00000c5c
                 0x00800200                PROVIDE (__data_start, .)
  *(.data)
  *(.data*)
@@ -477,35 +477,35 @@ END GROUP
  *(.rodata)
  *(.rodata*)
  .rodata.str1.1
-                0x0080021d      0x100 VoiceRecorder.o
-                                0x108 (size before relaxing)
+                0x0080021d       0xe2 VoiceRecorder.o
+                                 0xea (size before relaxing)
  *(.gnu.linkonce.r*)
-                0x0080031e                . = ALIGN (0x2)
- *fill*         0x0080031d        0x1 
-                0x0080031e                _edata = .
-                0x0080031e                PROVIDE (__data_end, .)
+                0x00800300                . = ALIGN (0x2)
+ *fill*         0x008002ff        0x1 
+                0x00800300                _edata = .
+                0x00800300                PROVIDE (__data_end, .)
 
-.bss            0x0080031e        0x5
-                0x0080031e                PROVIDE (__bss_start, .)
+.bss            0x00800300        0x5
+                0x00800300                PROVIDE (__bss_start, .)
  *(.bss)
  *(.bss*)
- .bss.MyLCD     0x0080031e        0x1 VoiceRecorder.o
-                0x0080031e                MyLCD
+ .bss.MyLCD     0x00800300        0x1 VoiceRecorder.o
+                0x00800300                MyLCD
  .bss.FileIndex
-                0x0080031f        0x2 VoiceRecorder.o
-                0x0080031f                FileIndex
- .bss.Position  0x00800321        0x2 VoiceRecorder.o
-                0x00800321                Position
+                0x00800301        0x2 VoiceRecorder.o
+                0x00800301                FileIndex
+ .bss.Position  0x00800303        0x2 VoiceRecorder.o
+                0x00800303                Position
  *(COMMON)
-                0x00800323                PROVIDE (__bss_end, .)
-                0x00000ca4                __data_load_start = LOADADDR (.data)
-                0x00000dc2                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x00800305                PROVIDE (__bss_end, .)
+                0x00000c5c                __data_load_start = LOADADDR (.data)
+                0x00000d5c                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x00800323        0x0
+.noinit         0x00800305        0x0
                 [!provide]                PROVIDE (__noinit_start, .)
  *(.noinit*)
                 [!provide]                PROVIDE (__noinit_end, .)
-                0x00800323                _end = .
+                0x00800305                _end = .
                 [!provide]                PROVIDE (__heap_start, .)
 
 .eeprom         0x00810000        0x0
@@ -584,26 +584,26 @@ END GROUP
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x2cf8
+.debug_info     0x00000000     0x2c70
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000      0xbbc C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/gcc/dev/atmega2560/avr6/crtatmega2560.o
  .debug_info    0x00000bbc      0x799 LCD.o
  .debug_info    0x00001355      0x246 main.o
- .debug_info    0x0000159b     0x175d VoiceRecorder.o
+ .debug_info    0x0000159b     0x16d5 VoiceRecorder.o
 
-.debug_abbrev   0x00000000     0x111c
+.debug_abbrev   0x00000000     0x10fc
  *(.debug_abbrev)
  .debug_abbrev  0x00000000      0xb1a C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/gcc/dev/atmega2560/avr6/crtatmega2560.o
  .debug_abbrev  0x00000b1a      0x22f LCD.o
  .debug_abbrev  0x00000d49       0xed main.o
- .debug_abbrev  0x00000e36      0x2e6 VoiceRecorder.o
+ .debug_abbrev  0x00000e36      0x2c6 VoiceRecorder.o
 
-.debug_line     0x00000000      0xb4e
+.debug_line     0x00000000      0xb35
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x00000000      0x1fa C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/gcc/dev/atmega2560/avr6/crtatmega2560.o
  .debug_line    0x000001fa      0x2f0 LCD.o
  .debug_line    0x000004ea       0x96 main.o
- .debug_line    0x00000580      0x5ce VoiceRecorder.o
+ .debug_line    0x00000580      0x5b5 VoiceRecorder.o
 
 .debug_frame    0x00000000      0x238
  *(.debug_frame)

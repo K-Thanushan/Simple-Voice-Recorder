@@ -61,18 +61,19 @@ void VoiceRecorder::Enter(void)
     }
 	else if (Position == 3){
 		MyLCD.Clear();
-		MyLCD.PrintString_xy(0, 0, "Confirm factory ");
-		MyLCD.PrintString_xy(1, 0, "reset ?");
+		MyLCD.PrintString_xy(0, 0, "Confirm Factory");
+		MyLCD.PrintString_xy(1, 0, "reset?");
 		Position = 16;
 		_delay_ms(750);
 	}
-    else if (Position==4){
-        //startRecording();
-		MenuPosition2(5, 2,"Recording...", "Stop Recording");
-    }
-	else if (Position==5){
-		//stopRecording();
-		MenuPosition1(1, "Record Voice", "Recordings");
+	else if (Position == 7){
+		MyLCD.Clear();
+		MyLCD.PrintString_xy(0, 5, "Volume");
+		char List[4];
+		itoa(Volume,List,10);
+		MyLCD.PrintString_xy(1, 7, List);
+		Position = 15;
+		_delay_ms(500);
 	}
     else if (Position==11){
         //deleteRecording(nameList[_FileIndex]);
@@ -83,22 +84,12 @@ void VoiceRecorder::Enter(void)
             nameList[i] = "";
         }*/
         _delay_ms(1000);
-        MenuPosition1(17, "", "");
+        MenuPosition1(17, "Recordings", "Factory Reset");
     }
-
     else if (Position==6){
         //startPlayback(nameList[_FileIndex]);
 		//_delay_ms(1000);
 		MenuPosition2(14, 3, "Playing...", "Stop");
-    }
-    else if (Position==7){
-        MyLCD.Clear();
-		MyLCD.PrintString_xy(0, 5, "Volume");
-		char List[4];
-		itoa(Volume,List,10);
-		MyLCD.PrintString_xy(1, 7, List);
-		Position = 15;
-		_delay_ms(500);
     }
     else if (Position == 8){
         MenuPosition1(12, "High Pitch", "Low Pitch");
@@ -249,8 +240,8 @@ void VoiceRecorder::Down(void)
 	}
 	else if (Position == 15)
 	{
-		if (Volume != 7){
-			Volume++;
+		if (Volume != 0){
+			Volume--;
 		}
 		MyLCD.Clear();
 		MyLCD.PrintString_xy(0, 5, "Volume");
