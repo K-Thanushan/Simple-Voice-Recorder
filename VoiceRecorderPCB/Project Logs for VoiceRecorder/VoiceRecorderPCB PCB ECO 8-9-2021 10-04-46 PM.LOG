@@ -1,0 +1,726 @@
+Added Component: Designator=?(RAD-0.3)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageDescription"; Value = "Radial Cap, Thru-Hole; 2 Leads; 0.3 in Pin Spacing"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageReference"; Value = "RAD-0.3"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published"; Value = "8-Jun-2000"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "100nF"; VariantName = "[No Variations]"
+Added Component: Designator=BACK(FP-3-1825910-1-MFG)
+Add component (AddParameter): Name = "Automotive"; Value = "No"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Category"; Value = "Switch"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=1825910&DocType=Customer+Drawing&DocLang=English"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Contact Current Rating"; Value = "50mA"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Contact Resistance"; Value = "100mO"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Device Class L1"; Value = "Electromechanical"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Device Class L2"; Value = "Switches"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Device Class L3"; Value = "Tactile Switches"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Digikey Description"; Value = "SWITCH TACTILE SPST-NO 0.05A 24V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Electromechanical Life"; Value = "100000Cycles"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Height"; Value = "17.3mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Lead Free"; Value = "Yes"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "TE Connectivity"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "3-1825910-1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mount"; Value = "Through Hole"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Octopart"; Value = "https://octopart.com/3-1825910-1-te+connectivity-46506874"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Operating Force"; Value = "160gf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "0"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS"; Value = "TRUE"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Temperature"; Value = "-35°C to +85°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Temperature Range High"; Value = "+85°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Temperature Range Low"; Value = "-35°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Throw Configuration"; Value = "SPST-NO"; VariantName = "[No Variations]"
+Added Component: Designator=C1(FP-C440-MFG)
+Add component (AddParameter): Name = "Automotive"; Value = "No"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Capacitance"; Value = "1uF"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Category"; Value = "Cap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "https://content.kemet.com/datasheets/KEM_C1042_AXIMAX_Z5U.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Device Class L1"; Value = "Passive Components"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Device Class L2"; Value = "Capacitors"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Device Class L3"; Value = "Ceramic Capacitors"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Digikey Description"; Value = "CAP CER 1UF 50V Z5U AXIAL"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Height"; Value = "3.81mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ipc Land Pattern Name"; Value = "CAPAD1043W70L736D381"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Lead Free"; Value = "Yes"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Kemet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "C440C105M5U5TA7200"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Material"; Value = "Ceramic"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mouser Description"; Value = "Multilayer Ceramic Capacitors MLCC - Leaded 50volts 1uF 20%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Octopart"; Value = "https://octopart.com/c440c105m5u5ta7200-kemet-193612"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "C440"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS"; Value = "TRUE"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Temperature"; Value = "-10°C to +85°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Temperature Characteristic"; Value = "Z5U"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Temperature Range High"; Value = "+85°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Temperature Range Low"; Value = "-10°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolerance"; Value = "20%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "1uF"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Voltage Rating"; Value = "50V"; VariantName = "[No Variations]"
+Added Component: Designator=C2(FP-C440-MFG)
+Add component (AddParameter): Name = "Automotive"; Value = "No"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Capacitance"; Value = "1uF"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Category"; Value = "Cap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "https://content.kemet.com/datasheets/KEM_C1042_AXIMAX_Z5U.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Device Class L1"; Value = "Passive Components"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Device Class L2"; Value = "Capacitors"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Device Class L3"; Value = "Ceramic Capacitors"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Digikey Description"; Value = "CAP CER 1UF 50V Z5U AXIAL"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Height"; Value = "3.81mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ipc Land Pattern Name"; Value = "CAPAD1043W70L736D381"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Lead Free"; Value = "Yes"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Kemet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "C440C105M5U5TA7200"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Material"; Value = "Ceramic"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mouser Description"; Value = "Multilayer Ceramic Capacitors MLCC - Leaded 50volts 1uF 20%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Octopart"; Value = "https://octopart.com/c440c105m5u5ta7200-kemet-193612"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "C440"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS"; Value = "TRUE"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Temperature"; Value = "-10°C to +85°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Temperature Characteristic"; Value = "Z5U"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Temperature Range High"; Value = "+85°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Temperature Range Low"; Value = "-10°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolerance"; Value = "20%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "1uF"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Voltage Rating"; Value = "50V"; VariantName = "[No Variations]"
+Added Component: Designator=C4(RAD-0.3)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageDescription"; Value = "Radial Cap, Thru-Hole; 2 Leads; 0.3 in Pin Spacing"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageReference"; Value = "RAD-0.3"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published"; Value = "8-Jun-2000"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "100nF"; VariantName = "[No Variations]"
+Added Component: Designator=C6(RAD-0.3)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageDescription"; Value = "Radial Cap, Thru-Hole; 2 Leads; 0.3 in Pin Spacing"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageReference"; Value = "RAD-0.3"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published"; Value = "8-Jun-2000"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "250uF"; VariantName = "[No Variations]"
+Added Component: Designator=C7(RAD-0.3)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageDescription"; Value = "Radial Cap, Thru-Hole; 2 Leads; 0.3 in Pin Spacing"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageReference"; Value = "RAD-0.3"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published"; Value = "8-Jun-2000"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "0.05uF"; VariantName = "[No Variations]"
+Added Component: Designator=C8(RAD-0.3)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageDescription"; Value = "Radial Cap, Thru-Hole; 2 Leads; 0.3 in Pin Spacing"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageReference"; Value = "RAD-0.3"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published"; Value = "8-Jun-2000"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "10uF"; VariantName = "[No Variations]"
+Added Component: Designator=CONNECTOR(FP-350428-1-MFG)
+Add component (AddParameter): Name = "Automotive"; Value = "No"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Category"; Value = "Conn"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=showdoc&DocId=Customer+Drawing%7F350428%7FY2%7Fpdf%7FEnglish%7FENG_CD_350428_Y2.pdf%7F350428-1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Conn Gender"; Value = "Male"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Conn Orientation"; Value = "Vertical"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Contact Material"; Value = "Gold,Nickel"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Current Rating"; Value = "12A"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Device Class L1"; Value = "Connectors"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Device Class L2"; Value = "Headers and Wire Housings"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Device Class L3"; Value = "unset"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Digikey Description"; Value = "CONN HEADER VERT 2POS 6.35MM"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Height"; Value = "14.99mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Lead Free"; Value = "Yes"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "TE Connectivity"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "350428-1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mouser Description"; Value = "Connector, Soft Shell; Universal MATE-N-LOK; 2; Nylon; Natural; 19 A; 600 VAC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Number Of Contacts"; Value = "2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Number Of Rows"; Value = "1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Octopart"; Value = "https://octopart.com/350428-1-te+connectivity-46505355"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "350428-1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pitch"; Value = "6.35mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS"; Value = "TRUE"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Standoff Height"; Value = "0.63mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Temperature"; Value = "-40°C to +105°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Temperature Range High"; Value = "+105°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Temperature Range Low"; Value = "-40°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Voltage Rating"; Value = "600V"; VariantName = "[No Variations]"
+Added Component: Designator=DOWN(FP-3-1825910-1-MFG)
+Add component (AddParameter): Name = "Automotive"; Value = "No"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Category"; Value = "Switch"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=1825910&DocType=Customer+Drawing&DocLang=English"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Contact Current Rating"; Value = "50mA"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Contact Resistance"; Value = "100mO"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Device Class L1"; Value = "Electromechanical"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Device Class L2"; Value = "Switches"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Device Class L3"; Value = "Tactile Switches"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Digikey Description"; Value = "SWITCH TACTILE SPST-NO 0.05A 24V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Electromechanical Life"; Value = "100000Cycles"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Height"; Value = "17.3mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Lead Free"; Value = "Yes"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "TE Connectivity"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "3-1825910-1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mount"; Value = "Through Hole"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Octopart"; Value = "https://octopart.com/3-1825910-1-te+connectivity-46506874"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Operating Force"; Value = "160gf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "0"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS"; Value = "TRUE"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Temperature"; Value = "-35°C to +85°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Temperature Range High"; Value = "+85°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Temperature Range Low"; Value = "-35°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Throw Configuration"; Value = "SPST-NO"; VariantName = "[No Variations]"
+Added Component: Designator=ENTER(FP-3-1825910-1-MFG)
+Add component (AddParameter): Name = "Automotive"; Value = "No"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Category"; Value = "Switch"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=1825910&DocType=Customer+Drawing&DocLang=English"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Contact Current Rating"; Value = "50mA"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Contact Resistance"; Value = "100mO"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Device Class L1"; Value = "Electromechanical"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Device Class L2"; Value = "Switches"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Device Class L3"; Value = "Tactile Switches"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Digikey Description"; Value = "SWITCH TACTILE SPST-NO 0.05A 24V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Electromechanical Life"; Value = "100000Cycles"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Height"; Value = "17.3mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Lead Free"; Value = "Yes"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "TE Connectivity"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "3-1825910-1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mount"; Value = "Through Hole"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Octopart"; Value = "https://octopart.com/3-1825910-1-te+connectivity-46506874"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Operating Force"; Value = "160gf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "0"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS"; Value = "TRUE"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Temperature"; Value = "-35°C to +85°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Temperature Range High"; Value = "+85°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Temperature Range Low"; Value = "-35°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Throw Configuration"; Value = "SPST-NO"; VariantName = "[No Variations]"
+Added Component: Designator=LCD(66201011122)
+Add component (AddParameter): Name = "Contact Resistance"; Value = "10mOhm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Datasheet URL"; Value = "https://katalog.we-online.de/em/datasheet/6620xx11122.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Gender"; Value = "Male"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Wurth Elektronik"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer URL"; Value = "http://www.we-online.de"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mounting Technology"; Value = "THT"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Operating Temperature"; Value = "-40to105degC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Orientation"; Value = "Vertical"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package Reference"; Value = "66201011122"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Packaging"; Value = "Tube"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part Number"; Value = "66201011122"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pin Number"; Value = "10"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pitch"; Value = "3mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "WurthElektronik"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Working Voltage"; Value = "250VAC"; VariantName = "[No Variations]"
+Added Component: Designator=MICROCONTROLLER(28P3)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "Manufacturer URL"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.atmel.com/"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "ATmega48A/48PA/88A/88PA/168A/168PA/328/328P Datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "http://www.atmel.com/dyn/resources/prod_documents/8271.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink3Description"; Value = "ATmega48A/48PA/88A/88PA/168A/168PA/328/328P Summary"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink3URL"; Value = "http://www.atmel.com/dyn/resources/prod_documents/8271S.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "DatasheetVersion"; Value = "revD, May-2011"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageDescription"; Value = "28-lead (0.300"/7.62mm Wide) Plastic Dual Inline Package (PDIP)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageReference"; Value = "28P3"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageVersion"; Value = "revB, Sep-2001"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RevisionNote"; Value = "DatasheetVersion updated. URLs added."; VariantName = "[No Variations]"
+Added Component: Designator=MIC(66200411122)
+Add component (AddParameter): Name = "Contact Resistance"; Value = "10mOhm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Datasheet URL"; Value = "https://katalog.we-online.de/em/datasheet/6620xx11122.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Gender"; Value = "Male"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Wurth Elektronik"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer URL"; Value = "http://www.we-online.de"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mounting Technology"; Value = "THT"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Operating Temperature"; Value = "-40to105degC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Orientation"; Value = "Vertical"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package Reference"; Value = "66200411122"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Packaging"; Value = "Tube"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part Number"; Value = "66200411122"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pin Number"; Value = "4"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pitch"; Value = "3mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "WurthElektronik"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Working Voltage"; Value = "250VAC"; VariantName = "[No Variations]"
+Added Component: Designator=OP-AMP(TI-P8)
+Add component (AddParameter): Name = "Code_JEDEC"; Value = "MS-001"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "Manufacturer URL"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.ti.com/"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "http://www.ti.com/general/docs/lit/getliterature.tsp?genericPartNumber=LM386&fileType=pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink3Description"; Value = "Package Specification"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink3URL"; Value = "http://www.ti.com/litv/pdf/mpdi001b"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "DatasheetVersion"; Value = "SNAS545A"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Input Type"; Value = "Analog"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Texas Instruments"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Max. Number of Speaker Outputs"; Value = "1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mounting Technology"; Value = "Through Hole"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageDescription"; Value = "8-Pin Plastic In-Line, Body 9.59 x 6.35 mm, Pitch 2.54 mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageReference"; Value = "P8"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageVersion"; Value = "4040082/E, 04/2010"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PartNumber"; Value = "LM386N-3"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SubFamily"; Value = "Mid/High-Power Amplifier"; VariantName = "[No Variations]"
+Added Component: Designator=POWER SWITCH(SW_1825116-1)
+Add component (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "EU_RoHS_Compliance"; Value = "Compliant"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "TE Connectivity"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "1825116-1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/1825116-1/TE%20Connectivity%20ALCOSWITCH%20Switches/view-part/497270/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "TE_purchase_URL"; Value = "https://www.te.com/usa-en/product-1825116-1.html?te_bu=Cor&te_type=disp&te_campaign=seda_glo_cor-seda-global-disp-prtnr-fy19-seda-model-bom-cta_sma-317_1&elqCampaignId=32493"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=R1(OMTE-RES7X2.5-2)
+Add component (AddParameter): Name = "Catalog Drawings"; Value = "OD,OF,OASeries"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Category"; Value = "Resistors"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Composition"; Value = "CarbonComposition"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Datasheet URL"; Value = "http://www.ohmite.com/cat/res_od_of_oa.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Datasheet Version"; Value = "06/2016"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "EDA / CAD Models"; Value = "DownloadfromAcceleratedDesigns"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Family"; Value = "ThroughHoleResistors"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Features"; Value = "PulseWithstanding"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Height"; Value = "-"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Ohmite"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer URL"; Value = "http://www.ohmite.com/"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mounting Technology"; Value = "ThroughHole"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Number of Terminations"; Value = "2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Online Catalog"; Value = "OD,OF,OASeries,LittleDemon®"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Operating Temperature"; Value = "-"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package / Case"; Value = "Axial"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package Description"; Value = "2-Pin THD Resistor, Body 7 x 2.5 mm, Lead Dia. 0.6 mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package Reference"; Value = "RES7X2.5"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Packaging"; Value = "Bulk  "; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PartNumber"; Value = "OD103JE"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Power (Watts)"; Value = "0.25W,1/4W"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Power Rating"; Value = "0.25W"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Resistance (Ohms)"; Value = "10k"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS Information"; Value = "LittleDemon"E"SeriesMaterialDeclaration"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Series"; Value = "LittleDemon®OD"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Size / Dimension"; Value = "0.098"Diax0.276"L(2.50mmx7.00mm)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Standard Package"; Value = "100"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Device Package"; Value = "Axial"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Temperature Coefficient"; Value = "-"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolerance"; Value = "±5%"; VariantName = "[No Variations]"
+Added Component: Designator=R2(OMTE-RES7X2.5-2)
+Add component (AddParameter): Name = "Catalog Drawings"; Value = "OD,OF,OASeries"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Category"; Value = "Resistors"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Composition"; Value = "CarbonComposition"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Datasheet URL"; Value = "http://www.ohmite.com/cat/res_od_of_oa.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Datasheet Version"; Value = "06/2016"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "EDA / CAD Models"; Value = "DownloadfromAcceleratedDesigns"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Family"; Value = "ThroughHoleResistors"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Features"; Value = "PulseWithstanding"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Height"; Value = "-"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Ohmite"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer URL"; Value = "http://www.ohmite.com/"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mounting Technology"; Value = "ThroughHole"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Number of Terminations"; Value = "2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Online Catalog"; Value = "OD,OF,OASeries,LittleDemon®"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Operating Temperature"; Value = "-"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package / Case"; Value = "Axial"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package Description"; Value = "2-Pin THD Resistor, Body 7 x 2.5 mm, Lead Dia. 0.6 mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package Reference"; Value = "RES7X2.5"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Packaging"; Value = "Bulk  "; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PartNumber"; Value = "OD103JE"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Power (Watts)"; Value = "0.25W,1/4W"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Power Rating"; Value = "0.25W"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Resistance (Ohms)"; Value = "10k"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS Information"; Value = "LittleDemon"E"SeriesMaterialDeclaration"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Series"; Value = "LittleDemon®OD"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Size / Dimension"; Value = "0.098"Diax0.276"L(2.50mmx7.00mm)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Standard Package"; Value = "100"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Device Package"; Value = "Axial"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Temperature Coefficient"; Value = "-"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolerance"; Value = "±5%"; VariantName = "[No Variations]"
+Added Component: Designator=R3(OMTE-RES7X2.5-2)
+Add component (AddParameter): Name = "Catalog Drawings"; Value = "OD,OF,OASeries"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Category"; Value = "Resistors"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Composition"; Value = "CarbonComposition"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Datasheet URL"; Value = "http://www.ohmite.com/cat/res_od_of_oa.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Datasheet Version"; Value = "06/2016"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "EDA / CAD Models"; Value = "DownloadfromAcceleratedDesigns"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Family"; Value = "ThroughHoleResistors"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Features"; Value = "PulseWithstanding"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Height"; Value = "-"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Ohmite"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer URL"; Value = "http://www.ohmite.com/"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mounting Technology"; Value = "ThroughHole"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Number of Terminations"; Value = "2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Online Catalog"; Value = "OD,OF,OASeries,LittleDemon®"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Operating Temperature"; Value = "-"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package / Case"; Value = "Axial"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package Description"; Value = "2-Pin THD Resistor, Body 7 x 2.5 mm, Lead Dia. 0.6 mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package Reference"; Value = "RES7X2.5"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Packaging"; Value = "Bulk  "; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PartNumber"; Value = "OD103JE"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Power (Watts)"; Value = "0.25W,1/4W"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Power Rating"; Value = "0.25W"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Resistance (Ohms)"; Value = "10k"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS Information"; Value = "LittleDemon"E"SeriesMaterialDeclaration"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Series"; Value = "LittleDemon®OD"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Size / Dimension"; Value = "0.098"Diax0.276"L(2.50mmx7.00mm)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Standard Package"; Value = "100"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Device Package"; Value = "Axial"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Temperature Coefficient"; Value = "-"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolerance"; Value = "±5%"; VariantName = "[No Variations]"
+Added Component: Designator=R4(OMTE-RES7X2.5-2)
+Add component (AddParameter): Name = "Catalog Drawings"; Value = "OD,OF,OASeries"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Category"; Value = "Resistors"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Composition"; Value = "CarbonComposition"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Datasheet URL"; Value = "http://www.ohmite.com/cat/res_od_of_oa.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Datasheet Version"; Value = "06/2016"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "EDA / CAD Models"; Value = "DownloadfromAcceleratedDesigns"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Family"; Value = "ThroughHoleResistors"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Features"; Value = "PulseWithstanding"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Height"; Value = "-"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Ohmite"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer URL"; Value = "http://www.ohmite.com/"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mounting Technology"; Value = "ThroughHole"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Number of Terminations"; Value = "2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Online Catalog"; Value = "OD,OF,OASeries,LittleDemon®"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Operating Temperature"; Value = "-"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package / Case"; Value = "Axial"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package Description"; Value = "2-Pin THD Resistor, Body 7 x 2.5 mm, Lead Dia. 0.6 mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package Reference"; Value = "RES7X2.5"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Packaging"; Value = "Bulk  "; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PartNumber"; Value = "OD103JE"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Power (Watts)"; Value = "0.25W,1/4W"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Power Rating"; Value = "0.25W"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Resistance (Ohms)"; Value = "10k"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS Information"; Value = "LittleDemon"E"SeriesMaterialDeclaration"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Series"; Value = "LittleDemon®OD"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Size / Dimension"; Value = "0.098"Diax0.276"L(2.50mmx7.00mm)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Standard Package"; Value = "100"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Device Package"; Value = "Axial"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Temperature Coefficient"; Value = "-"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolerance"; Value = "±5%"; VariantName = "[No Variations]"
+Added Component: Designator=R5(AXIAL-0.3)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageDescription"; Value = "Axial Device, Thru-Hole; 2 Leads; 0.3 in Pin Spacing"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageReference"; Value = "AXIAL-0.3"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published"; Value = "8-Jun-2000"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "470"; VariantName = "[No Variations]"
+Added Component: Designator=R6(AXIAL-0.3)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageDescription"; Value = "Axial Device, Thru-Hole; 2 Leads; 0.3 in Pin Spacing"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageReference"; Value = "AXIAL-0.3"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published"; Value = "8-Jun-2000"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "10k"; VariantName = "[No Variations]"
+Added Component: Designator=R7(VR5)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageDescription"; Value = "Variable Resistor, Thru-Hole; 3 Leads"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageReference"; Value = "VR5"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published"; Value = "8-Jun-2000"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Set Position"; Value = "0.5"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Sim Note"; Value = "Enter the Resistance value and the set point into parameter fields."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "10K"; VariantName = "[No Variations]"
+Added Component: Designator=R8(OMTE-RES7X2.5-2)
+Add component (AddParameter): Name = "Catalog Drawings"; Value = "OD,OF,OASeries"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Category"; Value = "Resistors"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Composition"; Value = "CarbonComposition"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Datasheet URL"; Value = "http://www.ohmite.com/cat/res_od_of_oa.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Datasheet Version"; Value = "06/2016"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "EDA / CAD Models"; Value = "DownloadfromAcceleratedDesigns"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Family"; Value = "ThroughHoleResistors"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Features"; Value = "PulseWithstanding"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Height"; Value = "-"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Ohmite"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer URL"; Value = "http://www.ohmite.com/"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mounting Technology"; Value = "ThroughHole"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Number of Terminations"; Value = "2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Online Catalog"; Value = "OD,OF,OASeries,LittleDemon®"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Operating Temperature"; Value = "-"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package / Case"; Value = "Axial"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package Description"; Value = "2-Pin THD Resistor, Body 7 x 2.5 mm, Lead Dia. 0.6 mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package Reference"; Value = "RES7X2.5"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Packaging"; Value = "Bulk  "; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PartNumber"; Value = "OD103JE"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Power (Watts)"; Value = "0.25W,1/4W"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Power Rating"; Value = "0.25W"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Resistance (Ohms)"; Value = "10k"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS Information"; Value = "LittleDemon"E"SeriesMaterialDeclaration"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Series"; Value = "LittleDemon®OD"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Size / Dimension"; Value = "0.098"Diax0.276"L(2.50mmx7.00mm)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Standard Package"; Value = "100"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Device Package"; Value = "Axial"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Temperature Coefficient"; Value = "-"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolerance"; Value = "±5%"; VariantName = "[No Variations]"
+Added Component: Designator=R9(OMTE-RES7X2.5-2)
+Add component (AddParameter): Name = "Catalog Drawings"; Value = "OD,OF,OASeries"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Category"; Value = "Resistors"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Composition"; Value = "CarbonComposition"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Datasheet URL"; Value = "http://www.ohmite.com/cat/res_od_of_oa.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Datasheet Version"; Value = "06/2016"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "EDA / CAD Models"; Value = "DownloadfromAcceleratedDesigns"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Family"; Value = "ThroughHoleResistors"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Features"; Value = "PulseWithstanding"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Height"; Value = "-"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Ohmite"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer URL"; Value = "http://www.ohmite.com/"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mounting Technology"; Value = "ThroughHole"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Number of Terminations"; Value = "2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Online Catalog"; Value = "OD,OF,OASeries,LittleDemon®"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Operating Temperature"; Value = "-"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package / Case"; Value = "Axial"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package Description"; Value = "2-Pin THD Resistor, Body 7 x 2.5 mm, Lead Dia. 0.6 mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package Reference"; Value = "RES7X2.5"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Packaging"; Value = "Bulk  "; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PartNumber"; Value = "OD103JE"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Power (Watts)"; Value = "0.25W,1/4W"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Power Rating"; Value = "0.25W"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Resistance (Ohms)"; Value = "10k"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS Information"; Value = "LittleDemon"E"SeriesMaterialDeclaration"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Series"; Value = "LittleDemon®OD"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Size / Dimension"; Value = "0.098"Diax0.276"L(2.50mmx7.00mm)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Standard Package"; Value = "100"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Device Package"; Value = "Axial"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Temperature Coefficient"; Value = "-"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolerance"; Value = "±5%"; VariantName = "[No Variations]"
+Added Component: Designator=REGULATOR(TO220)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "Manufacturer URL"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.st.com"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "http://www.st.com/internet/com/TECHNICAL_RESOURCES/TECHNICAL_LITERATURE/DATASHEET/CD00000444.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink3Description"; Value = "Package Specification"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink3URL"; Value = "http://www.st.com/internet/com/TECHNICAL_RESOURCES/TECHNICAL_LITERATURE/PACKAGE_INFORMATION/CD00004649.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "DatasheetVersion"; Value = "16/11/2011"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageDescription"; Value = "TO, Thru-Hole, Vertical, Heatsink Mounted; 3 In-Line Leads; Pitch 2.54 mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageReference"; Value = "TO220"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageVersion"; Value = "ver3.0"; VariantName = "[No Variations]"
+Added Component: Designator=SD CARD(66200611122)
+Add component (AddParameter): Name = "Contact Resistance"; Value = "10mOhm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Datasheet URL"; Value = "https://katalog.we-online.de/em/datasheet/6620xx11122.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Gender"; Value = "Male"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Wurth Elektronik"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer URL"; Value = "http://www.we-online.de"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mounting Technology"; Value = "THT"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Operating Temperature"; Value = "-40to105degC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Orientation"; Value = "Vertical"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package Reference"; Value = "66200611122"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Packaging"; Value = "Tube"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part Number"; Value = "66200611122"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pin Number"; Value = "6"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pitch"; Value = "3mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "WurthElektronik"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Working Voltage"; Value = "250VAC"; VariantName = "[No Variations]"
+Added Component: Designator=SPEAKER(66200211122)
+Add component (AddParameter): Name = "Contact Resistance"; Value = "10mOhm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Datasheet URL"; Value = "https://katalog.we-online.de/em/datasheet/6620xx11122.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Gender"; Value = "Male"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Wurth Elektronik"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer URL"; Value = "http://www.we-online.de"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mounting Technology"; Value = "THT"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Operating Temperature"; Value = "-40to105degC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Orientation"; Value = "Vertical"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package Reference"; Value = "66200211122"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Packaging"; Value = "Tube"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part Number"; Value = "66200211122"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pin Number"; Value = "2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pitch"; Value = "3mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "WurthElektronik"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Working Voltage"; Value = "250VAC"; VariantName = "[No Variations]"
+Added Component: Designator=(RAD-0.3)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageDescription"; Value = "Radial Cap, Thru-Hole; 2 Leads; 0.3 in Pin Spacing"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageReference"; Value = "RAD-0.3"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published"; Value = "8-Jun-2000"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "100nF"; VariantName = "[No Variations]"
+Added Component: Designator=UP(FP-3-1825910-1-MFG)
+Add component (AddParameter): Name = "Automotive"; Value = "No"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Category"; Value = "Switch"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=1825910&DocType=Customer+Drawing&DocLang=English"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Contact Current Rating"; Value = "50mA"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Contact Resistance"; Value = "100mO"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Device Class L1"; Value = "Electromechanical"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Device Class L2"; Value = "Switches"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Device Class L3"; Value = "Tactile Switches"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Digikey Description"; Value = "SWITCH TACTILE SPST-NO 0.05A 24V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Electromechanical Life"; Value = "100000Cycles"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Height"; Value = "17.3mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Lead Free"; Value = "Yes"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "TE Connectivity"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "3-1825910-1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mount"; Value = "Through Hole"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Octopart"; Value = "https://octopart.com/3-1825910-1-te+connectivity-46506874"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Operating Force"; Value = "160gf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "0"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS"; Value = "TRUE"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Temperature"; Value = "-35°C to +85°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Temperature Range High"; Value = "+85°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Temperature Range Low"; Value = "-35°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Throw Configuration"; Value = "SPST-NO"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=8 Pin=C8-2
+Added Pin To Net: NetName=8 Pin=OP-AMP-8
+Added Net: Name=8
+Added Pin To Net: NetName=B2 Pin=MICROCONTROLLER-16
+Added Pin To Net: NetName=B2 Pin=SD CARD-3
+Added Net: Name=B2
+Added Pin To Net: NetName=B3 Pin=MICROCONTROLLER-17
+Added Pin To Net: NetName=B3 Pin=SD CARD-4
+Added Net: Name=B3
+Added Pin To Net: NetName=B4 Pin=MICROCONTROLLER-18
+Added Pin To Net: NetName=B4 Pin=SD CARD-5
+Added Net: Name=B4
+Added Pin To Net: NetName=B5 Pin=MICROCONTROLLER-19
+Added Pin To Net: NetName=B5 Pin=SD CARD-6
+Added Net: Name=B5
+Added Pin To Net: NetName=C0 Pin=MICROCONTROLLER-23
+Added Pin To Net: NetName=C0 Pin=R5-1
+Added Net: Name=C0
+Added Pin To Net: NetName=C2 Pin=DOWN-3
+Added Pin To Net: NetName=C2 Pin=MICROCONTROLLER-25
+Added Net: Name=C2
+Added Pin To Net: NetName=C3 Pin=BACK-3
+Added Pin To Net: NetName=C3 Pin=MICROCONTROLLER-26
+Added Net: Name=C3
+Added Pin To Net: NetName=C4 Pin=MICROCONTROLLER-27
+Added Pin To Net: NetName=C4 Pin=UP-3
+Added Net: Name=C4
+Added Pin To Net: NetName=D0 Pin=LCD-4
+Added Pin To Net: NetName=D0 Pin=MICROCONTROLLER-2
+Added Net: Name=D0
+Added Pin To Net: NetName=D1 Pin=LCD-6
+Added Pin To Net: NetName=D1 Pin=MICROCONTROLLER-3
+Added Net: Name=D1
+Added Pin To Net: NetName=D2 Pin=ENTER-3
+Added Pin To Net: NetName=D2 Pin=MICROCONTROLLER-4
+Added Net: Name=D2
+Added Pin To Net: NetName=D3 Pin=MICROCONTROLLER-5
+Added Pin To Net: NetName=D3 Pin=R7-2
+Added Net: Name=D3
+Added Pin To Net: NetName=D4 Pin=LCD-7
+Added Pin To Net: NetName=D4 Pin=MICROCONTROLLER-6
+Added Net: Name=D4
+Added Pin To Net: NetName=D5 Pin=LCD-8
+Added Pin To Net: NetName=D5 Pin=MICROCONTROLLER-11
+Added Net: Name=D5
+Added Pin To Net: NetName=D6 Pin=LCD-9
+Added Pin To Net: NetName=D6 Pin=MICROCONTROLLER-12
+Added Net: Name=D6
+Added Pin To Net: NetName=D7 Pin=LCD-10
+Added Pin To Net: NetName=D7 Pin=MICROCONTROLLER-13
+Added Net: Name=D7
+Added Pin To Net: NetName=GND Pin=-1
+Added Pin To Net: NetName=GND Pin=?-1
+Added Pin To Net: NetName=GND Pin=C1-2
+Added Pin To Net: NetName=GND Pin=C2-2
+Added Pin To Net: NetName=GND Pin=C4-2
+Added Pin To Net: NetName=GND Pin=CONNECTOR-2
+Added Pin To Net: NetName=GND Pin=LCD-1
+Added Pin To Net: NetName=GND Pin=LCD-5
+Added Pin To Net: NetName=GND Pin=MIC-2
+Added Pin To Net: NetName=GND Pin=MICROCONTROLLER-8
+Added Pin To Net: NetName=GND Pin=MICROCONTROLLER-22
+Added Pin To Net: NetName=GND Pin=OP-AMP-2
+Added Pin To Net: NetName=GND Pin=OP-AMP-4
+Added Pin To Net: NetName=GND Pin=R1-1
+Added Pin To Net: NetName=GND Pin=R2-1
+Added Pin To Net: NetName=GND Pin=R3-1
+Added Pin To Net: NetName=GND Pin=R4-1
+Added Pin To Net: NetName=GND Pin=R6-1
+Added Pin To Net: NetName=GND Pin=R7-1
+Added Pin To Net: NetName=GND Pin=R8-2
+Added Pin To Net: NetName=GND Pin=REGULATOR-2
+Added Pin To Net: NetName=GND Pin=SD CARD-2
+Added Pin To Net: NetName=GND Pin=SPEAKER-1
+Added Net: Name=GND
+Added Pin To Net: NetName=Net?_2 Pin=?-2
+Added Pin To Net: NetName=Net?_2 Pin=MIC-3
+Added Pin To Net: NetName=Net?_2 Pin=R5-2
+Added Net: Name=Net?_2
+Added Pin To Net: NetName=Net_2 Pin=-2
+Added Pin To Net: NetName=Net_2 Pin=MICROCONTROLLER-21
+Added Net: Name=Net_2
+Added Pin To Net: NetName=NetBACK_4 Pin=BACK-4
+Added Pin To Net: NetName=NetBACK_4 Pin=R4-2
+Added Net: Name=NetBACK_4
+Added Pin To Net: NetName=NetC1_1 Pin=C1-1
+Added Pin To Net: NetName=NetC1_1 Pin=POWER SWITCH-1
+Added Pin To Net: NetName=NetC1_1 Pin=REGULATOR-1
+Added Net: Name=NetC1_1
+Added Pin To Net: NetName=NetC4_1 Pin=C4-1
+Added Pin To Net: NetName=NetC4_1 Pin=MICROCONTROLLER-20
+Added Net: Name=NetC4_1
+Added Pin To Net: NetName=NetC6_1 Pin=C6-1
+Added Pin To Net: NetName=NetC6_1 Pin=C7-2
+Added Pin To Net: NetName=NetC6_1 Pin=OP-AMP-5
+Added Net: Name=NetC6_1
+Added Pin To Net: NetName=NetC6_2 Pin=C6-2
+Added Pin To Net: NetName=NetC6_2 Pin=SPEAKER-2
+Added Net: Name=NetC6_2
+Added Pin To Net: NetName=NetC7_1 Pin=C7-1
+Added Pin To Net: NetName=NetC7_1 Pin=R6-2
+Added Net: Name=NetC7_1
+Added Pin To Net: NetName=NetC8_1 Pin=C8-1
+Added Pin To Net: NetName=NetC8_1 Pin=OP-AMP-1
+Added Net: Name=NetC8_1
+Added Pin To Net: NetName=NetCONNECTOR_1 Pin=CONNECTOR-1
+Added Pin To Net: NetName=NetCONNECTOR_1 Pin=POWER SWITCH-2
+Added Net: Name=NetCONNECTOR_1
+Added Pin To Net: NetName=NetDOWN_4 Pin=DOWN-4
+Added Pin To Net: NetName=NetDOWN_4 Pin=R2-2
+Added Net: Name=NetDOWN_4
+Added Pin To Net: NetName=NetENTER_4 Pin=ENTER-4
+Added Pin To Net: NetName=NetENTER_4 Pin=R3-2
+Added Net: Name=NetENTER_4
+Added Pin To Net: NetName=NetLCD_3 Pin=LCD-3
+Added Pin To Net: NetName=NetLCD_3 Pin=R8-1
+Added Pin To Net: NetName=NetLCD_3 Pin=R9-1
+Added Net: Name=NetLCD_3
+Added Pin To Net: NetName=NetOP-AMP_3 Pin=OP-AMP-3
+Added Pin To Net: NetName=NetOP-AMP_3 Pin=R7-3
+Added Net: Name=NetOP-AMP_3
+Added Pin To Net: NetName=NetR1_2 Pin=R1-2
+Added Pin To Net: NetName=NetR1_2 Pin=UP-4
+Added Net: Name=NetR1_2
+Added Pin To Net: NetName=VCC Pin=BACK-1
+Added Pin To Net: NetName=VCC Pin=C2-1
+Added Pin To Net: NetName=VCC Pin=DOWN-1
+Added Pin To Net: NetName=VCC Pin=ENTER-1
+Added Pin To Net: NetName=VCC Pin=LCD-2
+Added Pin To Net: NetName=VCC Pin=MIC-1
+Added Pin To Net: NetName=VCC Pin=MICROCONTROLLER-7
+Added Pin To Net: NetName=VCC Pin=OP-AMP-6
+Added Pin To Net: NetName=VCC Pin=R9-2
+Added Pin To Net: NetName=VCC Pin=REGULATOR-3
+Added Pin To Net: NetName=VCC Pin=SD CARD-1
+Added Pin To Net: NetName=VCC Pin=UP-1
+Added Net: Name=VCC
+Added Member To Class: ClassName=VoiceRecorderSchematic Member=Component ? C5
+Added Member To Class: ClassName=VoiceRecorderSchematic Member=Component BACK 3-1825910-1
+Added Member To Class: ClassName=VoiceRecorderSchematic Member=Component C1 1uF
+Added Member To Class: ClassName=VoiceRecorderSchematic Member=Component C2 1uF
+Added Member To Class: ClassName=VoiceRecorderSchematic Member=Component C4
+Added Member To Class: ClassName=VoiceRecorderSchematic Member=Component C6 Cap
+Added Member To Class: ClassName=VoiceRecorderSchematic Member=Component C7 Cap
+Added Member To Class: ClassName=VoiceRecorderSchematic Member=Component C8 Cap
+Added Member To Class: ClassName=VoiceRecorderSchematic Member=Component CONNECTOR 350428-1
+Added Member To Class: ClassName=VoiceRecorderSchematic Member=Component DOWN 3-1825910-1
+Added Member To Class: ClassName=VoiceRecorderSchematic Member=Component ENTER 3-1825910-1
+Added Member To Class: ClassName=VoiceRecorderSchematic Member=Component LCD 66201011122
+Added Member To Class: ClassName=VoiceRecorderSchematic Member=Component MICROCONTROLLER ATmega328-PU
+Added Member To Class: ClassName=VoiceRecorderSchematic Member=Component MIC 66200411122
+Added Member To Class: ClassName=VoiceRecorderSchematic Member=Component OP-AMP LM386N-3
+Added Member To Class: ClassName=VoiceRecorderSchematic Member=Component POWER SWITCH 1825116-1
+Added Member To Class: ClassName=VoiceRecorderSchematic Member=Component R1 10k
+Added Member To Class: ClassName=VoiceRecorderSchematic Member=Component R2 10k
+Added Member To Class: ClassName=VoiceRecorderSchematic Member=Component R3 10k
+Added Member To Class: ClassName=VoiceRecorderSchematic Member=Component R4 10k
+Added Member To Class: ClassName=VoiceRecorderSchematic Member=Component R5 Res1
+Added Member To Class: ClassName=VoiceRecorderSchematic Member=Component R6 Res1
+Added Member To Class: ClassName=VoiceRecorderSchematic Member=Component R7 RPot
+Added Member To Class: ClassName=VoiceRecorderSchematic Member=Component R8 8k
+Added Member To Class: ClassName=VoiceRecorderSchematic Member=Component R9 2k
+Added Member To Class: ClassName=VoiceRecorderSchematic Member=Component REGULATOR L7805CV
+Added Member To Class: ClassName=VoiceRecorderSchematic Member=Component SD CARD 66200611122
+Added Member To Class: ClassName=VoiceRecorderSchematic Member=Component SPEAKER 66200211122
+Added Member To Class: ClassName=VoiceRecorderSchematic Member=Component  C3
+Added Member To Class: ClassName=VoiceRecorderSchematic Member=Component UP 3-1825910-1
+Added Room: Name=VoiceRecorderSchematic

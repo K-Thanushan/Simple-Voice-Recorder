@@ -1,0 +1,38 @@
+Change Component Designator: OldDesignator=  R4 NewDesignator=R4
+Added Component: Designator=C9(RAD-0.3)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageDescription"; Value = "Radial Cap, Thru-Hole; 2 Leads; 0.3 in Pin Spacing"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageReference"; Value = "RAD-0.3"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published"; Value = "8-Jun-2000"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "22pF"; VariantName = "[No Variations]"
+Added Component: Designator=C10(RAD-0.3)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageDescription"; Value = "Radial Cap, Thru-Hole; 2 Leads; 0.3 in Pin Spacing"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageReference"; Value = "RAD-0.3"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published"; Value = "8-Jun-2000"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "22pF"; VariantName = "[No Variations]"
+Added Component: Designator=CO(ECS-4X-3IL)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.ecsxtal.com/store/pdf/hc-49usx.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "ECS"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageReference"; Value = "4X-3IL"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PartNumber"; Value = "ECS-200-20-4X"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=GND Pin=C9-2
+Added Pin To Net: NetName=GND Pin=C10-1
+Added Pin To Net: NetName=GND Pin=CO-2
+Added Pin To Net: NetName=9 Pin=C10-2
+Added Pin To Net: NetName=9 Pin=CO-1
+Added Pin To Net: NetName=9 Pin=MICROCONTROLLER-9
+Added Net: Name=9
+Added Pin To Net: NetName=10 Pin=C9-1
+Added Pin To Net: NetName=10 Pin=CO-3
+Added Pin To Net: NetName=10 Pin=MICROCONTROLLER-10
+Added Net: Name=10
+Added Member To Class: ClassName=VoiceRecorderSchematic Member=Component C9 Cap
+Added Member To Class: ClassName=VoiceRecorderSchematic Member=Component C10
+Added Member To Class: ClassName=VoiceRecorderSchematic Member=Component CO ECS-200-20-4X
+Added Member To Class: ClassName=VoiceRecorderSchematic Member=Component R4 10k

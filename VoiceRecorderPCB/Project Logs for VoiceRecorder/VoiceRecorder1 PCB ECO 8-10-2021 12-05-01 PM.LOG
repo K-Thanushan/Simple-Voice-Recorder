@@ -1,0 +1,30 @@
+Added Member To Class: ClassName=VoiceRecorderSchematic Member=Component ? C5
+Added Member To Class: ClassName=VoiceRecorderSchematic Member=Component BACK 3-1825910-1
+Added Member To Class: ClassName=VoiceRecorderSchematic Member=Component C1 1uF
+Added Member To Class: ClassName=VoiceRecorderSchematic Member=Component C2 1uF
+Added Member To Class: ClassName=VoiceRecorderSchematic Member=Component C4
+Added Member To Class: ClassName=VoiceRecorderSchematic Member=Component C6 Cap
+Added Member To Class: ClassName=VoiceRecorderSchematic Member=Component C7 Cap
+Added Member To Class: ClassName=VoiceRecorderSchematic Member=Component C8 Cap
+Added Member To Class: ClassName=VoiceRecorderSchematic Member=Component CONNECTOR 350428-1
+Added Member To Class: ClassName=VoiceRecorderSchematic Member=Component DOWN 3-1825910-1
+Added Member To Class: ClassName=VoiceRecorderSchematic Member=Component ENTER 3-1825910-1
+Added Member To Class: ClassName=VoiceRecorderSchematic Member=Component LCD 66201011122
+Added Member To Class: ClassName=VoiceRecorderSchematic Member=Component MICROCONTROLLER ATmega328-PU
+Added Member To Class: ClassName=VoiceRecorderSchematic Member=Component MIC 66200411122
+Added Member To Class: ClassName=VoiceRecorderSchematic Member=Component OP-AMP LM386N-3
+Added Member To Class: ClassName=VoiceRecorderSchematic Member=Component POWER SWITCH 1825116-1
+Added Member To Class: ClassName=VoiceRecorderSchematic Member=Component R1 10k
+Added Member To Class: ClassName=VoiceRecorderSchematic Member=Component R2 10k
+Added Member To Class: ClassName=VoiceRecorderSchematic Member=Component R3 10k
+Added Member To Class: ClassName=VoiceRecorderSchematic Member=Component R4 10k
+Added Member To Class: ClassName=VoiceRecorderSchematic Member=Component R5 Res1
+Added Member To Class: ClassName=VoiceRecorderSchematic Member=Component R6 Res1
+Added Member To Class: ClassName=VoiceRecorderSchematic Member=Component R7 RPot
+Added Member To Class: ClassName=VoiceRecorderSchematic Member=Component R8 8k
+Added Member To Class: ClassName=VoiceRecorderSchematic Member=Component R9 2k
+Added Member To Class: ClassName=VoiceRecorderSchematic Member=Component REGULATOR L7805CV
+Added Member To Class: ClassName=VoiceRecorderSchematic Member=Component SD CARD 66200611122
+Added Member To Class: ClassName=VoiceRecorderSchematic Member=Component SPEAKER 66200211122
+Added Member To Class: ClassName=VoiceRecorderSchematic Member=Component  C3
+Added Member To Class: ClassName=VoiceRecorderSchematic Member=Component UP 3-1825910-1
